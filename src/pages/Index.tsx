@@ -1,64 +1,57 @@
 
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { useState } from "react";
+import Header from "@/components/Header";
+import Introduction from "@/components/Introduction";
 import LogoSection from "@/components/LogoSection";
 import ColorPalette from "@/components/ColorPalette";
 import Typography from "@/components/Typography";
-import Applications from "@/components/Applications";
-import Header from "@/components/Header";
+import StationaryKit from "@/components/StationaryKit";
+import DigitalKit from "@/components/DigitalKit";
+import SocialMediaKit from "@/components/SocialMediaKit";
+import OperationAssets from "@/components/OperationAssets";
+import BrandMenu from "@/components/BrandMenu";
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState("introduction");
+
+  const renderActiveSection = () => {
+    switch (activeSection) {
+      case "introduction":
+        return <Introduction />;
+      case "logo":
+        return <LogoSection />;
+      case "colors":
+        return <ColorPalette />;
+      case "typography":
+        return <Typography />;
+      case "stationary":
+        return <StationaryKit />;
+      case "digital":
+        return <DigitalKit />;
+      case "social":
+        return <SocialMediaKit />;
+      case "operations":
+        return <OperationAssets />;
+      default:
+        return <Introduction />;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <Header />
       
-      <main className="max-w-7xl mx-auto px-6 py-12 space-y-16">
-        {/* Hero Section */}
-        <section className="text-center py-16">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-transparent mb-6">
-              Owner Inspections
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-slate-600 mb-8">
-              Brand Guidelines
-            </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              A comprehensive guide to maintaining consistency and excellence in the Owner Inspections brand identity across all touchpoints.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Badge variant="secondary" className="px-4 py-2 text-sm">
-                Version 1.0 • 2024
-              </Badge>
-            </div>
-          </div>
-        </section>
+      <div className="flex max-w-7xl mx-auto">
+        {/* Sidebar Menu */}
+        <div className="w-80 sticky top-20 h-screen overflow-y-auto">
+          <BrandMenu activeSection={activeSection} onSectionChange={setActiveSection} />
+        </div>
 
-        <Separator className="my-16" />
-
-        {/* Logo Section */}
-        <LogoSection />
-
-        <Separator className="my-16" />
-
-        {/* Color Palette */}
-        <ColorPalette />
-
-        <Separator className="my-16" />
-
-        {/* Typography */}
-        <Typography />
-
-        <Separator className="my-16" />
-
-        {/* Brand Applications */}
-        <Applications />
-
-        {/* Footer */}
-        <footer className="text-center py-16 text-slate-400">
-          <p>© 2024 Owner Inspections Brand Guidelines</p>
-        </footer>
-      </main>
+        {/* Main Content */}
+        <main className="flex-1 px-6 py-12">
+          {renderActiveSection()}
+        </main>
+      </div>
     </div>
   );
 };
