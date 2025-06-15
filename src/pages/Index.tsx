@@ -42,13 +42,18 @@ const Index = () => {
       <Header />
       
       <div className="flex max-w-7xl mx-auto">
-        {/* Sidebar Menu */}
-        <div className="w-80 sticky top-20 h-screen overflow-y-auto">
+        {/* Desktop Sidebar Menu */}
+        <div className="hidden lg:block w-80 sticky top-20 h-screen overflow-y-auto">
           <BrandMenu activeSection={activeSection} onSectionChange={setActiveSection} />
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 px-6 py-12">
+        <main className="flex-1 px-4 lg:px-6 py-8 lg:py-12">
+          {/* Mobile Menu */}
+          <div className="lg:hidden mb-6">
+            <BrandMenu activeSection={activeSection} onSectionChange={setActiveSection} isMobile />
+          </div>
+          
           {renderActiveSection()}
         </main>
       </div>

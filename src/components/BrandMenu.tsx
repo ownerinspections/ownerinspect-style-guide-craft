@@ -1,6 +1,15 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { 
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { 
   BookOpen, 
   Palette, 
@@ -9,15 +18,17 @@ import {
   Monitor, 
   Share2, 
   Briefcase,
-  Image
+  Image,
+  Menu
 } from "lucide-react";
 
 interface BrandMenuProps {
   activeSection: string;
   onSectionChange: (section: string) => void;
+  isMobile?: boolean;
 }
 
-const BrandMenu = ({ activeSection, onSectionChange }: BrandMenuProps) => {
+const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMenuProps) => {
   const menuItems = [
     {
       id: "introduction",
@@ -69,7 +80,7 @@ const BrandMenu = ({ activeSection, onSectionChange }: BrandMenuProps) => {
     }
   ];
 
-  return (
+  const MenuContent = ({ onItemClick }: { onItemClick?: () => void }) => (
     <div className="p-6 space-y-4">
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Brand Guidelines</h2>
@@ -86,7 +97,10 @@ const BrandMenu = ({ activeSection, onSectionChange }: BrandMenuProps) => {
             className={`p-4 cursor-pointer transition-all hover:shadow-md ${
               isActive ? 'border-blue-800 bg-blue-50' : 'hover:border-blue-200'
             }`}
-            onClick={() => onSectionChange(section.id)}
+            onClick={() => {
+              onSectionChange(section.id);
+              onItemClick?.();
+            }}
           >
             <div className="flex items-center space-x-3 mb-3">
               <Icon className={`w-5 h-5 ${isActive ? 'text-blue-800' : 'text-slate-600'}`} />
@@ -107,6 +121,33 @@ const BrandMenu = ({ activeSection, onSectionChange }: BrandMenuProps) => {
       })}
     </div>
   );
+
+  if (isMobile) {
+    return (
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" className="w-full justify-start">
+            <Menu className="w-4 h-4 mr-2" />
+            Brand Guidelines Menu
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="w-[350px] sm:w-[400px] p-0 overflow-y-auto">
+          <SheetHeader className="p-6 pb-0">
+            <SheetTitle>Brand Guidelines</SheetTitle>
+            <SheetDescription>
+              Navigate through sections
+            </SheetDescription>
+          </SheetHeader>
+          <MenuContent onItemClick={() => {
+            // The sheet will close automatically when an item is clicked
+            // due to the SheetTrigger behavior
+          }} />
+        </SheetContent>
+      </Sheet>
+    );
+  }
+
+  return <MenuContent />;
 };
 
 export default BrandMenu;
