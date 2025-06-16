@@ -15,16 +15,14 @@ const ColorPalette = () => {
 
   const brandColors = [
     { name: "Primary Blue", hex: "#0b487b", rgb: "11, 72, 123", usage: "Primary brand color, headers, CTAs" },
-    { name: "Secondary Blue", hex: "#1890ff", rgb: "24, 144, 255", usage: "Secondary brand color, accents, links" },
+    { name: "Secondary Blue", hex: "#2c9bd6", rgb: "44, 155, 214", usage: "Secondary brand color, accents, links" },
   ];
 
   const supportingColors = [
-    { name: "Light Blue", hex: "#40a9ff", rgb: "64, 169, 255", usage: "Hover states, light accents" },
-    { name: "Pale Blue", hex: "#91d5ff", rgb: "145, 213, 255", usage: "Backgrounds, subtle highlights" },
-    { name: "Orange Accent", hex: "#fa8c16", rgb: "250, 140, 22", usage: "Warning states, call-to-action accents" },
-    { name: "Green Success", hex: "#52c41a", rgb: "82, 196, 26", usage: "Success states, confirmations" },
-    { name: "Red Alert", hex: "#f5222d", rgb: "245, 34, 45", usage: "Error states, urgent notifications" },
-    { name: "Purple Accent", hex: "#722ed1", rgb: "114, 46, 209", usage: "Special highlights, premium features" },
+    { name: "Success Green", hex: "#10b981", rgb: "16, 185, 129", usage: "Success states, confirmations, positive feedback" },
+    { name: "Warning Orange", hex: "#f59e0b", rgb: "245, 158, 11", usage: "Warning states, cautions, important notices" },
+    { name: "Error Red", hex: "#ef4444", rgb: "239, 68, 68", usage: "Error states, urgent alerts, critical issues" },
+    { name: "Info Blue", hex: "#3b82f6", rgb: "59, 130, 246", usage: "Information states, tips, neutral notifications" },
   ];
 
   const neutralColors = [
@@ -40,7 +38,7 @@ const ColorPalette = () => {
     { name: "Primary Text", hex: "#262626", rgb: "38, 38, 38", usage: "Main content, headlines" },
     { name: "Secondary Text", hex: "#595959", rgb: "89, 89, 89", usage: "Subtext, descriptions" },
     { name: "Muted Text", hex: "#8c8c8c", rgb: "140, 140, 140", usage: "Captions, metadata" },
-    { name: "Link Text", hex: "#1890ff", rgb: "24, 144, 255", usage: "Links, interactive text" },
+    { name: "Link Text", hex: "#2c9bd6", rgb: "44, 155, 214", usage: "Links, interactive text" },
   ];
 
   const ColorCard = ({ colors, title }: { colors: any[], title: string }) => (
@@ -90,7 +88,7 @@ const ColorPalette = () => {
       </div>
 
       {/* Brand Colors Showcase */}
-      <Card className="p-8 text-white text-center" style={{ background: "linear-gradient(135deg, #0b487b 0%, #1890ff 100%)" }}>
+      <Card className="p-8 text-white text-center" style={{ background: "linear-gradient(135deg, #0b487b 0%, #2c9bd6 100%)" }}>
         <h3 className="text-3xl font-bold mb-4">Brand Color Combination</h3>
         <p className="text-blue-100 mb-6">The perfect balance of trust and clarity</p>
         <div className="flex justify-center space-x-8">
@@ -102,14 +100,14 @@ const ColorPalette = () => {
           <div className="text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-2" />
             <p className="text-sm">Secondary Blue</p>
-            <p className="text-xs text-blue-200">#1890ff</p>
+            <p className="text-xs text-blue-200">#2c9bd6</p>
           </div>
         </div>
       </Card>
 
       <div className="grid lg:grid-cols-2 gap-8">
         <ColorCard colors={brandColors} title="Brand Colors" />
-        <ColorCard colors={supportingColors} title="Supporting Colors" />
+        <ColorCard colors={supportingColors} title="Feedback Colors (Semantic)" />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8">
@@ -126,9 +124,9 @@ const ColorPalette = () => {
               <span>Website Headers</span>
               <Badge style={{ backgroundColor: "#0b487b", color: "white" }}>Primary Blue</Badge>
             </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(24, 144, 255, 0.1)" }}>
+            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(44, 155, 214, 0.1)" }}>
               <span>Links & CTAs</span>
-              <Badge style={{ backgroundColor: "#1890ff", color: "white" }}>Secondary Blue</Badge>
+              <Badge style={{ backgroundColor: "#2c9bd6", color: "white" }}>Secondary Blue</Badge>
             </div>
             <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
               <span>Body Text</span>
@@ -138,19 +136,23 @@ const ColorPalette = () => {
         </Card>
 
         <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Print Applications</h3>
+          <h3 className="text-xl font-semibold text-slate-800 mb-4">Feedback States</h3>
           <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(11, 72, 123, 0.1)" }}>
-              <span>Business Cards</span>
-              <Badge style={{ backgroundColor: "#0b487b", color: "white" }}>Primary Blue</Badge>
+            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(16, 185, 129, 0.1)" }}>
+              <span>✅ Success Messages</span>
+              <Badge style={{ backgroundColor: "#10b981", color: "white" }}>Success Green</Badge>
             </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(24, 144, 255, 0.1)" }}>
-              <span>Report Highlights</span>
-              <Badge style={{ backgroundColor: "#1890ff", color: "white" }}>Secondary Blue</Badge>
+            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(245, 158, 11, 0.1)" }}>
+              <span>⚠️ Warning Alerts</span>
+              <Badge style={{ backgroundColor: "#f59e0b", color: "white" }}>Warning Orange</Badge>
             </div>
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span>Document Text</span>
-              <Badge variant="outline">Charcoal</Badge>
+            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(239, 68, 68, 0.1)" }}>
+              <span>❌ Error States</span>
+              <Badge style={{ backgroundColor: "#ef4444", color: "white" }}>Error Red</Badge>
+            </div>
+            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(59, 130, 246, 0.1)" }}>
+              <span>ℹ️ Info Notices</span>
+              <Badge style={{ backgroundColor: "#3b82f6", color: "white" }}>Info Blue</Badge>
             </div>
           </div>
         </Card>
