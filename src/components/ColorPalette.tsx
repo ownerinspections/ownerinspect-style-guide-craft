@@ -93,12 +93,12 @@ const ColorPalette = () => {
         <p className="text-blue-100 mb-6">The perfect balance of trust and clarity</p>
         <div className="flex justify-center space-x-8">
           <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-2" />
+            <div className="w-20 h-20 rounded-full mx-auto mb-2" style={{ backgroundColor: "#0b487b" }} />
             <p className="text-sm">Primary Blue</p>
             <p className="text-xs text-blue-200">#0b487b</p>
           </div>
           <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-2" />
+            <div className="w-20 h-20 rounded-full mx-auto mb-2" style={{ backgroundColor: "#2c9bd6" }} />
             <p className="text-sm">Secondary Blue</p>
             <p className="text-xs text-blue-200">#2c9bd6</p>
           </div>
