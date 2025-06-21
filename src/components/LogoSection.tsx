@@ -82,33 +82,40 @@ const LogoSection = () => {
   };
 
   const handleDownloadFaviconPNG = () => {
-    // Create a canvas to generate the favicon PNG
+    // Create a canvas to generate the favicon PNG based on the actual logo style
     const canvas = document.createElement('canvas');
     canvas.width = 64;
     canvas.height = 64;
     const ctx = canvas.getContext('2d');
     
     if (ctx) {
-      // Draw the circular background
+      // Draw the circular background in primary blue
       ctx.fillStyle = '#0b487b';
       ctx.beginPath();
-      ctx.arc(32, 32, 30, 0, 2 * Math.PI);
+      ctx.arc(32, 32, 32, 0, 2 * Math.PI);
       ctx.fill();
       
-      // Draw the magnifying glass circle
+      // Draw the outer magnifying glass circle (larger)
       ctx.strokeStyle = '#898b8e';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 4;
       ctx.beginPath();
-      ctx.arc(24, 24, 12, 0, 2 * Math.PI);
+      ctx.arc(28, 28, 16, 0, 2 * Math.PI);
+      ctx.stroke();
+      
+      // Draw the inner magnifying glass circle (smaller, concentric)
+      ctx.strokeStyle = '#898b8e';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(28, 28, 10, 0, 2 * Math.PI);
       ctx.stroke();
       
       // Draw the magnifying glass handle
       ctx.strokeStyle = '#898b8e';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 4;
       ctx.lineCap = 'round';
       ctx.beginPath();
-      ctx.moveTo(33, 33);
-      ctx.lineTo(42, 42);
+      ctx.moveTo(40, 40);
+      ctx.lineTo(50, 50);
       ctx.stroke();
     }
     
@@ -132,12 +139,15 @@ const LogoSection = () => {
   <defs>
     <style>
       .favicon-bg { fill: #0b487b; }
-      .favicon-glass { fill: none; stroke: #898b8e; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .favicon-glass-outer { fill: none; stroke: #898b8e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .favicon-glass-inner { fill: none; stroke: #898b8e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .favicon-handle { fill: none; stroke: #898b8e; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
-  <circle class="favicon-bg" cx="32" cy="32" r="30"/>
-  <circle class="favicon-glass" cx="24" cy="24" r="12"/>
-  <line class="favicon-glass" x1="33" y1="33" x2="42" y2="42"/>
+  <circle class="favicon-bg" cx="32" cy="32" r="32"/>
+  <circle class="favicon-glass-outer" cx="28" cy="28" r="16"/>
+  <circle class="favicon-glass-inner" cx="28" cy="28" r="10"/>
+  <line class="favicon-handle" x1="40" y1="40" x2="50" y2="50"/>
 </svg>`;
     
     const blob = new Blob([faviconSVG], { type: 'image/svg+xml' });
@@ -250,9 +260,10 @@ const LogoSection = () => {
         <div className="flex justify-center mb-6">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <svg width="64" height="64" viewBox="0 0 64 64" className="mx-auto">
-              <circle fill="#0b487b" cx="32" cy="32" r="30"/>
-              <circle fill="none" stroke="#898b8e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" cx="24" cy="24" r="12"/>
-              <line stroke="#898b8e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" x1="33" y1="33" x2="42" y2="42"/>
+              <circle fill="#0b487b" cx="32" cy="32" r="32"/>
+              <circle fill="none" stroke="#898b8e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" cx="28" cy="28" r="16"/>
+              <circle fill="none" stroke="#898b8e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" cx="28" cy="28" r="10"/>
+              <line stroke="#898b8e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" x1="40" y1="40" x2="50" y2="50"/>
             </svg>
           </div>
         </div>
