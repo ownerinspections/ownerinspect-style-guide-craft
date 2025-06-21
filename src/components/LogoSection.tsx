@@ -81,6 +81,76 @@ const LogoSection = () => {
     URL.revokeObjectURL(url);
   };
 
+  const handleDownloadFaviconPNG = () => {
+    // Create a canvas to generate the favicon PNG
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    
+    if (ctx) {
+      // Draw the circular background
+      ctx.fillStyle = '#0b487b';
+      ctx.beginPath();
+      ctx.arc(32, 32, 30, 0, 2 * Math.PI);
+      ctx.fill();
+      
+      // Draw the magnifying glass circle
+      ctx.strokeStyle = '#898b8e';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(24, 24, 12, 0, 2 * Math.PI);
+      ctx.stroke();
+      
+      // Draw the magnifying glass handle
+      ctx.strokeStyle = '#898b8e';
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(33, 33);
+      ctx.lineTo(42, 42);
+      ctx.stroke();
+    }
+    
+    canvas.toBlob((blob) => {
+      if (blob) {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'owner-inspections-favicon.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+    });
+  };
+
+  const handleDownloadFaviconSVG = () => {
+    const faviconSVG = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .favicon-bg { fill: #0b487b; }
+      .favicon-glass { fill: none; stroke: #898b8e; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <circle class="favicon-bg" cx="32" cy="32" r="30"/>
+  <circle class="favicon-glass" cx="24" cy="24" r="12"/>
+  <line class="favicon-glass" x1="33" y1="33" x2="42" y2="42"/>
+</svg>`;
+    
+    const blob = new Blob([faviconSVG], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'owner-inspections-favicon.svg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section className="space-y-12">
       <div className="text-center">
@@ -167,6 +237,34 @@ const LogoSection = () => {
           <Button variant="outline" onClick={handleDownloadSVG}>
             <Download className="w-4 h-4 mr-2" />
             SVG Vector
+          </Button>
+        </div>
+      </Card>
+
+      {/* Favicon Section */}
+      <Card className="p-8 text-center bg-gradient-to-r from-slate-50 to-blue-50 border-2 border-dashed border-slate-200">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-4">Favicon</h3>
+        <p className="text-slate-600 mb-6">The magnifying glass icon from our logo, perfect for browser tabs and bookmarks</p>
+        
+        {/* Favicon Preview */}
+        <div className="flex justify-center mb-6">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <svg width="64" height="64" viewBox="0 0 64 64" className="mx-auto">
+              <circle fill="#0b487b" cx="32" cy="32" r="30"/>
+              <circle fill="none" stroke="#898b8e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" cx="24" cy="24" r="12"/>
+              <line stroke="#898b8e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" x1="33" y1="33" x2="42" y2="42"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button variant="outline" onClick={handleDownloadFaviconPNG}>
+            <Download className="w-4 h-4 mr-2" />
+            Favicon PNG
+          </Button>
+          <Button variant="outline" onClick={handleDownloadFaviconSVG}>
+            <Download className="w-4 h-4 mr-2" />
+            Favicon SVG
           </Button>
         </div>
       </Card>
