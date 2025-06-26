@@ -23,7 +23,7 @@ const StationaryKit = () => {
       mockup: "letterhead-a4-mockup.jpg",
       downloadFile: "Owner_inspection_letter_head_A4.docx",
       downloadPath: "/lovable-uploads/Owner_inspection_letter_head_A4.docx",
-      thumbnailUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
+      thumbnailUrl: "/lovable-uploads/1c564e05-07b7-48f5-a5ab-41b013f541d8.png"
     },
     {
       title: "Letterhead A5",
@@ -33,7 +33,7 @@ const StationaryKit = () => {
       mockup: "letterhead-a5-mockup.jpg",
       downloadFile: "Owner_inspection_letter_head_A5.docx",
       downloadPath: "/lovable-uploads/Owner_inspection_letter_head_A5.docx",
-      thumbnailUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop"
+      thumbnailUrl: "/lovable-uploads/1c564e05-07b7-48f5-a5ab-41b013f541d8.png"
     },
     {
       title: "Envelope",
@@ -99,28 +99,22 @@ const StationaryKit = () => {
                 )}
               </div>
 
-              <div className="flex space-x-3">
-                {item.downloadPath ? (
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1"
-                    onClick={() => handleDownloadDocument(item.downloadFile!, item.downloadPath)}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Document
-                  </Button>
-                ) : (
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Template
-                  </Button>
-                )}
-                <Button variant="outline" size="sm" className="flex-1">
+              {item.downloadPath ? (
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => handleDownloadDocument(item.downloadFile!, item.downloadPath)}
+                >
                   <Download className="w-4 h-4 mr-2" />
-                  Download PDF
+                  Download Document
                 </Button>
-              </div>
+              ) : (
+                <Button variant="outline" size="sm" className="w-full">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Template
+                </Button>
+              )}
             </Card>
           );
         })}
