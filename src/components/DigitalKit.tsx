@@ -53,8 +53,8 @@ const DigitalKit = () => {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4">Digital Kit</h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Digital Kit</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Digital assets and templates for online communications, ensuring brand consistency across all digital touchpoints.
         </p>
       </div>
@@ -69,9 +69,9 @@ const DigitalKit = () => {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">{item.title}</h3>
-                  <p className="text-slate-600 mb-3">{item.description}</p>
-                  <Badge variant="outline" className="text-xs">{item.format}</Badge>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2 font-degular">{item.title}</h3>
+                  <p className="text-slate-600 mb-3 font-inter">{item.description}</p>
+                  <Badge variant="outline" className="text-xs font-inter">{item.format}</Badge>
                 </div>
               </div>
 
@@ -79,64 +79,44 @@ const DigitalKit = () => {
               <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-6 mb-4">
                 <div className="bg-white rounded border p-4 text-center">
                   <div className="w-6 h-6 bg-gradient-to-r from-blue-800 to-orange-500 rounded mx-auto mb-2"></div>
-                  <div className="text-sm text-slate-600 mb-2">Owner Inspections</div>
-                  <div className="text-xs text-slate-400">{item.preview}</div>
+                  <div className="text-sm text-slate-600 mb-2 font-inter">Owner Inspections</div>
+                  <div className="text-xs text-slate-400 font-inter">{item.preview}</div>
                 </div>
               </div>
 
-              <div className="flex space-x-3">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download HTML
-                </Button>
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Download className="w-4 h-4 mr-2" />
-                  View Demo
-                </Button>
-              </div>
+              <Button variant="outline" size="sm" className="w-full font-inter">
+                <Download className="w-4 h-4 mr-2" />
+                Download Template
+              </Button>
             </Card>
           );
         })}
       </div>
 
-      {/* Email Guidelines */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Email Design Guidelines</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-              <span className="text-sm">Header Logo</span>
-              <Badge style={{ backgroundColor: "#1e40af", color: "white" }}>Required</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
-              <span className="text-sm">Brand Colors</span>
-              <Badge style={{ backgroundColor: "#ea580c", color: "white" }}>Primary</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span className="text-sm">Professional Tone</span>
-              <Badge variant="outline">Essential</Badge>
-            </div>
+      {/* Usage Guidelines */}
+      <Card className="p-8">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Digital Asset Guidelines</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Email Best Practices</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• Use consistent branding across all email communications</li>
+              <li>• Maintain professional tone and language</li>
+              <li>• Include clear call-to-action buttons</li>
+              <li>• Ensure templates are mobile-responsive</li>
+            </ul>
           </div>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Technical Specifications</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span className="text-sm">Max Width</span>
-              <Badge variant="outline">600px</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span className="text-sm">Mobile Responsive</span>
-              <Badge variant="outline">Required</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span className="text-sm">Image Format</span>
-              <Badge variant="outline">PNG/JPG</Badge>
-            </div>
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Technical Requirements</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• HTML templates compatible with major email clients</li>
+              <li>• Optimized file sizes for quick loading</li>
+              <li>• Variable content areas for customization</li>
+              <li>• Fallback fonts for maximum compatibility</li>
+            </ul>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </div>
   );
 };

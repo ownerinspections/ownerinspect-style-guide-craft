@@ -9,6 +9,8 @@ import StationaryKit from "@/components/StationaryKit";
 import DigitalKit from "@/components/DigitalKit";
 import SocialMediaKit from "@/components/SocialMediaKit";
 import OperationAssets from "@/components/OperationAssets";
+import MarketingAssets from "@/components/MarketingAssets";
+import Services from "@/components/Services";
 import BrandMenu from "@/components/BrandMenu";
 
 const Index = () => {
@@ -32,6 +34,10 @@ const Index = () => {
         return <SocialMediaKit />;
       case "operations":
         return <OperationAssets />;
+      case "marketing":
+        return <MarketingAssets />;
+      case "services":
+        return <Services />;
       default:
         return <Introduction />;
     }
@@ -43,7 +49,7 @@ const Index = () => {
       
       <div className="flex max-w-7xl mx-auto">
         {/* Desktop Sidebar Menu */}
-        <div className="hidden lg:block w-80 sticky top-20 h-screen overflow-y-auto">
+        <div className="hidden lg:block w-80 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto">
           <BrandMenu activeSection={activeSection} onSectionChange={setActiveSection} />
         </div>
 

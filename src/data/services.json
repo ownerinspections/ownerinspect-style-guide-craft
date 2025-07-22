@@ -1,0 +1,296 @@
+{
+  "serviceCategories": [
+    {
+      "id": "property-compliance",
+      "title": "Property Condition & Compliance Inspections",
+      "description": "Routine, safety, and compliance inspections for existing residential or commercial properties.",
+      "icon": "Home",
+      "services": [
+        {
+          "id": "pre-purchase",
+          "name": "Pre-Purchase Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "pre-sale",
+          "name": "Pre-Sale Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "pre-auction",
+          "name": "Pre-Auction Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "pre-settlement",
+          "name": "Pre-Settlement Inspection (Apartment / Off-the-plan)",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "rental-condition",
+          "name": "Rental Property Condition Report (Entry/Exit)",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "maintenance",
+          "name": "Maintenance Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "mould-moisture",
+          "name": "Mould / Moisture Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "timber-pest",
+          "name": "Timber & Pest Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "termite-risk",
+          "name": "Termite Risk Assessment",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "building-code",
+          "name": "Building Code Compliance Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "fire-safety",
+          "name": "Fire Safety Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "pool-barrier",
+          "name": "Swimming Pool Barrier / Compliance Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "energy-efficiency",
+          "name": "Energy Efficiency Rating / Thermal Imaging",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "asbestos",
+          "name": "Asbestos Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "commercial-property",
+          "name": "Commercial Property Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "make-good",
+          "name": "Make Good Inspection (Commercial)",
+          "isCurrentlyOffering": false,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "construction-stage",
+      "title": "Construction Stage Inspections",
+      "description": "Conducted during the building process to check compliance at each key milestone.",
+      "icon": "Building",
+      "services": [
+        {
+          "id": "slab-stage",
+          "name": "Slab Stage Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "frame-stage",
+          "name": "Frame Stage Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "lock-up-stage",
+          "name": "Lock-up Stage Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "waterproofing",
+          "name": "Waterproofing Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "fixing-stage",
+          "name": "Fixing Stage Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "practical-completion",
+          "name": "Practical Completion / Handover Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "final-inspection",
+          "name": "Final Inspection Report",
+          "isCurrentlyOffering": true,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "post-construction",
+      "title": "Post-Construction & Warranty Inspections",
+      "description": "Inspections performed after construction is complete, typically during the warranty period or for defect concerns.",
+      "icon": "Shield",
+      "services": [
+        {
+          "id": "owner-builder-warranty",
+          "name": "Owner-Builder Warranty Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "builder-warranty",
+          "name": "Builder's Warranty Defect Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "defect-investigation",
+          "name": "Defect Investigation Report",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "structural-engineering",
+          "name": "Structural Engineering Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "insurance-legal",
+      "title": "Insurance, Dispute & Legal Inspections",
+      "description": "Specialised inspections for legal cases, damage claims, or expert reports.",
+      "icon": "Scale",
+      "services": [
+        {
+          "id": "insurance-claim",
+          "name": "Insurance Claim Inspection",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "expert-witness",
+          "name": "Expert Witness Inspection & Report",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "dilapidation",
+          "name": "Dilapidation Report",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "post-flood-storm",
+          "name": "Post-Flood/Storm Structural Assessment",
+          "isCurrentlyOffering": false,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "remote-advisory",
+      "title": "Remote Building Advisory Service",
+      "description": "Professional building advisory services delivered remotely.",
+      "icon": "Headphones",
+      "services": [
+        {
+          "id": "contract-review",
+          "name": "Contract Review",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "inspection-interpretation",
+          "name": "Inspection Report Interpretation",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "defect-photo-review",
+          "name": "Defect Photo/Video Review",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "quotation-scope-review",
+          "name": "Quotation & Scope Review",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "insurance-claim-policy",
+          "name": "Insurance Claim & Policy Review",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "strata-report",
+          "name": "Strata Report Review",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "tribunal-dispute",
+          "name": "Tribunal/Dispute Documentation Support",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "remote-expert-opinion",
+          "name": "Remote Expert Opinion Letter",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "warranty-coverage",
+          "name": "Warranty Coverage Advice",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "quote-comparison",
+          "name": "Quote Comparison Advisory",
+          "isCurrentlyOffering": true,
+          "questions": []
+        },
+        {
+          "id": "live-consultation",
+          "name": "Live Remote Consultation / Walkthrough",
+          "isCurrentlyOffering": true,
+          "questions": []
+        }
+      ]
+    }
+  ]
+} 

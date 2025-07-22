@@ -43,7 +43,7 @@ const ColorPalette = () => {
 
   const ColorCard = ({ colors, title }: { colors: any[], title: string }) => (
     <div className="space-y-4">
-      <h3 className="text-2xl font-semibold text-slate-800">{title}</h3>
+      <h3 className="text-2xl font-semibold text-slate-800 font-degular">{title}</h3>
       <div className="grid gap-4">
         {colors.map((color, index) => (
           <Card key={index} className="p-4 hover:shadow-lg transition-shadow">
@@ -53,12 +53,12 @@ const ColorPalette = () => {
                 style={{ backgroundColor: color.hex }}
               />
               <div className="flex-1">
-                <h4 className="font-semibold text-slate-800">{color.name}</h4>
-                <p className="text-sm text-slate-500 mb-2">{color.usage}</p>
+                <h4 className="font-semibold text-slate-800 font-degular">{color.name}</h4>
+                <p className="text-sm text-slate-500 mb-2 font-inter">{color.usage}</p>
                 <div className="flex items-center space-x-4">
                   <button 
                     onClick={() => copyToClipboard(color.hex)}
-                    className="flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-800 transition-colors"
+                    className="flex items-center space-x-2 text-sm text-slate-600 hover:text-slate-800 transition-colors font-inter"
                   >
                     {copiedColor === color.hex ? (
                       <Check className="w-4 h-4 text-green-600" />
@@ -67,7 +67,7 @@ const ColorPalette = () => {
                     )}
                     <span className="font-mono">{color.hex}</span>
                   </button>
-                  <span className="text-sm text-slate-400 font-mono">RGB {color.rgb}</span>
+                  <span className="text-sm text-slate-400 font-mono font-inter">RGB {color.rgb}</span>
                 </div>
               </div>
             </div>
@@ -75,13 +75,13 @@ const ColorPalette = () => {
         ))}
       </div>
     </div>
-  );
+  )
 
   return (
     <section className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4">Color Palette</h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Color Palette</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Our color palette reflects trust, professionalism, and reliability. 
           The primary blue conveys stability while the secondary blue adds clarity and approachability.
         </p>
@@ -89,18 +89,18 @@ const ColorPalette = () => {
 
       {/* Brand Colors Showcase */}
       <Card className="p-8 text-white text-center" style={{ background: "linear-gradient(135deg, #0b487b 0%, #2c9bd6 100%)" }}>
-        <h3 className="text-3xl font-bold mb-4">Brand Color Combination</h3>
-        <p className="text-blue-100 mb-6">The perfect balance of trust and clarity</p>
+        <h3 className="text-3xl font-bold mb-4 font-degular">Brand Color Combination</h3>
+        <p className="text-blue-100 mb-6 font-inter">The perfect balance of trust and clarity</p>
         <div className="flex justify-center space-x-8">
           <div className="text-center">
             <div className="w-20 h-20 rounded-full mx-auto mb-2" style={{ backgroundColor: "#0b487b" }} />
-            <p className="text-sm">Primary Blue</p>
-            <p className="text-xs text-blue-200">#0b487b</p>
+            <p className="text-sm font-inter">Primary Blue</p>
+            <p className="text-xs text-blue-200 font-inter">#0b487b</p>
           </div>
           <div className="text-center">
             <div className="w-20 h-20 rounded-full mx-auto mb-2" style={{ backgroundColor: "#2c9bd6" }} />
-            <p className="text-sm">Secondary Blue</p>
-            <p className="text-xs text-blue-200">#2c9bd6</p>
+            <p className="text-sm font-inter">Secondary Blue</p>
+            <p className="text-xs text-blue-200 font-inter">#2c9bd6</p>
           </div>
         </div>
       </Card>
@@ -116,47 +116,29 @@ const ColorPalette = () => {
       </div>
 
       {/* Color Applications */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Digital Applications</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(11, 72, 123, 0.1)" }}>
-              <span>Website Headers</span>
-              <Badge style={{ backgroundColor: "#0b487b", color: "white" }}>Primary Blue</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(44, 155, 214, 0.1)" }}>
-              <span>Links & CTAs</span>
-              <Badge style={{ backgroundColor: "#2c9bd6", color: "white" }}>Secondary Blue</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-              <span>Body Text</span>
-              <Badge variant="outline">Charcoal</Badge>
-            </div>
+      <Card className="p-8">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Color Applications</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Primary Applications</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• Website headers and navigation</li>
+              <li>• Call-to-action buttons</li>
+              <li>• Brand accent elements</li>
+              <li>• Email signatures and templates</li>
+            </ul>
           </div>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Feedback States</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(16, 185, 129, 0.1)" }}>
-              <span>✅ Success Messages</span>
-              <Badge style={{ backgroundColor: "#10b981", color: "white" }}>Success Green</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(245, 158, 11, 0.1)" }}>
-              <span>⚠️ Warning Alerts</span>
-              <Badge style={{ backgroundColor: "#f59e0b", color: "white" }}>Warning Orange</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(239, 68, 68, 0.1)" }}>
-              <span>❌ Error States</span>
-              <Badge style={{ backgroundColor: "#ef4444", color: "white" }}>Error Red</Badge>
-            </div>
-            <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(59, 130, 246, 0.1)" }}>
-              <span>ℹ️ Info Notices</span>
-              <Badge style={{ backgroundColor: "#3b82f6", color: "white" }}>Info Blue</Badge>
-            </div>
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Secondary Applications</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• Links and interactive elements</li>
+              <li>• Supporting graphics</li>
+              <li>• Social media accents</li>
+              <li>• Document highlights</li>
+            </ul>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </section>
   );
 };

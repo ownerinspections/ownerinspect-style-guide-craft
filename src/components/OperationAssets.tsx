@@ -44,8 +44,8 @@ const OperationAssets = () => {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4">Operation Assets</h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Operation Assets</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Professional presentation templates and operational assets to maintain brand consistency in business communications and client presentations.
         </p>
       </div>
@@ -56,8 +56,8 @@ const OperationAssets = () => {
           <div className="w-20 h-20 bg-gradient-to-r from-blue-800 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Presentation className="w-10 h-10 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-800 mb-4">PowerPoint Template</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold text-slate-800 mb-4 font-degular">PowerPoint Template</h3>
+          <p className="text-slate-600 max-w-2xl mx-auto font-inter">
             Comprehensive presentation template designed for client presentations, training materials, and business communications.
           </p>
         </div>
@@ -70,118 +70,61 @@ const OperationAssets = () => {
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
                   <Icon className="w-6 h-6 text-blue-800" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-2">{feature.title}</h4>
-                <p className="text-sm text-slate-600">{feature.description}</p>
+                <h4 className="font-semibold text-slate-800 mb-2 font-degular">{feature.title}</h4>
+                <p className="text-sm text-slate-600 font-inter">{feature.description}</p>
               </div>
             );
           })}
         </div>
 
-        <div className="flex justify-center space-x-4">
-          <Button className="bg-blue-800 hover:bg-blue-900">
+        <div className="text-center">
+          <Button className="bg-[#0b487b] hover:bg-[#094071] font-inter">
             <Download className="w-4 h-4 mr-2" />
-            Download Template (.PPTX)
-          </Button>
-          <Button variant="outline">
-            <Download className="w-4 h-4 mr-2" />
-            Download Guidelines (.PDF)
+            Download PowerPoint Template
           </Button>
         </div>
       </Card>
 
-      {/* Template Preview */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <h3 className="text-xl font-semibold text-slate-800 mb-6">Template Preview</h3>
-          <Card className="p-6">
-            <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg p-8">
-              <div className="bg-white rounded shadow-lg aspect-video flex flex-col">
-                {/* Slide Header */}
-                <div className="bg-gradient-to-r from-blue-800 to-orange-500 p-4 rounded-t text-white">
-                  <div className="flex justify-between items-center">
-                    <div className="text-lg font-bold">Owner Inspections</div>
-                    <div className="w-8 h-8 bg-white/20 rounded"></div>
-                  </div>
-                </div>
-                
-                {/* Slide Content */}
-                <div className="flex-1 p-6 flex items-center justify-center">
-                  <div className="text-center">
-                    <h4 className="text-lg font-semibold text-slate-800 mb-2">Sample Title Slide</h4>
-                    <p className="text-slate-600">Professional Property Inspections</p>
-                  </div>
-                </div>
-                
-                {/* Slide Footer */}
-                <div className="border-t p-3 text-center">
-                  <div className="text-xs text-slate-400">ownerinspections.com.au</div>
-                </div>
-              </div>
+      {/* Slide Types Available */}
+      <Card className="p-8">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Available Slide Templates</h3>
+        <p className="text-slate-600 mb-6 font-inter">
+          The PowerPoint template includes a comprehensive set of pre-designed slides for various presentation needs.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {slideTypes.map((slideType, index) => (
+            <div key={index} className="text-center p-4 bg-slate-50 rounded-lg">
+              <div className="w-8 h-6 bg-gradient-to-r from-blue-800 to-orange-500 rounded mx-auto mb-2"></div>
+              <p className="text-sm font-medium text-slate-700 font-inter">{slideType}</p>
             </div>
-          </Card>
+          ))}
         </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-slate-800 mb-6">Available Slide Types</h3>
-          <Card className="p-6">
-            <div className="space-y-3">
-              {slideTypes.map((type, index) => (
-                <div key={index} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-slate-50">
-                  <div className="w-2 h-2 bg-blue-800 rounded-full"></div>
-                  <span className="text-sm text-slate-700">{type}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </div>
-      </div>
+      </Card>
 
       {/* Usage Guidelines */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Design Guidelines</h3>
-          <ul className="space-y-3 text-slate-600">
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-blue-800 rounded-full mt-2"></div>
-              <span>Use consistent typography throughout presentation</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-              <span>Maintain brand colors in all visual elements</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-slate-600 rounded-full mt-2"></div>
-              <span>Ensure logo placement follows clear space rules</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-              <span>Keep slides clean and professional</span>
-            </li>
-          </ul>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-xl font-semibold text-slate-800 mb-4">Best Practices</h3>
-          <ul className="space-y-3 text-slate-600">
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <span>Limit text to key points for better readability</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <span>Use high-quality images and graphics</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <span>Maintain consistent slide transitions</span>
-            </li>
-            <li className="flex items-start space-x-2">
-              <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-              <span>Include contact information on final slide</span>
-            </li>
-          </ul>
-        </Card>
-      </div>
+      <Card className="p-8">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Presentation Guidelines</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Brand Consistency</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• Always use the provided master slides</li>
+              <li>• Maintain consistent color palette throughout</li>
+              <li>• Use approved fonts and typography hierarchy</li>
+              <li>• Include logo on every slide</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Content Best Practices</h4>
+            <ul className="space-y-2 text-slate-600 font-inter">
+              <li>• Keep text concise and readable</li>
+              <li>• Use high-quality images and graphics</li>
+              <li>• Maintain consistent spacing and alignment</li>
+              <li>• Follow the 6x6 rule (max 6 bullets, 6 words each)</li>
+            </ul>
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };

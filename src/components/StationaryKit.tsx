@@ -2,13 +2,13 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, Mail, CreditCard } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 
 const StationaryKit = () => {
-  const handleDownloadDocument = (fileName: string, filePath: string) => {
+  const handleDownloadLetterheadZip = () => {
     const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
+    link.href = '/lovable-uploads/owner-letter-head.zip';
+    link.download = 'owner-letter-head.zip';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -21,9 +21,7 @@ const StationaryKit = () => {
       icon: FileText,
       specs: "210mm × 297mm • 300 DPI • CMYK",
       mockup: "letterhead-a4-mockup.jpg",
-      downloadFile: "Owner_inspection_letter_head_A4.docx",
-      downloadPath: "/lovable-uploads/Owner_inspection_letter_head_A4.docx",
-      thumbnailUrl: "/lovable-uploads/1c564e05-07b7-48f5-a5ab-41b013f541d8.png"
+      thumbnailUrl: "/lovable-uploads/letter-head-thumnail.png"
     },
     {
       title: "Letterhead A5",
@@ -31,33 +29,15 @@ const StationaryKit = () => {
       icon: FileText,
       specs: "148mm × 210mm • 300 DPI • CMYK",
       mockup: "letterhead-a5-mockup.jpg",
-      downloadFile: "Owner_inspection_letter_head_A5.docx",
-      downloadPath: "/lovable-uploads/Owner_inspection_letter_head_A5.docx",
-      thumbnailUrl: "/lovable-uploads/1c564e05-07b7-48f5-a5ab-41b013f541d8.png"
-    },
-    {
-      title: "Envelope",
-      description: "Standard business envelope with brand identity",
-      icon: Mail,
-      specs: "DL Size (110mm × 220mm) • 300 DPI • CMYK",
-      mockup: "envelope-mockup.jpg",
-      thumbnailUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop"
-    },
-    {
-      title: "Business Card",
-      description: "Professional business cards for networking",
-      icon: CreditCard,
-      specs: "85mm × 55mm • 300 DPI • CMYK • Matte Finish",
-      mockup: "business-card-mockup.jpg",
-      thumbnailUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+      thumbnailUrl: "/lovable-uploads/letter-head-thumnail.png"
     }
   ];
 
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4">Stationary Kit</h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Stationary Kit</h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Professional print materials that maintain brand consistency across all business communications and touchpoints.
         </p>
       </div>
@@ -72,9 +52,9 @@ const StationaryKit = () => {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">{item.title}</h3>
-                  <p className="text-slate-600 mb-3">{item.description}</p>
-                  <Badge variant="outline" className="text-xs">{item.specs}</Badge>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2 font-degular">{item.title}</h3>
+                  <p className="text-slate-600 mb-3 font-inter">{item.description}</p>
+                  <Badge variant="outline" className="text-xs font-inter">{item.specs}</Badge>
                 </div>
               </div>
 
@@ -92,56 +72,26 @@ const StationaryKit = () => {
                   <div className="w-full h-32 bg-white rounded shadow-md flex items-center justify-center border">
                     <div className="text-center">
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-800 to-orange-500 rounded mx-auto mb-2"></div>
-                      <div className="text-xs text-slate-600">Owner Inspections</div>
-                      <div className="text-xs text-slate-400 mt-1">{item.title} Preview</div>
+                      <div className="text-xs text-slate-600 font-inter">Owner Inspections</div>
+                      <div className="text-xs text-slate-400 mt-1 font-inter">{item.title} Preview</div>
                     </div>
                   </div>
                 )}
               </div>
-
-              {item.downloadPath ? (
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => handleDownloadDocument(item.downloadFile!, item.downloadPath)}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Document
-                </Button>
-              ) : (
-                <Button variant="outline" size="sm" className="w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Template
-                </Button>
-              )}
             </Card>
           );
         })}
       </div>
 
-      {/* Design Guidelines */}
-      <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Design Guidelines</h3>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="font-semibold text-slate-700 mb-3">Layout Principles</h4>
-            <ul className="space-y-2 text-slate-600">
-              <li>• Maintain consistent margins and spacing</li>
-              <li>• Use the brand color palette appropriately</li>
-              <li>• Ensure logo placement follows clear space rules</li>
-              <li>• Keep typography hierarchy consistent</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-slate-700 mb-3">Print Specifications</h4>
-            <ul className="space-y-2 text-slate-600">
-              <li>• Resolution: 300 DPI minimum</li>
-              <li>• Color Mode: CMYK for print</li>
-              <li>• Bleed: 3mm on all sides</li>
-              <li>• Paper: High-quality matte or gloss finish</li>
-            </ul>
-          </div>
+      {/* Download Section */}
+      <Card className="p-8 text-center bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-dashed border-blue-200">
+        <h3 className="text-2xl font-semibold text-slate-800 mb-4 font-degular">Letterhead Templates</h3>
+        <p className="text-slate-600 mb-6 font-inter">Download professional letterhead templates for all your business correspondence</p>
+        <div className="flex justify-center">
+          <Button variant="default" onClick={handleDownloadLetterheadZip} className="bg-[#0b487b] hover:bg-[#094071] font-inter">
+            <Download className="w-4 h-4 mr-2" />
+            Download All Letterheads (ZIP)
+          </Button>
         </div>
       </Card>
     </div>

@@ -1,10 +1,17 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Target, Heart, Compass, Lightbulb, Users, BookOpen, Crown } from "lucide-react";
+import { Target, Heart, Compass, Lightbulb, Users, BookOpen, Crown, FileText } from "lucide-react";
 
 const Introduction = () => {
   const sections = [
+    {
+      id: "bio",
+      title: "Bio",
+      icon: BookOpen,
+      content: "Owner Inspections | Trusted Australian Building Consultants\n• Residential, Commercial & Body Corporate\n• Property Inspections\n• Building Defect Reports\n• Forensic Investigations\n• Expert Witness Reporting\nClarity | Precision | Integrity\nwww.ownerinspections.com.au",
+      color: "bg-slate-600"
+    },
     {
       id: "vision",
       title: "Vision",
@@ -43,7 +50,7 @@ const Introduction = () => {
     {
       id: "story",
       title: "Brand Story",
-      icon: BookOpen,
+      icon: FileText,
       content: "Founded on the principle that every property owner deserves complete transparency and professional expertise when making important property decisions.",
       color: "bg-blue-700"
     },
@@ -61,17 +68,17 @@ const Introduction = () => {
       {/* Hero Section */}
       <section className="text-center py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-transparent mb-6 font-degular">
             Owner Inspections
           </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-600 mb-8">
+          <h2 className="text-2xl md:text-3xl text-slate-600 mb-8 font-degular">
             Brand Guidelines & Identity
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-inter">
             A comprehensive guide to maintaining consistency and excellence in the Owner Inspections brand identity across all touchpoints.
           </p>
           <div className="mt-8 flex justify-center">
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge variant="secondary" className="px-4 py-2 text-sm font-inter">
               Version 1.0 • 2024
             </Badge>
           </div>
@@ -89,8 +96,8 @@ const Introduction = () => {
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-800 mb-4">{section.title}</h3>
-                  <p className="text-lg text-slate-600 leading-relaxed">{section.content}</p>
+                  <h3 className="text-2xl font-bold text-slate-800 mb-4 font-degular">{section.title}</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed font-inter whitespace-pre-line">{section.content}</p>
                 </div>
               </div>
             </Card>
@@ -99,20 +106,37 @@ const Introduction = () => {
       </div>
 
       {/* Brand Essence Summary */}
-      <Card className="p-8 bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-dashed border-blue-200">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Brand Essence</h3>
-        <div className="grid md:grid-cols-3 gap-6 text-center">
-          <div>
-            <h4 className="font-semibold text-blue-800 mb-2">What We Do</h4>
-            <p className="text-slate-600">Professional Property Inspections</p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-orange-600 mb-2">How We Do It</h4>
-            <p className="text-slate-600">With Expertise & Technology</p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-slate-700 mb-2">Why It Matters</h4>
-            <p className="text-slate-600">Peace of Mind for Property Owners</p>
+      <Card className="p-8 bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-blue-200">
+        <div className="text-center">
+          <h3 className="text-3xl font-bold text-slate-800 mb-6 font-degular">Brand Essence</h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-slate-700 mb-8 font-inter leading-relaxed">
+              Owner Inspections embodies trust, expertise, and innovation in the property inspection industry. 
+              We are the reliable partner that property owners depend on for comprehensive, accurate, and professional inspection services.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="w-12 h-12 bg-blue-800 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Expert</h4>
+                <p className="text-sm text-slate-600 font-inter">Professional knowledge and industry expertise</p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-orange-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Trusted</h4>
+                <p className="text-sm text-slate-600 font-inter">Reliable and honest service delivery</p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Innovative</h4>
+                <p className="text-sm text-slate-600 font-inter">Modern technology and advanced methods</p>
+              </div>
+            </div>
           </div>
         </div>
       </Card>

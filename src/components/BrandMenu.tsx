@@ -19,7 +19,9 @@ import {
   Share2, 
   Briefcase,
   Image,
-  Menu
+  Menu,
+  Target,
+  Wrench
 } from "lucide-react";
 
 interface BrandMenuProps {
@@ -33,58 +35,59 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
     {
       id: "introduction",
       title: "Introduction",
-      icon: BookOpen,
-      items: ["Vision", "Mission", "Core Values", "Brand Strategy", "Brand Personality", "Brand Story", "Brand Archetype"]
+      icon: BookOpen
     },
     {
       id: "logo",
       title: "Logo",
-      icon: Image,
-      items: ["Logo", "Logo Variations", "Favicon", "Favicon Variation", "Logo Properties", "Logo Clear Space", "Logo Minimum Size", "Logo Misuse"]
+      icon: Image
     },
     {
       id: "colors",
       title: "Color Palette",
-      icon: Palette,
-      items: ["Brand Colors", "Supporting Colors", "Neutral Colors", "Text Colors"]
+      icon: Palette
     },
     {
       id: "typography",
       title: "Typography",
-      icon: Type,
-      items: ["Primary Font", "Secondary Font"]
+      icon: Type
     },
     {
       id: "stationary",
       title: "Stationary Kit",
-      icon: FileText,
-      items: ["Letterheads A4", "Letterhead A3", "Envelope", "Business Card"]
+      icon: FileText
     },
     {
       id: "digital",
       title: "Digital Kit",
-      icon: Monitor,
-      items: ["Vcard", "Email Signature", "General Email Template", "Payment Receipt Email Template", "Quote Email Templates", "Invoice Email Template"]
+      icon: Monitor
     },
     {
       id: "social",
       title: "Social Media Kit",
-      icon: Share2,
-      items: ["Profile Logo", "YouTube", "Instagram", "LinkedIn", "Medium", "Reddit", "Logo Motion for Instagram Story", "Logo Motion for YouTube Clips", "Hashtags"]
+      icon: Share2
     },
     {
       id: "operations",
       title: "Operation Assets",
-      icon: Briefcase,
-      items: ["PowerPoint Template"]
+      icon: Briefcase
+    },
+    {
+      id: "marketing",
+      title: "Marketing Assets",
+      icon: Target
+    },
+    {
+      id: "services",
+      title: "Services",
+      icon: Wrench
     }
   ];
 
   const MenuContent = ({ onItemClick }: { onItemClick?: () => void }) => (
     <div className="p-6 space-y-4">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-800 mb-2">Brand Guidelines</h2>
-        <p className="text-sm text-slate-600">Navigate through sections</p>
+        <h2 className="text-2xl font-bold text-slate-800 mb-2 font-degular">Brand Guidelines</h2>
       </div>
 
       {menuItems.map((section) => {
@@ -92,31 +95,24 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
         const isActive = activeSection === section.id;
         
         return (
-          <Card 
+          <Button
             key={section.id}
-            className={`p-4 cursor-pointer transition-all hover:shadow-md ${
-              isActive ? 'border-blue-800 bg-blue-50' : 'hover:border-blue-200'
-            }`}
+            variant={isActive ? "default" : "ghost"}
+            className={`w-full justify-start h-auto p-4 ${
+              isActive 
+                ? "bg-[#0b487b] hover:bg-[#094071]" 
+                : "hover:bg-slate-100"
+            } font-inter`}
             onClick={() => {
               onSectionChange(section.id);
               onItemClick?.();
             }}
           >
-            <div className="flex items-center space-x-3 mb-3">
-              <Icon className={`w-5 h-5 ${isActive ? 'text-blue-800' : 'text-slate-600'}`} />
-              <h3 className={`font-semibold ${isActive ? 'text-blue-800' : 'text-slate-800'}`}>
-                {section.title}
-              </h3>
-              {isActive && <Badge className="bg-blue-800 text-xs">Active</Badge>}
-            </div>
-            <div className="space-y-1">
-              {section.items.map((item, index) => (
-                <p key={index} className="text-xs text-slate-500 ml-8">
-                  • {item}
-                </p>
-              ))}
-            </div>
-          </Card>
+            <Icon className={`w-5 h-5 mr-3 ${isActive ? "text-white" : "text-slate-600"}`} />
+            <span className={isActive ? "text-white" : "text-slate-700"}>
+              {section.title}
+            </span>
+          </Button>
         );
       })}
     </div>
@@ -126,28 +122,31 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
     return (
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" className="w-full justify-start">
+          <Button variant="outline" size="sm" className="font-inter">
             <Menu className="w-4 h-4 mr-2" />
-            Brand Guidelines Menu
+            Menu
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[350px] sm:w-[400px] p-0 overflow-y-auto">
-          <SheetHeader className="p-6 pb-0">
-            <SheetTitle>Brand Guidelines</SheetTitle>
-            <SheetDescription>
-              Navigate through sections
+        <SheetContent side="left" className="w-80">
+          <SheetHeader>
+            <SheetTitle className="font-degular">Navigation</SheetTitle>
+            <SheetDescription className="font-inter">
+              Access all brand guideline sections
             </SheetDescription>
           </SheetHeader>
-          <MenuContent onItemClick={() => {
-            // The sheet will close automatically when an item is clicked
-            // due to the SheetTrigger behavior
-          }} />
+          <MenuContent onItemClick={() => {}} />
         </SheetContent>
       </Sheet>
     );
   }
 
-  return <MenuContent />;
+  return (
+    <Card className="h-full overflow-hidden">
+      <div className="h-full overflow-y-auto">
+        <MenuContent />
+      </div>
+    </Card>
+  );
 };
 
 export default BrandMenu;
