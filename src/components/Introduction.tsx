@@ -79,7 +79,14 @@ const Introduction = () => {
           </p>
           <div className="mt-8 flex justify-center">
             <Badge variant="secondary" className="px-4 py-2 text-sm font-inter">
-              Version 1.0 • 2024
+              Last updated: {new Date().toLocaleDateString('en-AU', { 
+                timeZone: 'Australia/Sydney',
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })}
             </Badge>
           </div>
         </div>

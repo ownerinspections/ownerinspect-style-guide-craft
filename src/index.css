@@ -1,96 +1,6 @@
 
-/* Local Fonts */
-/* Inter Font Family */
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter/Inter-Regular.woff2') format('woff2'),
-        url('./assets/fonts/Inter/Inter-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter/Inter-Bold.woff2') format('woff2'),
-        url('./assets/fonts/Inter/Inter-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter/Inter-Medium.woff2') format('woff2'),
-        url('./assets/fonts/Inter/Inter-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
-        url('./assets/fonts/Inter/Inter-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter/Inter-Light.woff2') format('woff2'),
-        url('./assets/fonts/Inter/Inter-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Degular Display Font Family */
-@font-face {
-    font-family: 'Degular Display';
-    src: url('./assets/fonts/Degular/DegularDisplay-Regular.woff2') format('woff2'),
-        url('./assets/fonts/Degular/DegularDisplay-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular Display';
-    src: url('./assets/fonts/Degular/DegularDisplay-Bold.woff2') format('woff2'),
-        url('./assets/fonts/Degular/DegularDisplay-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular Display';
-    src: url('./assets/fonts/Degular/DegularDisplay-Medium.woff2') format('woff2'),
-        url('./assets/fonts/Degular/DegularDisplay-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular Display';
-    src: url('./assets/fonts/Degular/DegularDisplay-SemiBold.woff2') format('woff2'),
-        url('./assets/fonts/Degular/DegularDisplay-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Degular Display';
-    src: url('./assets/fonts/Degular/DegularDisplay-Light.woff2') format('woff2'),
-        url('./assets/fonts/Degular/DegularDisplay-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -193,15 +103,6 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  /* Ensure fonts are applied correctly */
-  .font-inter {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  }
-
-  .font-degular {
-    font-family: 'Degular Display', Georgia, 'Times New Roman', serif !important;
+    font-family: 'Inter', sans-serif;
   }
 }
