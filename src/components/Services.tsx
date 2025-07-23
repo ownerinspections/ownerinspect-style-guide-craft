@@ -8,7 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap } from "lucide-react";
+import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap, Edit } from "lucide-react";
 import { 
   getInitialServicesDataWithPersistence, 
   downloadServicesData, 
@@ -43,6 +43,8 @@ const Services = () => {
   const [isAddingQuestion, setIsAddingQuestion] = useState(false);
   const [viewMode, setViewMode] = useState<'list' | 'flow'>('list');
   const [copyFromService, setCopyFromService] = useState<{ categoryId: string; serviceId: string } | null>(null);
+  const [editingQuestion, setEditingQuestion] = useState<{ categoryId: string; serviceId: string; questionId: string } | null>(null);
+  const [editQuestionData, setEditQuestionData] = useState<Partial<Question>>({});
 
   const addQuestion = () => {
     if (!selectedService || !newQuestion.text) return;
@@ -83,6 +85,52 @@ const Services = () => {
 
     setNewQuestion({ text: '', type: 'text', required: false, order: 0 });
     setIsAddingQuestion(false);
+  };
+
+  const updateQuestion = () => {
+    if (!editingQuestion || !editQuestionData.text) return;
+
+    setServicesData(prev => ({
+      ...prev,
+      serviceCategories: prev.serviceCategories.map(category => 
+        category.id === editingQuestion.categoryId
+          ? {
+              ...category,
+              services: category.services.map(service =>
+                service.id === editingQuestion.serviceId
+                  ? { 
+                      ...service, 
+                      questions: service.questions.map(question =>
+                        question.id === editingQuestion.questionId
+                          ? { 
+                              ...question, 
+                              text: editQuestionData.text || question.text,
+                              type: editQuestionData.type || question.type,
+                              options: editQuestionData.options || question.options,
+                              required: editQuestionData.required !== undefined ? editQuestionData.required : question.required
+                            }
+                          : question
+                      )
+                    }
+                  : service
+              )
+            }
+          : category
+      )
+    }));
+
+    setEditingQuestion(null);
+    setEditQuestionData({});
+  };
+
+  const startEditingQuestion = (categoryId: string, serviceId: string, question: Question) => {
+    setEditingQuestion({ categoryId, serviceId, questionId: question.id });
+    setEditQuestionData({
+      text: question.text,
+      type: question.type,
+      options: question.options,
+      required: question.required
+    });
   };
 
   const removeQuestion = (categoryId: string, serviceId: string, questionId: string) => {
@@ -515,14 +563,24 @@ const Services = () => {
                                     </div>
                                   </div>
                                   {isEditable && (
-                                    <Button
-                                      variant="ghost"
-                                      size="sm"
-                                      onClick={() => removeQuestion(category.id, service.id, question.id)}
-                                      className="text-red-500 hover:text-red-700"
-                                    >
-                                      <Trash2 className="w-4 h-4" />
-                                    </Button>
+                                    <div className="flex gap-1">
+                                      <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        onClick={() => startEditingQuestion(category.id, service.id, question)}
+                                        className="text-blue-500 hover:text-blue-700"
+                                      >
+                                        <Edit className="w-4 h-4" />
+                                      </Button>
+                                      <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        onClick={() => removeQuestion(category.id, service.id, question.id)}
+                                        className="text-red-500 hover:text-red-700"
+                                      >
+                                        <Trash2 className="w-4 h-4" />
+                                      </Button>
+                                    </div>
                                   )}
                                 </div>
                                     ))}
@@ -693,6 +751,88 @@ const Services = () => {
                                         className="bg-[#0b487b] hover:bg-[#094071] font-inter"
                                       >
                                         Copy Questions
+                                      </Button>
+                                    </div>
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
+
+                              {/* Edit Question Dialog */}
+                              <Dialog open={editingQuestion?.categoryId === category.id && editingQuestion?.serviceId === service.id} onOpenChange={(open) => !open && setEditingQuestion(null)}>
+                                <DialogContent>
+                                  <DialogHeader>
+                                    <DialogTitle className="font-degular">Edit Question</DialogTitle>
+                                    <DialogDescription className="font-inter">
+                                      Modify the question details below.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <div className="space-y-4">
+                                    <div>
+                                      <Label htmlFor="edit-question-text" className="font-inter">Question Text</Label>
+                                      <Textarea
+                                        id="edit-question-text"
+                                        placeholder="Enter your question..."
+                                        value={editQuestionData.text || ''}
+                                        onChange={(e) => setEditQuestionData(prev => ({ ...prev, text: e.target.value }))}
+                                        className="font-inter"
+                                      />
+                                    </div>
+                                    <div>
+                                      <Label htmlFor="edit-question-type" className="font-inter">Question Type</Label>
+                                      <select
+                                        id="edit-question-type"
+                                        value={editQuestionData.type || 'text'}
+                                        onChange={(e) => setEditQuestionData(prev => ({ ...prev, type: e.target.value as Question['type'] }))}
+                                        className="w-full p-2 border border-gray-300 rounded-md font-inter"
+                                      >
+                                        <option value="text">Text Input</option>
+                                        <option value="textarea">Text Area</option>
+                                        <option value="select">Select Dropdown</option>
+                                        <option value="checkbox">Checkbox</option>
+                                      </select>
+                                    </div>
+                                    {(editQuestionData.type === 'select' || editQuestionData.type === 'checkbox') && (
+                                      <div>
+                                        <Label htmlFor="edit-question-options" className="font-inter">
+                                          {editQuestionData.type === 'select' ? 'Dropdown Options' : 'Checkbox Options'} (comma-separated)
+                                        </Label>
+                                        <Textarea
+                                          id="edit-question-options"
+                                          placeholder={editQuestionData.type === 'select' 
+                                            ? "Option 1, Option 2, Option 3" 
+                                            : "Option A, Option B, Option C"
+                                          }
+                                          value={editQuestionData.options ? editQuestionData.options.join(', ') : ''}
+                                          onChange={(e) => setEditQuestionData(prev => ({ 
+                                            ...prev, 
+                                            options: e.target.value.split(',').map(opt => opt.trim()).filter(Boolean)
+                                          }))}
+                                          className="font-inter min-h-[80px]"
+                                          rows={3}
+                                        />
+                                        <p className="text-sm text-slate-500 mt-1 font-inter">
+                                          {editQuestionData.type === 'select' 
+                                            ? 'Users will select one option from the dropdown list'
+                                            : 'Users can select multiple options from checkboxes'
+                                          }
+                                        </p>
+                                      </div>
+                                    )}
+                                    <div className="flex items-center space-x-2">
+                                      <input
+                                        type="checkbox"
+                                        id="edit-question-required"
+                                        checked={editQuestionData.required || false}
+                                        onChange={(e) => setEditQuestionData(prev => ({ ...prev, required: e.target.checked }))}
+                                      />
+                                      <Label htmlFor="edit-question-required" className="font-inter">Required field</Label>
+                                    </div>
+                                    <div className="flex justify-end space-x-2">
+                                      <Button variant="outline" onClick={() => setEditingQuestion(null)} className="font-inter">
+                                        Cancel
+                                      </Button>
+                                      <Button onClick={updateQuestion} className="bg-[#0b487b] hover:bg-[#094071] font-inter">
+                                        Update Question
                                       </Button>
                                     </div>
                                   </div>
