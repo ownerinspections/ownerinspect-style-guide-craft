@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,8 +10,9 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap } from "lucide-react";
 import { 
-  getInitialServicesData, 
+  getInitialServicesDataWithPersistence, 
   downloadServicesData, 
+  saveToLocalStorage,
   type Question, 
   type Service, 
   type ServiceCategory, 
@@ -20,10 +21,17 @@ import {
 } from "@/utils/servicesData";
 
 const Services = () => {
-  const [servicesData, setServicesData] = useState<ServicesData>(() => getInitialServicesData());
+  const [servicesData, setServicesData] = useState<ServicesData>(() => getInitialServicesDataWithPersistence());
   
   // Check if we're in development mode - only allow editing in development
   const isEditable = import.meta.env.DEV;
+
+  // Auto-save to localStorage whenever data changes
+  useEffect(() => {
+    if (isEditable) {
+      saveToLocalStorage(servicesData);
+    }
+  }, [servicesData, isEditable]);
 
   const [selectedService, setSelectedService] = useState<{ categoryId: string; serviceId: string } | null>(null);
   const [newQuestion, setNewQuestion] = useState<Partial<Question>>({
@@ -34,6 +42,7 @@ const Services = () => {
   });
   const [isAddingQuestion, setIsAddingQuestion] = useState(false);
   const [viewMode, setViewMode] = useState<'list' | 'flow'>('list');
+  const [copyFromService, setCopyFromService] = useState<{ categoryId: string; serviceId: string } | null>(null);
 
   const addQuestion = () => {
     if (!selectedService || !newQuestion.text) return;
@@ -92,6 +101,71 @@ const Services = () => {
           : category
       )
     }));
+  };
+
+  const copyQuestionsFromService = () => {
+    if (!selectedService || !copyFromService) return;
+
+    // Find the source service
+    const sourceService = servicesData.serviceCategories
+      .find(cat => cat.id === copyFromService.categoryId)
+      ?.services.find(svc => svc.id === copyFromService.serviceId);
+
+    if (!sourceService || sourceService.questions.length === 0) return;
+
+    // Copy questions with new IDs and updated order numbers
+    const copiedQuestions: Question[] = sourceService.questions.map((question, index) => ({
+      ...question,
+      id: `${Date.now()}_${index}`, // Generate new unique ID
+      order: index + 1, // Reset order starting from 1
+      // Reset conditional logic as it might reference questions that don't exist in target service
+      conditional: undefined
+    }));
+
+    setServicesData(prev => ({
+      ...prev,
+      serviceCategories: prev.serviceCategories.map(category => 
+        category.id === selectedService.categoryId
+          ? {
+              ...category,
+              services: category.services.map(service =>
+                service.id === selectedService.serviceId
+                  ? { ...service, questions: copiedQuestions } // Replace all questions
+                  : service
+              )
+            }
+          : category
+      )
+    }));
+
+    setCopyFromService(null);
+  };
+
+  // Get all services with questions for the copy dropdown
+  const getServicesWithQuestions = () => {
+    const servicesWithQuestions: Array<{
+      categoryId: string;
+      categoryTitle: string;
+      serviceId: string;
+      serviceName: string;
+      questionCount: number;
+    }> = [];
+
+    servicesData.serviceCategories.forEach(category => {
+      category.services.forEach(service => {
+        if (service.questions.length > 0) {
+          servicesWithQuestions.push({
+            categoryId: category.id,
+            categoryTitle: category.title,
+            serviceId: service.id,
+            serviceName: service.name,
+            questionCount: service.questions.length
+          });
+        }
+      });
+    });
+
+    return servicesWithQuestions;
   };
 
   const toggleServiceOffering = (categoryId: string, serviceId: string) => {
@@ -267,16 +341,24 @@ const Services = () => {
       </div>
 
       <div className="space-y-8">
-        {/* Export Data Button - Only show in development */}
+        {/* Export Data Buttons - Only show in development */}
         {isEditable && (
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end gap-2 mb-4">
             <Button
-              onClick={() => downloadServicesData(servicesData)}
+              onClick={() => downloadServicesData(servicesData, 'services-backup.json')}
               variant="outline"
               className="font-inter"
             >
               <Download className="w-4 h-4 mr-2" />
-              Export Services Data
+              Download Backup
+            </Button>
+            <Button
+              onClick={() => downloadServicesData(servicesData, 'services.json')}
+              variant="default"
+              className="bg-[#0b487b] hover:bg-[#094071] font-inter"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Save to services.json
             </Button>
           </div>
         )}
@@ -462,243 +544,169 @@ const Services = () => {
 
                           {/* Add Question Button - Only show in development */}
                           {isEditable && (
-                            <Dialog open={isAddingQuestion && selectedService?.categoryId === category.id && selectedService?.serviceId === service.id} onOpenChange={setIsAddingQuestion}>
-                              <DialogTrigger asChild>
-                                <Button
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={() => {
-                                    setSelectedService({ categoryId: category.id, serviceId: service.id });
-                                    setIsAddingQuestion(true);
-                                  }}
-                                  className="font-inter"
-                                >
-                                  <PlusCircle className="w-4 h-4 mr-2" />
-                                  Add Question
-                                </Button>
-                              </DialogTrigger>
-                            <DialogContent>
-                              <DialogHeader>
-                                <DialogTitle className="font-degular">Add Question to {service.name}</DialogTitle>
-                                <DialogDescription className="font-inter">
-                                  Create a new question that will be asked for this service.
-                                </DialogDescription>
-                              </DialogHeader>
-                              <div className="space-y-4">
-                                <div>
-                                  <Label htmlFor="question-text" className="font-inter">Question Text</Label>
-                                  <Textarea
-                                    id="question-text"
-                                    placeholder="Enter your question..."
-                                    value={newQuestion.text}
-                                    onChange={(e) => setNewQuestion(prev => ({ ...prev, text: e.target.value }))}
+                            <div className="flex gap-2">
+                              <Dialog open={isAddingQuestion && selectedService?.categoryId === category.id && selectedService?.serviceId === service.id} onOpenChange={setIsAddingQuestion}>
+                                <DialogTrigger asChild>
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                      setSelectedService({ categoryId: category.id, serviceId: service.id });
+                                      setIsAddingQuestion(true);
+                                    }}
                                     className="font-inter"
-                                  />
-                                </div>
-                                <div>
-                                  <Label htmlFor="question-type" className="font-inter">Question Type</Label>
-                                  <select
-                                    id="question-type"
-                                    value={newQuestion.type}
-                                    onChange={(e) => setNewQuestion(prev => ({ ...prev, type: e.target.value as Question['type'] }))}
-                                    className="w-full p-2 border border-gray-300 rounded-md font-inter"
                                   >
-                                    <option value="text">Text Input</option>
-                                    <option value="textarea">Text Area</option>
-                                    <option value="select">Select Dropdown</option>
-                                    <option value="checkbox">Checkbox</option>
-                                  </select>
-                                </div>
-                                {(newQuestion.type === 'select' || newQuestion.type === 'checkbox') && (
-                                  <div>
-                                    <Label htmlFor="question-options" className="font-inter">
-                                      {newQuestion.type === 'select' ? 'Dropdown Options' : 'Checkbox Options'} (comma-separated)
-                                    </Label>
-                                    <Textarea
-                                      id="question-options"
-                                      placeholder={newQuestion.type === 'select' 
-                                        ? "Option 1, Option 2, Option 3" 
-                                        : "Option A, Option B, Option C"
-                                      }
-                                      onChange={(e) => setNewQuestion(prev => ({ 
-                                        ...prev, 
-                                        options: e.target.value.split(',').map(opt => opt.trim()).filter(Boolean)
-                                      }))}
-                                      className="font-inter min-h-[80px]"
-                                      rows={3}
-                                    />
-                                    <p className="text-sm text-slate-500 mt-1 font-inter">
-                                      {newQuestion.type === 'select' 
-                                        ? 'Users will select one option from the dropdown list'
-                                        : 'Users can select multiple options from checkboxes'
-                                      }
-                                    </p>
-                                  </div>
-                                )}
-                                {/* Conditional Logic Section */}
-                                <div className="border-t pt-4">
-                                  <Label className="font-inter text-sm font-medium">Conditional Logic (Optional)</Label>
-                                  <p className="text-xs text-slate-500 mb-3 font-inter">Make this question appear only when a previous question has a specific answer</p>
-                                  
-                                  <div className="flex items-center space-x-2 mb-3">
-                                    <input
-                                      type="checkbox"
-                                      id="question-conditional"
-                                      checked={!!newQuestion.conditional}
-                                      onChange={(e) => {
-                                        if (e.target.checked) {
-                                          setNewQuestion(prev => ({ 
-                                            ...prev, 
-                                            conditional: { 
-                                              parentQuestionId: '', 
-                                              parentAnswerValue: '', 
-                                              operator: 'equals' 
-                                            } 
-                                          }));
-                                        } else {
-                                          setNewQuestion(prev => ({ ...prev, conditional: undefined }));
-                                        }
-                                      }}
-                                    />
-                                    <Label htmlFor="question-conditional" className="font-inter">Make this a conditional question</Label>
-                                  </div>
-
-                                  {newQuestion.conditional && (
-                                    <div className="space-y-3 p-3 bg-blue-50 rounded border-blue-200 border">
-                                      <div>
-                                        <Label className="font-inter text-sm">Show this question when:</Label>
-                                        <select
-                                          value={newQuestion.conditional.parentQuestionId}
-                                          onChange={(e) => setNewQuestion(prev => ({ 
-                                            ...prev, 
-                                            conditional: { ...prev.conditional!, parentQuestionId: e.target.value }
-                                          }))}
-                                          className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
-                                        >
-                                          <option value="">Select a previous question...</option>
-                                          {servicesData.serviceCategories
-                                            .find(cat => cat.id === selectedService?.categoryId)
-                                            ?.services.find(svc => svc.id === selectedService?.serviceId)
-                                            ?.questions.sort((a, b) => a.order - b.order)
-                                            .map(q => (
-                                              <option key={q.id} value={q.id}>
-                                                #{q.order} - {q.text.substring(0, 50)}...
-                                              </option>
-                                            ))}
-                                        </select>
-                                      </div>
-                                      
-                                      <div className="flex gap-2">
-                                        <select
-                                          value={newQuestion.conditional.operator}
-                                          onChange={(e) => setNewQuestion(prev => ({ 
-                                            ...prev, 
-                                            conditional: { ...prev.conditional!, operator: e.target.value as ConditionalRule['operator'] }
-                                          }))}
-                                          className="p-2 border border-gray-300 rounded-md font-inter"
-                                        >
-                                          <option value="equals">equals</option>
-                                          <option value="contains">contains</option>
-                                          <option value="not_equals">does not equal</option>
-                                        </select>
-                                        
-                                        {(() => {
-                                          // Find the parent question to get its options
-                                          const parentQuestion = servicesData.serviceCategories
-                                            .find(cat => cat.id === selectedService?.categoryId)
-                                            ?.services.find(svc => svc.id === selectedService?.serviceId)
-                                            ?.questions.find(q => q.id === newQuestion.conditional?.parentQuestionId);
-                                          
-                                          // If parent question has options (select/checkbox), show dropdown
-                                          if (parentQuestion && parentQuestion.options && parentQuestion.options.length > 0) {
-                                            return (
-                                              <select
-                                                value={Array.isArray(newQuestion.conditional.parentAnswerValue) 
-                                                  ? newQuestion.conditional.parentAnswerValue[0] || ''
-                                                  : newQuestion.conditional.parentAnswerValue}
-                                                onChange={(e) => setNewQuestion(prev => ({ 
-                                                  ...prev, 
-                                                  conditional: { ...prev.conditional!, parentAnswerValue: e.target.value }
-                                                }))}
-                                                className="flex-1 p-2 border border-gray-300 rounded-md font-inter"
-                                              >
-                                                <option value="">Select an option...</option>
-                                                {parentQuestion.options.map((option, index) => (
-                                                  <option key={index} value={option}>
-                                                    {option}
-                                                  </option>
-                                                ))}
-                                              </select>
-                                            );
-                                          } else {
-                                            // For text/textarea questions, show input field
-                                            return (
-                                              <Input
-                                                placeholder="Answer value..."
-                                                value={Array.isArray(newQuestion.conditional.parentAnswerValue) 
-                                                  ? newQuestion.conditional.parentAnswerValue.join(', ') 
-                                                  : newQuestion.conditional.parentAnswerValue}
-                                                onChange={(e) => setNewQuestion(prev => ({ 
-                                                  ...prev, 
-                                                  conditional: { ...prev.conditional!, parentAnswerValue: e.target.value }
-                                                }))}
-                                                className="font-inter flex-1"
-                                              />
-                                            );
-                                          }
-                                        })()}
-                                      </div>
-                                      
-                                      {(() => {
-                                        const parentQuestion = servicesData.serviceCategories
-                                          .find(cat => cat.id === selectedService?.categoryId)
-                                          ?.services.find(svc => svc.id === selectedService?.serviceId)
-                                          ?.questions.find(q => q.id === newQuestion.conditional?.parentQuestionId);
-                                        
-                                        if (parentQuestion) {
-                                          return (
-                                            <div className="text-xs text-blue-600 font-inter">
-                                              <p>This question will only appear when the selected question's answer matches the condition above.</p>
-                                              <p className="mt-1">
-                                                <strong>Parent question type:</strong> {parentQuestion.type}
-                                                {parentQuestion.options && parentQuestion.options.length > 0 && (
-                                                  <span> (has {parentQuestion.options.length} predefined options)</span>
-                                                )}
-                                              </p>
-                                            </div>
-                                          );
-                                        } else {
-                                          return (
-                                            <p className="text-xs text-blue-600 font-inter">
-                                              This question will only appear when the selected question's answer matches the condition above.
-                                            </p>
-                                          );
-                                        }
-                                      })()}
-                                    </div>
-                                  )}
-                                </div>
-
-                                <div className="flex items-center space-x-2">
-                                  <input
-                                    type="checkbox"
-                                    id="question-required"
-                                    checked={newQuestion.required}
-                                    onChange={(e) => setNewQuestion(prev => ({ ...prev, required: e.target.checked }))}
-                                  />
-                                  <Label htmlFor="question-required" className="font-inter">Required field</Label>
-                                </div>
-                                <div className="flex justify-end space-x-2">
-                                  <Button variant="outline" onClick={() => setIsAddingQuestion(false)} className="font-inter">
-                                    Cancel
-                                  </Button>
-                                  <Button onClick={addQuestion} className="bg-[#0b487b] hover:bg-[#094071] font-inter">
+                                    <PlusCircle className="w-4 h-4 mr-2" />
                                     Add Question
                                   </Button>
+                                </DialogTrigger>
+                              
+                              <DialogContent>
+                                <DialogHeader>
+                                  <DialogTitle className="font-degular">Add Question to {service.name}</DialogTitle>
+                                  <DialogDescription className="font-inter">
+                                    Create a new question that will be asked for this service.
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <div className="space-y-4">
+                                  <div>
+                                    <Label htmlFor="question-text" className="font-inter">Question Text</Label>
+                                    <Textarea
+                                      id="question-text"
+                                      placeholder="Enter your question..."
+                                      value={newQuestion.text}
+                                      onChange={(e) => setNewQuestion(prev => ({ ...prev, text: e.target.value }))}
+                                      className="font-inter"
+                                    />
+                                  </div>
+                                  <div>
+                                    <Label htmlFor="question-type" className="font-inter">Question Type</Label>
+                                    <select
+                                      id="question-type"
+                                      value={newQuestion.type}
+                                      onChange={(e) => setNewQuestion(prev => ({ ...prev, type: e.target.value as Question['type'] }))}
+                                      className="w-full p-2 border border-gray-300 rounded-md font-inter"
+                                    >
+                                      <option value="text">Text Input</option>
+                                      <option value="textarea">Text Area</option>
+                                      <option value="select">Select Dropdown</option>
+                                      <option value="checkbox">Checkbox</option>
+                                    </select>
+                                  </div>
+                                  {(newQuestion.type === 'select' || newQuestion.type === 'checkbox') && (
+                                    <div>
+                                      <Label htmlFor="question-options" className="font-inter">
+                                        {newQuestion.type === 'select' ? 'Dropdown Options' : 'Checkbox Options'} (comma-separated)
+                                      </Label>
+                                      <Textarea
+                                        id="question-options"
+                                        placeholder={newQuestion.type === 'select' 
+                                          ? "Option 1, Option 2, Option 3" 
+                                          : "Option A, Option B, Option C"
+                                        }
+                                        onChange={(e) => setNewQuestion(prev => ({ 
+                                          ...prev, 
+                                          options: e.target.value.split(',').map(opt => opt.trim()).filter(Boolean)
+                                        }))}
+                                        className="font-inter min-h-[80px]"
+                                        rows={3}
+                                      />
+                                      <p className="text-sm text-slate-500 mt-1 font-inter">
+                                        {newQuestion.type === 'select' 
+                                          ? 'Users will select one option from the dropdown list'
+                                          : 'Users can select multiple options from checkboxes'
+                                        }
+                                      </p>
+                                    </div>
+                                  )}
+                                  <div className="flex items-center space-x-2">
+                                    <input
+                                      type="checkbox"
+                                      id="question-required"
+                                      checked={newQuestion.required}
+                                      onChange={(e) => setNewQuestion(prev => ({ ...prev, required: e.target.checked }))}
+                                    />
+                                    <Label htmlFor="question-required" className="font-inter">Required field</Label>
+                                  </div>
+                                  <div className="flex justify-end space-x-2">
+                                    <Button variant="outline" onClick={() => setIsAddingQuestion(false)} className="font-inter">
+                                      Cancel
+                                    </Button>
+                                    <Button onClick={addQuestion} className="bg-[#0b487b] hover:bg-[#094071] font-inter">
+                                      Add Question
+                                    </Button>
+                                  </div>
                                 </div>
-                              </div>
-                            </DialogContent>
-                          </Dialog>
+                              </DialogContent>
+                            </Dialog>
+                               
+                            {/* Copy Questions Dialog */}
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                      setSelectedService({ categoryId: category.id, serviceId: service.id });
+                                    }}
+                                    className="font-inter"
+                                  >
+                                    Copy Questions From
+                                  </Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                  <DialogHeader>
+                                    <DialogTitle className="font-degular">Copy Questions to {service.name}</DialogTitle>
+                                    <DialogDescription className="font-inter">
+                                      Select a service to copy all questions from. This will replace any existing questions.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <div className="space-y-4">
+                                    <div>
+                                      <Label className="font-inter">Questions are the same as:</Label>
+                                      <select
+                                        value={copyFromService ? `${copyFromService.categoryId}:${copyFromService.serviceId}` : ''}
+                                        onChange={(e) => {
+                                          if (e.target.value) {
+                                            const [categoryId, serviceId] = e.target.value.split(':');
+                                            setCopyFromService({ categoryId, serviceId });
+                                          } else {
+                                            setCopyFromService(null);
+                                          }
+                                        }}
+                                        className="w-full p-2 border border-gray-300 rounded-md font-inter mt-2"
+                                      >
+                                        <option value="">Select a service...</option>
+                                        {getServicesWithQuestions()
+                                          .filter(svc => !(svc.categoryId === category.id && svc.serviceId === service.id))
+                                          .map(svc => (
+                                            <option key={`${svc.categoryId}:${svc.serviceId}`} value={`${svc.categoryId}:${svc.serviceId}`}>
+                                              {svc.categoryTitle} → {svc.serviceName} ({svc.questionCount} questions)
+                                            </option>
+                                          ))}
+                                      </select>
+                                    </div>
+                                    <div className="flex justify-end space-x-2">
+                                      <DialogTrigger asChild>
+                                        <Button variant="outline" className="font-inter">
+                                          Cancel
+                                        </Button>
+                                      </DialogTrigger>
+                                      <Button 
+                                        onClick={() => {
+                                          copyQuestionsFromService();
+                                          setCopyFromService(null);
+                                        }}
+                                        disabled={!copyFromService}
+                                        className="bg-[#0b487b] hover:bg-[#094071] font-inter"
+                                      >
+                                        Copy Questions
+                                      </Button>
+                                    </div>
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
+                            </div>
                           )}
                         </div>
                       </AccordionContent>

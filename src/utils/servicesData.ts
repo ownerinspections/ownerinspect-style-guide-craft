@@ -62,6 +62,40 @@ export const downloadServicesData = (data: ServicesData, filename: string = 'ser
   URL.revokeObjectURL(url);
 };
 
+// Function to save data to localStorage for persistence during development
+export const saveToLocalStorage = (data: ServicesData) => {
+  try {
+    localStorage.setItem('ownerInspections_servicesData', JSON.stringify(data));
+  } catch (error) {
+    console.warn('Failed to save to localStorage:', error);
+  }
+};
+
+// Function to load data from localStorage
+export const loadFromLocalStorage = (): ServicesData | null => {
+  try {
+    const saved = localStorage.getItem('ownerInspections_servicesData');
+    if (saved) {
+      return JSON.parse(saved);
+    }
+  } catch (error) {
+    console.warn('Failed to load from localStorage:', error);
+  }
+  return null;
+};
+
+// Enhanced function to get initial data with localStorage fallback
+export const getInitialServicesDataWithPersistence = (): ServicesData => {
+  // First try to load from localStorage (for development changes)
+  const savedData = loadFromLocalStorage();
+  if (savedData) {
+    return savedData;
+  }
+  
+  // Fallback to the original JSON file
+  return servicesJsonData as ServicesData;
+};
+
 // Icon mapping function since we can't store React components in JSON
 export const getIconComponent = (iconName: string) => {
   switch (iconName) {
