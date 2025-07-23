@@ -84,15 +84,37 @@ export const loadFromLocalStorage = (): ServicesData | null => {
   return null;
 };
 
-// Enhanced function to get initial data with localStorage fallback
-export const getInitialServicesDataWithPersistence = (): ServicesData => {
-  // First try to load from localStorage (for development changes)
-  const savedData = loadFromLocalStorage();
-  if (savedData) {
-    return savedData;
+// Function to save data to the actual services.json file
+export const saveToFile = async (data: ServicesData): Promise<boolean> => {
+  try {
+    // Only attempt to save in development mode
+    if (import.meta.env.DEV) {
+      const response = await fetch('/api/save-services', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data, null, 2)
+      });
+      
+      if (response.ok) {
+        console.log('Services data saved to file successfully');
+        return true;
+      } else {
+        console.error('Failed to save services data to file');
+        return false;
+      }
+    }
+    return false;
+  } catch (error) {
+    console.error('Error saving to file:', error);
+    return false;
   }
-  
-  // Fallback to the original JSON file
+};
+
+// Enhanced function to get initial data (always from file)
+export const getInitialServicesDataWithPersistence = (): ServicesData => {
+  // Always load from the JSON file for consistency
   return servicesJsonData as ServicesData;
 };
 

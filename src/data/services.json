@@ -43,7 +43,13 @@
               "id": "property-type",
               "text": "What type of property is being inspected?",
               "type": "select",
-              "options": ["House", "Apartment/Unit", "Townhouse", "Commercial Building", "Other"],
+              "options": [
+                "House",
+                "Apartment/Unit",
+                "Townhouse",
+                "Commercial Building",
+                "Other"
+              ],
               "required": true,
               "order": 5
             },
@@ -51,7 +57,14 @@
               "id": "property-age",
               "text": "Approximately how old is the property?",
               "type": "select",
-              "options": ["Under 5 years", "5-10 years", "10-20 years", "20-50 years", "Over 50 years", "Unknown"],
+              "options": [
+                "Under 5 years",
+                "5-10 years",
+                "10-20 years",
+                "20-50 years",
+                "Over 50 years",
+                "Unknown"
+              ],
               "required": false,
               "order": 6
             },
@@ -59,7 +72,13 @@
               "id": "access-arrangements",
               "text": "How will access to the property be arranged?",
               "type": "select",
-              "options": ["I will be present", "Real estate agent will provide access", "Property manager will provide access", "Keys will be provided", "Other arrangement"],
+              "options": [
+                "I will be present",
+                "Real estate agent will provide access",
+                "Property manager will provide access",
+                "Keys will be provided",
+                "Other arrangement"
+              ],
               "required": true,
               "order": 7
             },
@@ -74,7 +93,12 @@
               "id": "preferred-time",
               "text": "What is your preferred inspection time?",
               "type": "select",
-              "options": ["Morning (8AM-12PM)", "Afternoon (12PM-5PM)", "Flexible", "Specific time (please specify in comments)"],
+              "options": [
+                "Morning (8AM-12PM)",
+                "Afternoon (12PM-5PM)",
+                "Flexible",
+                "Specific time (please specify in comments)"
+              ],
               "required": true,
               "order": 9
             },
@@ -82,7 +106,12 @@
               "id": "urgency",
               "text": "How urgent is this inspection?",
               "type": "select",
-              "options": ["Same day", "Within 2-3 days", "Within a week", "Flexible timing"],
+              "options": [
+                "Same day",
+                "Within 2-3 days",
+                "Within a week",
+                "Flexible timing"
+              ],
               "required": true,
               "order": 10
             },
@@ -90,7 +119,11 @@
               "id": "report-delivery",
               "text": "How would you like to receive your inspection report?",
               "type": "select",
-              "options": ["Email (PDF)", "Both email and hard copy", "Electronic link only"],
+              "options": [
+                "Email (PDF)",
+                "Both email and hard copy",
+                "Electronic link only"
+              ],
               "required": true,
               "order": 11
             },
@@ -105,7 +138,15 @@
               "id": "heard-about-us",
               "text": "How did you hear about Owner Inspections?",
               "type": "select",
-              "options": ["Google search", "Referral from friend/family", "Real estate agent", "Social media", "Website", "Previous customer", "Other"],
+              "options": [
+                "Google search",
+                "Referral from friend/family",
+                "Real estate agent",
+                "Social media",
+                "Website",
+                "Previous customer",
+                "Other"
+              ],
               "required": false,
               "order": 13
             }
@@ -123,7 +164,19 @@
           "id": "pre-purchase",
           "name": "Pre-Purchase Inspection",
           "isCurrentlyOffering": true,
-          "questions": []
+          "questions": [
+            {
+              "id": "1753279538759",
+              "text": "What is your property Usage?",
+              "type": "select",
+              "options": [
+                "Residential",
+                "Commercial"
+              ],
+              "required": false,
+              "order": 1
+            }
+          ]
         },
         {
           "id": "pre-sale",
@@ -406,4 +459,4 @@
       ]
     }
   ]
-} 
+}

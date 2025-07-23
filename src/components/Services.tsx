@@ -12,7 +12,7 @@ import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones
 import { 
   getInitialServicesDataWithPersistence, 
   downloadServicesData, 
-  saveToLocalStorage,
+  saveToFile,
   type Question, 
   type Service, 
   type ServiceCategory, 
@@ -26,10 +26,10 @@ const Services = () => {
   // Check if we're in development mode - only allow editing in development
   const isEditable = import.meta.env.DEV;
 
-  // Auto-save to localStorage whenever data changes
+  // Auto-save to file whenever data changes
   useEffect(() => {
     if (isEditable) {
-      saveToLocalStorage(servicesData);
+      saveToFile(servicesData);
     }
   }, [servicesData, isEditable]);
 
@@ -341,9 +341,9 @@ const Services = () => {
       </div>
 
       <div className="space-y-8">
-        {/* Export Data Buttons - Only show in development */}
+        {/* Export Data Button - Only show in development */}
         {isEditable && (
-          <div className="flex justify-end gap-2 mb-4">
+          <div className="flex justify-end mb-4">
             <Button
               onClick={() => downloadServicesData(servicesData, 'services-backup.json')}
               variant="outline"
@@ -351,14 +351,6 @@ const Services = () => {
             >
               <Download className="w-4 h-4 mr-2" />
               Download Backup
-            </Button>
-            <Button
-              onClick={() => downloadServicesData(servicesData, 'services.json')}
-              variant="default"
-              className="bg-[#0b487b] hover:bg-[#094071] font-inter"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Save to services.json
             </Button>
           </div>
         )}
