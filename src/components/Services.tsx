@@ -8,7 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap, Edit } from "lucide-react";
+import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap, Edit, ChevronUp, ChevronDown } from "lucide-react";
 import { 
   getInitialServicesDataWithPersistence, 
   downloadServicesData, 
@@ -121,6 +121,72 @@ const Services = () => {
 
     setEditingQuestion(null);
     setEditQuestionData({});
+  };
+
+  const moveQuestionUp = (categoryId: string, serviceId: string, questionId: string) => {
+    setServicesData(prev => ({
+      ...prev,
+      serviceCategories: prev.serviceCategories.map(category => 
+        category.id === categoryId
+          ? {
+              ...category,
+              services: category.services.map(service =>
+                service.id === serviceId
+                  ? {
+                      ...service,
+                      questions: (() => {
+                        const sortedQuestions = [...service.questions].sort((a, b) => a.order - b.order);
+                        const currentIndex = sortedQuestions.findIndex(q => q.id === questionId);
+                        
+                        if (currentIndex > 0) {
+                          // Swap with previous question
+                          const temp = sortedQuestions[currentIndex].order;
+                          sortedQuestions[currentIndex].order = sortedQuestions[currentIndex - 1].order;
+                          sortedQuestions[currentIndex - 1].order = temp;
+                        }
+                        
+                        return sortedQuestions;
+                      })()
+                    }
+                  : service
+              )
+            }
+          : category
+      )
+    }));
+  };
+
+  const moveQuestionDown = (categoryId: string, serviceId: string, questionId: string) => {
+    setServicesData(prev => ({
+      ...prev,
+      serviceCategories: prev.serviceCategories.map(category => 
+        category.id === categoryId
+          ? {
+              ...category,
+              services: category.services.map(service =>
+                service.id === serviceId
+                  ? {
+                      ...service,
+                      questions: (() => {
+                        const sortedQuestions = [...service.questions].sort((a, b) => a.order - b.order);
+                        const currentIndex = sortedQuestions.findIndex(q => q.id === questionId);
+                        
+                        if (currentIndex < sortedQuestions.length - 1) {
+                          // Swap with next question
+                          const temp = sortedQuestions[currentIndex].order;
+                          sortedQuestions[currentIndex].order = sortedQuestions[currentIndex + 1].order;
+                          sortedQuestions[currentIndex + 1].order = temp;
+                        }
+                        
+                        return sortedQuestions;
+                      })()
+                    }
+                  : service
+              )
+            }
+          : category
+      )
+    }));
   };
 
   const startEditingQuestion = (categoryId: string, serviceId: string, question: Question) => {
@@ -517,7 +583,7 @@ const Services = () => {
                                 <div className="space-y-2">
                                   {service.questions
                                     .sort((a, b) => a.order - b.order)
-                                    .map((question) => (
+                                    .map((question, index, sortedQuestions) => (
                                 <div key={question.id} className="flex items-start justify-between p-3 bg-slate-50 rounded-lg">
                                   <div className="flex-1">
                                     <div className="flex items-center gap-2 mb-1">
@@ -564,6 +630,26 @@ const Services = () => {
                                   </div>
                                   {isEditable && (
                                     <div className="flex gap-1">
+                                      <div className="flex flex-col gap-1">
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          onClick={() => moveQuestionUp(category.id, service.id, question.id)}
+                                          disabled={index === 0}
+                                          className="text-gray-500 hover:text-gray-700 h-6 w-6 p-0"
+                                        >
+                                          <ChevronUp className="w-3 h-3" />
+                                        </Button>
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          onClick={() => moveQuestionDown(category.id, service.id, question.id)}
+                                          disabled={index === sortedQuestions.length - 1}
+                                          className="text-gray-500 hover:text-gray-700 h-6 w-6 p-0"
+                                        >
+                                          <ChevronDown className="w-3 h-3" />
+                                        </Button>
+                                      </div>
                                       <Button
                                         variant="ghost"
                                         size="sm"
