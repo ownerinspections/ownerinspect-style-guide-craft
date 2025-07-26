@@ -38,13 +38,26 @@ const Services = () => {
     text: '',
     type: 'text',
     required: false,
-    order: 0
+    order: 0,
+    conditional: undefined
   });
   const [isAddingQuestion, setIsAddingQuestion] = useState(false);
   const [viewMode, setViewMode] = useState<'list' | 'flow'>('list');
   const [copyFromService, setCopyFromService] = useState<{ categoryId: string; serviceId: string } | null>(null);
   const [editingQuestion, setEditingQuestion] = useState<{ categoryId: string; serviceId: string; questionId: string } | null>(null);
   const [editQuestionData, setEditQuestionData] = useState<Partial<Question>>({});
+
+  // Function to check for circular dependencies in conditional logic
+  const wouldCreateCircularDependency = (childQuestionId: string, parentQuestionId: string, questions: Question[]): boolean => {
+    if (childQuestionId === parentQuestionId) return true;
+    
+    // Find if the parent question is itself conditional to another question
+    const parentQuestion = questions.find(q => q.id === parentQuestionId);
+    if (!parentQuestion?.conditional) return false;
+    
+    // Recursively check if the child would eventually depend on itself
+    return wouldCreateCircularDependency(childQuestionId, parentQuestion.conditional.parentQuestionId, questions);
+  };
 
   const addQuestion = () => {
     if (!selectedService || !newQuestion.text) return;
@@ -54,9 +67,19 @@ const Services = () => {
       .find(cat => cat.id === selectedService.categoryId)
       ?.services.find(svc => svc.id === selectedService.serviceId);
     
+    if (!currentService) return;
+
+    // Validate conditional logic to prevent circular dependencies
+    const questionId = Date.now().toString();
+    if (newQuestion.conditional?.parentQuestionId) {
+      if (wouldCreateCircularDependency(questionId, newQuestion.conditional.parentQuestionId, currentService.questions)) {
+        alert('Error: This would create a circular dependency. Please select a different parent question.');
+        return;
+      }
+    }
+    
     const nextOrder = currentService ? Math.max(0, ...currentService.questions.map(q => q.order)) + 1 : 1;
 
-    const questionId = Date.now().toString();
     const question: Question = {
       id: questionId,
       text: newQuestion.text,
@@ -83,12 +106,27 @@ const Services = () => {
       )
     }));
 
-    setNewQuestion({ text: '', type: 'text', required: false, order: 0 });
+    setNewQuestion({ text: '', type: 'text', required: false, order: 0, conditional: undefined });
     setIsAddingQuestion(false);
   };
 
   const updateQuestion = () => {
     if (!editingQuestion || !editQuestionData.text) return;
+
+    // Find the current service for validation
+    const currentService = servicesData.serviceCategories
+      .find(cat => cat.id === editingQuestion.categoryId)
+      ?.services.find(svc => svc.id === editingQuestion.serviceId);
+    
+    if (!currentService) return;
+
+    // Validate conditional logic to prevent circular dependencies
+    if (editQuestionData.conditional?.parentQuestionId) {
+      if (wouldCreateCircularDependency(editingQuestion.questionId, editQuestionData.conditional.parentQuestionId, currentService.questions)) {
+        alert('Error: This would create a circular dependency. Please select a different parent question.');
+        return;
+      }
+    }
 
     setServicesData(prev => ({
       ...prev,
@@ -107,7 +145,8 @@ const Services = () => {
                               text: editQuestionData.text || question.text,
                               type: editQuestionData.type || question.type,
                               options: editQuestionData.options || question.options,
-                              required: editQuestionData.required !== undefined ? editQuestionData.required : question.required
+                              required: editQuestionData.required !== undefined ? editQuestionData.required : question.required,
+                              conditional: editQuestionData.conditional !== undefined ? editQuestionData.conditional : question.conditional
                             }
                           : question
                       )
@@ -195,7 +234,8 @@ const Services = () => {
       text: question.text,
       type: question.type,
       options: question.options,
-      required: question.required
+      required: question.required,
+      conditional: question.conditional
     });
   };
 
@@ -314,51 +354,61 @@ const Services = () => {
       return children.map(question => ({
         question,
         depth,
-        children: buildTree(question.id, depth + 1)
+        children: buildTree(question.id, depth + 1),
+        condition: question.conditional
       }));
     };
 
     return rootQuestions.map(question => ({
       question,
       depth: 0,
-      children: buildTree(question.id, 1)
+      children: buildTree(question.id, 1),
+      condition: null
     }));
   };
 
   // Render question flow tree
   const renderQuestionFlow = (flowTree: any[], categoryId: string, serviceId: string, questions: Question[]) => {
     const renderNode = (node: any, isLast = false, prefix = '') => {
-      const { question, depth, children } = node;
+      const { question, depth, children, condition } = node;
       const hasChildren = children && children.length > 0;
       
       return (
         <div key={question.id} className="relative">
-          {/* Question Node */}
-          <div className={`flex items-start gap-3 p-3 rounded-lg mb-2 ${
-            depth === 0 ? 'bg-blue-50 border-l-4 border-l-blue-500' : 
-            'bg-gray-50 border-l-4 border-l-gray-300 ml-6'
-          }`}>
-            {/* Depth Indicator */}
-            {depth > 0 && (
-              <div className="flex items-center text-gray-400">
-                <ChevronRight className="w-4 h-4" />
-              </div>
-            )}
+                      {/* Question Node */}
+            <div className={`flex items-start gap-3 p-4 rounded-lg mb-3 ${
+              depth === 0 ? 'bg-blue-50 border-l-4 border-l-blue-500 shadow-sm' : 
+              depth === 1 ? 'bg-orange-50 border-l-4 border-l-orange-400 shadow-sm ml-8' :
+              depth === 2 ? 'bg-yellow-50 border-l-4 border-l-yellow-400 shadow-sm ml-16' :
+              'bg-purple-50 border-l-4 border-l-purple-400 shadow-sm ml-24'
+            }`}>
+                          {/* Connection Line */}
+              {depth > 0 && (
+                <div className={`absolute -left-4 top-1/2 w-6 h-px ${
+                  depth === 1 ? 'bg-orange-300' :
+                  depth === 2 ? 'bg-yellow-300' :
+                  'bg-purple-300'
+                }`}></div>
+              )}
             
             {/* Question Content */}
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-mono bg-white px-2 py-1 rounded border">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs font-mono bg-white px-2 py-1 rounded border font-semibold">
                   #{question.order}
                 </span>
                 {depth === 0 ? (
-                  <Zap className="w-4 h-4 text-blue-500" />
+                  <Zap className="w-4 h-4 text-blue-600" />
+                ) : depth === 1 ? (
+                  <GitBranch className="w-4 h-4 text-orange-600" />
+                ) : depth === 2 ? (
+                  <GitBranch className="w-4 h-4 text-yellow-600" />
                 ) : (
-                  <GitBranch className="w-4 h-4 text-gray-500" />
+                  <GitBranch className="w-4 h-4 text-purple-600" />
                 )}
-                {question.conditional && (
-                  <Badge variant="outline" className="text-xs bg-orange-50 text-orange-600 border-orange-200">
-                    If condition met
+                {condition && (
+                  <Badge variant="outline" className="text-xs bg-orange-100 text-orange-800 border-orange-300">
+                    Conditional
                   </Badge>
                 )}
                 {question.required && (
@@ -368,76 +418,119 @@ const Services = () => {
                 )}
               </div>
               
-              <p className="font-medium text-slate-700 font-inter mb-1">
+              <p className="font-semibold text-slate-800 font-inter mb-2 text-sm">
                 {question.text}
               </p>
               
+              {/* Conditional Logic Display - Enhanced */}
+              {condition && (
+                <div className="p-3 bg-gradient-to-r from-orange-100 to-yellow-50 rounded-md text-xs text-orange-800 font-inter mb-3 border border-orange-200">
+                  <div className="flex items-center gap-2 mb-1">
+                    <GitBranch className="w-3 h-3 text-orange-600" />
+                    <strong>Conditional Trigger:</strong>
+                  </div>
+                  <div className="pl-5">
+                    Question #{questions.find(q => q.id === condition.parentQuestionId)?.order || '?'}: "
+                    {questions.find(q => q.id === condition.parentQuestionId)?.text?.substring(0, 30) || 'Unknown'}..."
+                    <br />
+                    <span className="bg-white px-2 py-1 rounded border text-orange-700 font-mono text-xs mt-1 inline-block">
+                      {condition.operator === 'equals' ? '=' : 
+                       condition.operator === 'contains' ? 'contains' : '≠'} "{condition.parentAnswerValue}"
+                    </span>
+                  </div>
+                </div>
+              )}
+              
               {/* Question Type & Options */}
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs bg-white">
                   {question.type}
                 </Badge>
                 {question.options && question.options.length > 0 && (
-                  <Badge variant="default" className="text-xs bg-green-100 text-green-700">
+                  <Badge variant="default" className="text-xs bg-green-100 text-green-800 border-green-200">
                     {question.options.length} options
                   </Badge>
                 )}
               </div>
 
-              {/* Show Options */}
+              {/* Show Options - Enhanced Display */}
               {question.options && question.options.length > 0 && (
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {question.options.map((option, index) => (
-                    <span key={index} className="text-xs bg-white px-2 py-1 rounded border text-gray-600">
-                      {option}
-                    </span>
-                  ))}
-                </div>
-              )}
-              
-              {/* Conditional Logic Display */}
-              {question.conditional && (
-                <div className="p-2 bg-orange-50 rounded text-xs text-orange-700 font-inter mb-2">
-                  <strong>Shows when:</strong> Question #
-                  {questions.find(q => q.id === question.conditional!.parentQuestionId)?.order || '?'} {' '}
-                  {question.conditional.operator === 'equals' ? '=' : 
-                   question.conditional.operator === 'contains' ? 'contains' : '≠'} {' '}
-                  "{Array.isArray(question.conditional.parentAnswerValue) 
-                    ? question.conditional.parentAnswerValue.join(', ') 
-                    : question.conditional.parentAnswerValue}"
+                <div className="mt-2">
+                  <p className="text-xs text-slate-600 font-inter mb-1 font-medium">Available Options:</p>
+                  <div className="flex flex-wrap gap-1">
+                    {question.options.map((option, index) => (
+                      <span key={index} className="text-xs bg-white px-2 py-1 rounded border text-slate-700 font-medium">
+                        {option}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
             
             {/* Actions */}
             {isEditable && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => removeQuestion(categoryId, serviceId, question.id)}
-                className="text-red-500 hover:text-red-700 self-start"
-              >
-                <Trash2 className="w-4 h-4" />
-              </Button>
+              <div className="flex gap-1">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => startEditingQuestion(categoryId, serviceId, question)}
+                  className="text-blue-600 hover:text-blue-800 h-8 w-8 p-0"
+                >
+                  <Edit className="w-3 h-3" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => removeQuestion(categoryId, serviceId, question.id)}
+                  className="text-red-500 hover:text-red-700 h-8 w-8 p-0"
+                >
+                  <Trash2 className="w-3 h-3" />
+                </Button>
+              </div>
             )}
           </div>
           
-          {/* Children with connecting lines */}
+          {/* Children with enhanced connecting lines */}
           {hasChildren && (
-            <div className="ml-6 border-l-2 border-gray-200 pl-4">
-              {children.map((child: any, index: number) => 
-                renderNode(child, index === children.length - 1, prefix + '  ')
-              )}
-            </div>
+                          <div className="relative">
+                {/* Vertical line */}
+                <div className={`absolute left-6 top-0 w-px h-4 ${
+                  depth === 0 ? 'bg-orange-300' :
+                  depth === 1 ? 'bg-yellow-300' :
+                  'bg-purple-300'
+                }`}></div>
+                <div className="pl-8">
+                  {children.map((child: any, index: number) => (
+                    <div key={child.question.id} className="relative">
+                      {/* Horizontal connector */}
+                      <div className={`absolute -left-2 top-6 w-6 h-px ${
+                        depth === 0 ? 'bg-orange-300' :
+                        depth === 1 ? 'bg-yellow-300' :
+                        'bg-purple-300'
+                      }`}></div>
+                      {renderNode(child, index === children.length - 1, prefix + '  ')}
+                    </div>
+                  ))}
+                </div>
+              </div>
           )}
         </div>
       );
     };
 
     return (
-      <div className="space-y-2">
-        {flowTree.map((node, index) => 
-          renderNode(node, index === flowTree.length - 1)
+      <div className="space-y-1">
+        {flowTree.length === 0 ? (
+          <div className="text-center py-8 text-slate-500 font-inter">
+            <GitBranch className="w-8 h-8 mx-auto mb-2 opacity-50" />
+            <p>No questions defined yet</p>
+            <p className="text-sm">Add questions to see the flow diagram</p>
+          </div>
+        ) : (
+          flowTree.map((node, index) => 
+            renderNode(node, index === flowTree.length - 1)
+          )
         )}
       </div>
     );
@@ -697,7 +790,7 @@ const Services = () => {
                                   </Button>
                                 </DialogTrigger>
                               
-                              <DialogContent>
+                              <DialogContent className="max-h-[90vh] overflow-y-auto">
                                 <DialogHeader>
                                   <DialogTitle className="font-degular">Add Question to {service.name}</DialogTitle>
                                   <DialogDescription className="font-inter">
@@ -755,6 +848,136 @@ const Services = () => {
                                       </p>
                                     </div>
                                   )}
+
+                                  {/* Conditional Logic Section */}
+                                  <div className="border-t pt-4">
+                                    <div className="flex items-center space-x-2 mb-3">
+                                      <input
+                                        type="checkbox"
+                                        id="question-conditional"
+                                        checked={!!newQuestion.conditional}
+                                        onChange={(e) => {
+                                          if (e.target.checked) {
+                                            setNewQuestion(prev => ({ 
+                                              ...prev, 
+                                              conditional: {
+                                                parentQuestionId: '',
+                                                parentAnswerValue: '',
+                                                operator: 'equals'
+                                              }
+                                            }));
+                                          } else {
+                                            setNewQuestion(prev => ({ ...prev, conditional: undefined }));
+                                          }
+                                        }}
+                                      />
+                                      <Label htmlFor="question-conditional" className="font-inter font-medium">
+                                        Make this a conditional question
+                                      </Label>
+                                    </div>
+                                    <p className="text-sm text-slate-500 mb-3 font-inter">
+                                      Conditional questions only appear when a specific answer is given to a previous question.
+                                    </p>
+                                    
+                                    {newQuestion.conditional && (
+                                      <div className="space-y-3 pl-4 border-l-2 border-blue-200 bg-blue-50 p-3 rounded">
+                                        <div>
+                                          <Label htmlFor="parent-question" className="font-inter">Show this question when:</Label>
+                                          <select
+                                            id="parent-question"
+                                            value={newQuestion.conditional.parentQuestionId}
+                                            onChange={(e) => setNewQuestion(prev => ({
+                                              ...prev,
+                                              conditional: prev.conditional ? {
+                                                ...prev.conditional,
+                                                parentQuestionId: e.target.value
+                                              } : undefined
+                                            }))}
+                                            className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                          >
+                                            <option value="">Select a question...</option>
+                                            {service.questions
+                                              .sort((a, b) => a.order - b.order)
+                                              .map(q => (
+                                                <option key={q.id} value={q.id}>
+                                                  #{q.order}: {q.text} {q.conditional ? '(Conditional)' : ''}
+                                                </option>
+                                              ))}
+                                          </select>
+                                        </div>
+                                        
+                                        <div>
+                                          <Label htmlFor="condition-operator" className="font-inter">Condition:</Label>
+                                          <select
+                                            id="condition-operator"
+                                            value={newQuestion.conditional.operator}
+                                            onChange={(e) => setNewQuestion(prev => ({
+                                              ...prev,
+                                              conditional: prev.conditional ? {
+                                                ...prev.conditional,
+                                                operator: e.target.value as ConditionalRule['operator']
+                                              } : undefined
+                                            }))}
+                                            className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                          >
+                                            <option value="equals">equals</option>
+                                            <option value="contains">contains</option>
+                                            <option value="not_equals">does not equal</option>
+                                          </select>
+                                        </div>
+                                        
+                                        <div>
+                                          <Label htmlFor="trigger-value" className="font-inter">Trigger Value:</Label>
+                                          {(() => {
+                                            const parentQuestion = service.questions.find(q => q.id === newQuestion.conditional?.parentQuestionId);
+                                            if (parentQuestion?.type === 'select' && parentQuestion.options) {
+                                              return (
+                                                <select
+                                                  id="trigger-value"
+                                                  value={newQuestion.conditional.parentAnswerValue as string}
+                                                  onChange={(e) => setNewQuestion(prev => ({
+                                                    ...prev,
+                                                    conditional: prev.conditional ? {
+                                                      ...prev.conditional,
+                                                      parentAnswerValue: e.target.value
+                                                    } : undefined
+                                                  }))}
+                                                  className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                                >
+                                                  <option value="">Select trigger value...</option>
+                                                  {parentQuestion.options.map(option => (
+                                                    <option key={option} value={option}>
+                                                      {option}
+                                                    </option>
+                                                  ))}
+                                                </select>
+                                              );
+                                            } else {
+                                              return (
+                                                <Input
+                                                  id="trigger-value"
+                                                  placeholder="Enter the value that triggers this question..."
+                                                  value={newQuestion.conditional.parentAnswerValue as string}
+                                                  onChange={(e) => setNewQuestion(prev => ({
+                                                    ...prev,
+                                                    conditional: prev.conditional ? {
+                                                      ...prev.conditional,
+                                                      parentAnswerValue: e.target.value
+                                                    } : undefined
+                                                  }))}
+                                                  className="font-inter mt-1"
+                                                />
+                                              );
+                                            }
+                                          })()}
+                                          <p className="text-xs text-slate-500 mt-1 font-inter">
+                                            This question will only appear when the selected question has this specific answer.
+                                          </p>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+
                                   <div className="flex items-center space-x-2">
                                     <input
                                       type="checkbox"
@@ -845,7 +1068,7 @@ const Services = () => {
 
                               {/* Edit Question Dialog */}
                               <Dialog open={editingQuestion?.categoryId === category.id && editingQuestion?.serviceId === service.id} onOpenChange={(open) => !open && setEditingQuestion(null)}>
-                                <DialogContent>
+                                <DialogContent className="max-h-[90vh] overflow-y-auto">
                                   <DialogHeader>
                                     <DialogTitle className="font-degular">Edit Question</DialogTitle>
                                     <DialogDescription className="font-inter">
@@ -904,6 +1127,137 @@ const Services = () => {
                                         </p>
                                       </div>
                                     )}
+
+                                    {/* Conditional Logic Section for Edit */}
+                                    <div className="border-t pt-4">
+                                      <div className="flex items-center space-x-2 mb-3">
+                                        <input
+                                          type="checkbox"
+                                          id="edit-question-conditional"
+                                          checked={!!editQuestionData.conditional}
+                                          onChange={(e) => {
+                                            if (e.target.checked) {
+                                              setEditQuestionData(prev => ({ 
+                                                ...prev, 
+                                                conditional: {
+                                                  parentQuestionId: '',
+                                                  parentAnswerValue: '',
+                                                  operator: 'equals'
+                                                }
+                                              }));
+                                            } else {
+                                              setEditQuestionData(prev => ({ ...prev, conditional: undefined }));
+                                            }
+                                          }}
+                                        />
+                                        <Label htmlFor="edit-question-conditional" className="font-inter font-medium">
+                                          Make this a conditional question
+                                        </Label>
+                                      </div>
+                                      <p className="text-sm text-slate-500 mb-3 font-inter">
+                                        Conditional questions only appear when a specific answer is given to a previous question.
+                                      </p>
+                                      
+                                      {editQuestionData.conditional && (
+                                        <div className="space-y-3 pl-4 border-l-2 border-blue-200 bg-blue-50 p-3 rounded">
+                                          <div>
+                                            <Label htmlFor="edit-parent-question" className="font-inter">Show this question when:</Label>
+                                            <select
+                                              id="edit-parent-question"
+                                              value={editQuestionData.conditional.parentQuestionId}
+                                              onChange={(e) => setEditQuestionData(prev => ({
+                                                ...prev,
+                                                conditional: prev.conditional ? {
+                                                  ...prev.conditional,
+                                                  parentQuestionId: e.target.value
+                                                } : undefined
+                                              }))}
+                                              className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                            >
+                                              <option value="">Select a question...</option>
+                                              {service.questions
+                                                .filter(q => q.id !== editingQuestion?.questionId) // Exclude self only
+                                                .sort((a, b) => a.order - b.order)
+                                                .map(q => (
+                                                  <option key={q.id} value={q.id}>
+                                                    #{q.order}: {q.text} {q.conditional ? '(Conditional)' : ''}
+                                                  </option>
+                                                ))}
+                                            </select>
+                                          </div>
+                                          
+                                          <div>
+                                            <Label htmlFor="edit-condition-operator" className="font-inter">Condition:</Label>
+                                            <select
+                                              id="edit-condition-operator"
+                                              value={editQuestionData.conditional.operator}
+                                              onChange={(e) => setEditQuestionData(prev => ({
+                                                ...prev,
+                                                conditional: prev.conditional ? {
+                                                  ...prev.conditional,
+                                                  operator: e.target.value as ConditionalRule['operator']
+                                                } : undefined
+                                              }))}
+                                              className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                            >
+                                              <option value="equals">equals</option>
+                                              <option value="contains">contains</option>
+                                              <option value="not_equals">does not equal</option>
+                                            </select>
+                                          </div>
+                                          
+                                          <div>
+                                            <Label htmlFor="edit-trigger-value" className="font-inter">Trigger Value:</Label>
+                                            {(() => {
+                                              const parentQuestion = service.questions.find(q => q.id === editQuestionData.conditional?.parentQuestionId);
+                                              if (parentQuestion?.type === 'select' && parentQuestion.options) {
+                                                return (
+                                                  <select
+                                                    id="edit-trigger-value"
+                                                    value={editQuestionData.conditional.parentAnswerValue as string}
+                                                    onChange={(e) => setEditQuestionData(prev => ({
+                                                      ...prev,
+                                                      conditional: prev.conditional ? {
+                                                        ...prev.conditional,
+                                                        parentAnswerValue: e.target.value
+                                                      } : undefined
+                                                    }))}
+                                                    className="w-full p-2 border border-gray-300 rounded-md font-inter mt-1"
+                                                  >
+                                                    <option value="">Select trigger value...</option>
+                                                    {parentQuestion.options.map(option => (
+                                                      <option key={option} value={option}>
+                                                        {option}
+                                                      </option>
+                                                    ))}
+                                                  </select>
+                                                );
+                                              } else {
+                                                return (
+                                                  <Input
+                                                    id="edit-trigger-value"
+                                                    placeholder="Enter the value that triggers this question..."
+                                                    value={editQuestionData.conditional.parentAnswerValue as string}
+                                                    onChange={(e) => setEditQuestionData(prev => ({
+                                                      ...prev,
+                                                      conditional: prev.conditional ? {
+                                                        ...prev.conditional,
+                                                        parentAnswerValue: e.target.value
+                                                      } : undefined
+                                                    }))}
+                                                    className="font-inter mt-1"
+                                                  />
+                                                );
+                                              }
+                                            })()}
+                                            <p className="text-xs text-slate-500 mt-1 font-inter">
+                                              This question will only appear when the selected question has this specific answer.
+                                            </p>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+
                                     <div className="flex items-center space-x-2">
                                       <input
                                         type="checkbox"

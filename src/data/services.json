@@ -48,17 +48,6 @@
               "order": 7
             },
             {
-              "id": "1753341753562",
-              "text": "Type of inspection?",
-              "type": "select",
-              "options": [
-                "pre-purchase",
-                "pre-sales .."
-              ],
-              "required": true,
-              "order": 8
-            },
-            {
               "id": "heard-about-us",
               "text": "How did you hear about Owner Inspections?",
               "type": "select",
@@ -72,6 +61,17 @@
                 "Other"
               ],
               "required": false,
+              "order": 8
+            },
+            {
+              "id": "1753341753562",
+              "text": "Type of inspection?",
+              "type": "select",
+              "options": [
+                "pre-purchase",
+                "pre-sales .."
+              ],
+              "required": true,
               "order": 44
             }
           ]
@@ -97,8 +97,52 @@
                 "Residential",
                 "Commercial"
               ],
-              "required": false,
+              "required": true,
               "order": 1
+            },
+            {
+              "id": "1753532638049",
+              "text": "if commercial, we need more details for a custom quote?",
+              "type": "textarea",
+              "required": true,
+              "order": 2,
+              "conditional": {
+                "parentQuestionId": "1753279538759",
+                "parentAnswerValue": "Commercial",
+                "operator": "equals"
+              }
+            },
+            {
+              "id": "1753532683773",
+              "text": "if residential: what is property type?",
+              "type": "select",
+              "options": [
+                "House",
+                "apartment"
+              ],
+              "required": true,
+              "order": 3,
+              "conditional": {
+                "parentQuestionId": "1753279538759",
+                "parentAnswerValue": "Residential",
+                "operator": "equals"
+              }
+            },
+            {
+              "id": "1753532739602",
+              "text": "if house; how many levels does the house have?",
+              "type": "select",
+              "options": [
+                "single storey",
+                "double storey"
+              ],
+              "required": true,
+              "order": 4,
+              "conditional": {
+                "parentQuestionId": "1753532683773",
+                "parentAnswerValue": "House",
+                "operator": "equals"
+              }
             }
           ]
         },
@@ -111,7 +155,7 @@
         {
           "id": "pre-auction",
           "name": "Pre-Auction Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -123,25 +167,25 @@
         {
           "id": "rental-condition",
           "name": "Rental Property Condition Report (Entry/Exit)",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "maintenance",
           "name": "Maintenance Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "mould-moisture",
           "name": "Mould / Moisture Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "timber-pest",
           "name": "Timber & Pest Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -165,7 +209,7 @@
         {
           "id": "pool-barrier",
           "name": "Swimming Pool Barrier / Compliance Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -183,7 +227,7 @@
         {
           "id": "commercial-property",
           "name": "Commercial Property Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -203,43 +247,43 @@
         {
           "id": "slab-stage",
           "name": "Slab Stage Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "frame-stage",
           "name": "Frame Stage Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "lock-up-stage",
           "name": "Lock-up Stage Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "waterproofing",
           "name": "Waterproofing Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "fixing-stage",
           "name": "Fixing Stage Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "practical-completion",
           "name": "Practical Completion / Handover Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "final-inspection",
           "name": "Final Inspection Report",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         }
       ]
@@ -253,19 +297,19 @@
         {
           "id": "owner-builder-warranty",
           "name": "Owner-Builder Warranty Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "builder-warranty",
           "name": "Builder's Warranty Defect Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "defect-investigation",
           "name": "Defect Investigation Report",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -285,19 +329,19 @@
         {
           "id": "insurance-claim",
           "name": "Insurance Claim Inspection",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "expert-witness",
           "name": "Expert Witness Inspection & Report",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "dilapidation",
           "name": "Dilapidation Report",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
@@ -317,67 +361,67 @@
         {
           "id": "contract-review",
           "name": "Contract Review",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "inspection-interpretation",
           "name": "Inspection Report Interpretation",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "defect-photo-review",
           "name": "Defect Photo/Video Review",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "quotation-scope-review",
           "name": "Quotation & Scope Review",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "insurance-claim-policy",
           "name": "Insurance Claim & Policy Review",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "strata-report",
           "name": "Strata Report Review",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "tribunal-dispute",
           "name": "Tribunal/Dispute Documentation Support",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "remote-expert-opinion",
           "name": "Remote Expert Opinion Letter",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "warranty-coverage",
           "name": "Warranty Coverage Advice",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "quote-comparison",
           "name": "Quote Comparison Advisory",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "live-consultation",
           "name": "Live Remote Consultation / Walkthrough",
-          "isCurrentlyOffering": true,
+          "isCurrentlyOffering": false,
           "questions": []
         }
       ]
