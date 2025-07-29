@@ -21,7 +21,8 @@ import {
   Image,
   Menu,
   Target,
-  Wrench
+  Wrench,
+  Mail
 } from "lucide-react";
 
 interface BrandMenuProps {
@@ -81,6 +82,11 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
       id: "services",
       title: "Services",
       icon: Wrench
+    },
+    {
+      id: "email-signature",
+      title: "Email Signature",
+      icon: Mail
     }
   ];
 

@@ -11,6 +11,7 @@ import SocialMediaKit from "@/components/SocialMediaKit";
 import OperationAssets from "@/components/OperationAssets";
 import MarketingAssets from "@/components/MarketingAssets";
 import Services from "@/components/Services";
+import EmailSignature from "@/components/EmailSignature";
 import BrandMenu from "@/components/BrandMenu";
 
 const Index = () => {
@@ -38,6 +39,8 @@ const Index = () => {
         return <MarketingAssets />;
       case "services":
         return <Services />;
+      case "email-signature":
+        return <EmailSignature />;
       default:
         return <Introduction />;
     }
