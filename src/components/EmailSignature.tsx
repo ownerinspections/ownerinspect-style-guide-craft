@@ -361,12 +361,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     <!-- Additional Images Row -->
     <div class="additional-images" style="margin-top: 15px; margin-bottom: 15px;">
       <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/nsw-government.svg" alt="NSW Government" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/au-society.svg" alt="Australian Society" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/bpc.svg" alt="BPC" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/google-reviews.svg" alt="Google Reviews" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/product-review.svg" alt="Product Review" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style="height: 50px; width: auto; object-fit: contain;" />
       </div>
     </div>  </div>
 </body>
@@ -531,12 +531,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
           {/* Additional Images Row */}
           <div style={{ marginTop: '15px', marginBottom: '15px' }}>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/nsw-government.svg" alt="NSW Government" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/au-society.svg" alt="Australian Society" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/bpc.svg" alt="BPC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/google-reviews.svg" alt="Google Reviews" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/product-review.svg" alt="Product Review" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-              <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
@@ -917,12 +917,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               {/* Additional Images Row */}
               <div style={{ marginTop: '15px', marginBottom: '15px' }}>
                 <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/nsw-government.svg" alt="NSW Government" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/au-society.svg" alt="Australian Society" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/bpc.svg" alt="BPC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/google-reviews.svg" alt="Google Reviews" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/product-review.svg" alt="Product Review" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
-                  <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
                 </div>
               </div>
             </div>
@@ -1226,12 +1226,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     <!-- Additional Images Row -->
     <div class="additional-images" style="margin-top: 15px; margin-bottom: 15px;">
       <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/nsw-government.svg" alt="NSW Government" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/au-society.svg" alt="Australian Society" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/bpc.svg" alt="BPC" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/google-reviews.svg" alt="Google Reviews" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/product-review.svg" alt="Product Review" style="height: 50px; width: auto; object-fit: contain;" />
-        <img src="https://www.ownerinspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style="height: 50px; width: auto; object-fit: contain;" />
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style="height: 50px; width: auto; object-fit: contain;" />
       </div>
     </div>
   </div>
