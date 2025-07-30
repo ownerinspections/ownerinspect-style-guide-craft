@@ -17,7 +17,7 @@ const Typography = () => {
   return (
     <section className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Typography</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Typography</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Clean, professional typography that ensures excellent readability across all platforms and materials.
         </p>
@@ -63,7 +63,7 @@ const Typography = () => {
           </div>
           <h3 className="text-2xl font-bold text-slate-800 mb-6 font-inter">Degular Display</h3>
           <div className="space-y-4">
-            <div className="text-4xl font-bold text-slate-800 font-degular">Degular Display</div>
+            <div className="text-4xl font-bold text-slate-800">Inter</div>
             <p className="text-slate-600 font-inter">
               Degular Display adds modern elegance and distinction — reserved exclusively for headlines and section titles.
             </p>
@@ -85,7 +85,7 @@ const Typography = () => {
                 <li>• Navigation menus</li>
               </ul>
             </div>
-            <div className="space-y-2 font-degular">
+            <div className="space-y-2">
               <div className="font-light text-2xl">Light - Aa</div>
               <div className="font-normal text-2xl">Regular - Aa</div>
               <div className="font-medium text-2xl">Medium - Aa</div>
@@ -98,7 +98,7 @@ const Typography = () => {
 
       {/* Download Section */}
       <Card className="p-8 text-center bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-dashed border-blue-200">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-4 font-degular">Font Assets</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-4">Font Assets</h3>
         <p className="text-slate-600 mb-6 font-inter">Download both Inter and Degular Display font families for consistent brand typography</p>
         <div className="flex justify-center">
           <Button variant="default" onClick={handleDownloadFontsZip} className="bg-[#0b487b] hover:bg-[#094071]">
@@ -111,24 +111,24 @@ const Typography = () => {
       {/* Typography Hierarchy - MANDATORY USAGE */}
       <Card className="p-8 border-2 border-slate-800">
         <div className="flex items-center mb-8">
-          <h3 className="text-2xl font-semibold text-slate-800 mr-4 font-degular">Typography Hierarchy</h3>
+          <h3 className="text-2xl font-semibold text-slate-800 mr-4">Typography Hierarchy</h3>
           <Badge className="bg-red-600 text-white">MANDATORY USAGE</Badge>
         </div>
         <div className="space-y-6">
           <div className="border-l-4 border-blue-800 pl-6 bg-blue-50 p-4 rounded-r-lg">
-            <h1 className="text-5xl font-bold text-slate-800 mb-2 font-degular">Hero Headline</h1>
+            <h1 className="text-5xl font-bold text-slate-800 mb-2">Hero Headline</h1>
             <p className="text-slate-500 font-inter font-medium">48px / 60px line height • Degular Display Bold</p>
           </div>
           <div className="border-l-4 border-blue-600 pl-6 bg-blue-50 p-4 rounded-r-lg">
-            <h2 className="text-4xl font-semibold text-slate-800 mb-2 font-degular">Section Headline</h2>
+            <h2 className="text-4xl font-semibold text-slate-800 mb-2">Section Headline</h2>
             <p className="text-slate-500 font-inter font-medium">36px / 44px line height • Degular Display Semibold</p>
           </div>
           <div className="border-l-4 border-blue-400 pl-6 bg-blue-50 p-4 rounded-r-lg">
-            <h3 className="text-2xl font-medium text-slate-800 mb-2 font-degular">Subsection Title</h3>
+            <h3 className="text-2xl font-medium text-slate-800 mb-2">Subsection Title</h3>
             <p className="text-slate-500 font-inter font-medium">24px / 32px line height • Degular Display Medium</p>
           </div>
           <div className="border-l-4 border-orange-500 pl-6 bg-orange-50 p-4 rounded-r-lg">
-            <h4 className="text-xl font-medium text-slate-800 mb-2 font-degular">Card Title</h4>
+            <h4 className="text-xl font-medium text-slate-800 mb-2">Card Title</h4>
             <p className="text-slate-500 font-inter font-medium">20px / 28px line height • Degular Display Medium</p>
           </div>
           <div className="border-l-4 border-slate-400 pl-6 bg-slate-50 p-4 rounded-r-lg">
@@ -147,7 +147,7 @@ const Typography = () => {
         <Card className="p-6">
           <Badge className="mb-4 bg-blue-800">Correct Usage Example</Badge>
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-blue-800 font-degular">Professional Property Inspections</h3>
+            <h3 className="text-2xl font-bold text-blue-800">Professional Property Inspections</h3>
             <p className="text-slate-700 leading-relaxed font-inter">
               Trust Owner Inspections for comprehensive property assessments. Our certified 
               inspectors provide detailed reports that help you make informed decisions about 
@@ -162,7 +162,7 @@ const Typography = () => {
         <Card className="p-6 bg-slate-900 text-white">
           <Badge className="mb-4 bg-orange-500">Dark Theme Example</Badge>
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-orange-400 font-degular">Expert Inspection Services</h3>
+            <h3 className="text-2xl font-bold text-orange-400">Expert Inspection Services</h3>
             <p className="text-slate-300 leading-relaxed font-inter">
               Our team of qualified inspectors uses the latest technology and techniques 
               to provide thorough property evaluations. From structural assessments to 

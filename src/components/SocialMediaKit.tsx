@@ -161,7 +161,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Social Media Kit</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Social Media Kit</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Comprehensive social media assets to maintain brand consistency across all digital platforms and social channels.
         </p>
@@ -178,7 +178,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-3 font-degular">{platform.name}</h3>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-3">{platform.name}</h3>
                   <div className="space-y-2">
                     {platform.formats.map((format, idx) => (
                       <Badge key={idx} variant="outline" className="mr-2 mb-2 text-xs font-inter">
@@ -200,10 +200,10 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
 
       {/* Content Guidelines */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Content Guidelines</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Content Guidelines</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Brand Voice</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Brand Voice</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Professional yet approachable tone</li>
               <li>• Educational and informative content</li>
@@ -212,7 +212,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Visual Standards</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Visual Standards</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Use consistent brand colors and fonts</li>
               <li>• High-quality professional imagery</li>
@@ -225,11 +225,11 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
 
       {/* Hashtag Guidelines */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Hashtag Strategy</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Hashtag Strategy</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {hashtags.map((group, index) => (
             <div key={index}>
-              <h4 className="font-semibold text-slate-700 mb-3 flex items-center font-degular">
+              <h4 className="font-semibold text-slate-700 mb-3 flex items-center">
                 <Hash className="w-4 h-4 mr-2" />
                 {group.category}
               </h4>
@@ -245,21 +245,21 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
         </div>
         <div className="mt-6 p-4 bg-blue-50 rounded-lg">
           <p className="text-sm text-blue-800 font-inter">
-            <strong className="font-degular">Tip:</strong> Use 3-5 hashtags per post for optimal engagement. Mix primary brand hashtags with relevant industry and location tags.
+            <strong>Tip:</strong> Use 3-5 hashtags per post for optimal engagement. Mix primary brand hashtags with relevant industry and location tags.
           </p>
         </div>
       </Card>
 
       {/* Social Media Captions */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Social Media Captions</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Social Media Captions</h3>
         <div className="space-y-6">
           
                      {/* YouTube Long */}
            <div className="p-4 border rounded-lg bg-red-50">
              <div className="flex items-center mb-3">
                <Youtube className="w-5 h-5 text-red-600 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">YouTube Long</h4>
+               <h4 className="font-semibold text-slate-800">YouTube Long</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-red-500">
@@ -292,7 +292,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-red-50">
              <div className="flex items-center mb-3">
                <Youtube className="w-5 h-5 text-red-600 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">YouTube Short</h4>
+               <h4 className="font-semibold text-slate-800">YouTube Short</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-red-500">
@@ -325,7 +325,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-blue-50">
              <div className="flex items-center mb-3">
                <Linkedin className="w-5 h-5 text-blue-700 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">LinkedIn Post</h4>
+               <h4 className="font-semibold text-slate-800">LinkedIn Post</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-blue-500">
@@ -358,7 +358,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-blue-50">
              <div className="flex items-center mb-3">
                <Linkedin className="w-5 h-5 text-blue-700 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">LinkedIn Short</h4>
+               <h4 className="font-semibold text-slate-800">LinkedIn Short</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-blue-500">
@@ -391,7 +391,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-pink-50">
              <div className="flex items-center mb-3">
                <Instagram className="w-5 h-5 text-pink-600 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">Instagram Posts & Reels</h4>
+               <h4 className="font-semibold text-slate-800">Instagram Posts & Reels</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-pink-500">
@@ -424,7 +424,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-orange-50">
              <div className="flex items-center mb-3">
                <MessageSquare className="w-5 h-5 text-orange-600 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">Reddit</h4>
+               <h4 className="font-semibold text-slate-800">Reddit</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-orange-500">
@@ -457,7 +457,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
            <div className="p-4 border rounded-lg bg-slate-50">
              <div className="flex items-center mb-3">
                <FileText className="w-5 h-5 text-slate-700 mr-2" />
-               <h4 className="font-semibold text-slate-800 font-degular">Medium</h4>
+               <h4 className="font-semibold text-slate-800">Medium</h4>
              </div>
              <div className="space-y-3">
                <div className="p-3 bg-white rounded border-l-4 border-slate-500">
@@ -490,7 +490,7 @@ Ready to make informed property decisions? Contact Owner Inspections for compreh
         
         <div className="mt-6 p-4 bg-amber-50 rounded-lg">
           <p className="text-sm text-amber-800 font-inter">
-            <strong className="font-degular">Note:</strong> These captions are templates that should be customized for specific content, current events, or seasonal campaigns. Always include relevant calls-to-action and ensure compliance with each platform's guidelines.
+            <strong>Note:</strong> These captions are templates that should be customized for specific content, current events, or seasonal campaigns. Always include relevant calls-to-action and ensure compliance with each platform's guidelines.
           </p>
         </div>
       </Card>

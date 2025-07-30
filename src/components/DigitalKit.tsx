@@ -53,7 +53,7 @@ const DigitalKit = () => {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Digital Kit</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Digital Kit</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Digital assets and templates for online communications, ensuring brand consistency across all digital touchpoints.
         </p>
@@ -69,7 +69,7 @@ const DigitalKit = () => {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2 font-degular">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">{item.title}</h3>
                   <p className="text-slate-600 mb-3 font-inter">{item.description}</p>
                   <Badge variant="outline" className="text-xs font-inter">{item.format}</Badge>
                 </div>
@@ -95,10 +95,10 @@ const DigitalKit = () => {
 
       {/* Usage Guidelines */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Digital Asset Guidelines</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Digital Asset Guidelines</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Email Best Practices</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Email Best Practices</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Use consistent branding across all email communications</li>
               <li>• Maintain professional tone and language</li>
@@ -107,7 +107,7 @@ const DigitalKit = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Technical Requirements</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Technical Requirements</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• HTML templates compatible with major email clients</li>
               <li>• Optimized file sizes for quick loading</li>

@@ -68,10 +68,10 @@ const Introduction = () => {
       {/* Hero Section */}
       <section className="text-center py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-transparent mb-6 font-degular">
-            Owner Inspections
-          </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-600 mb-8 font-degular">
+                  <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-transparent mb-6">
+          Owner Inspections
+        </h1>
+        <h2 className="text-2xl md:text-3xl text-slate-600 mb-8">
             Brand Guidelines & Identity
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-inter">
@@ -103,7 +103,7 @@ const Introduction = () => {
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-800 mb-4 font-degular">{section.title}</h3>
+                  <h3 className="text-2xl font-bold text-slate-800 mb-4">{section.title}</h3>
                   <p className="text-lg text-slate-600 leading-relaxed font-inter whitespace-pre-line">{section.content}</p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ const Introduction = () => {
       {/* Brand Essence Summary */}
       <Card className="p-8 bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-blue-200">
         <div className="text-center">
-          <h3 className="text-3xl font-bold text-slate-800 mb-6 font-degular">Brand Essence</h3>
+          <h3 className="text-3xl font-bold text-slate-800 mb-6">Brand Essence</h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-slate-700 mb-8 font-inter leading-relaxed">
               Owner Inspections embodies trust, expertise, and innovation in the property inspection industry. 
@@ -126,21 +126,21 @@ const Introduction = () => {
                 <div className="w-12 h-12 bg-blue-800 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <Target className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Expert</h4>
+                <h4 className="font-semibold text-slate-800 mb-2">Expert</h4>
                 <p className="text-sm text-slate-600 font-inter">Professional knowledge and industry expertise</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-orange-500 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Trusted</h4>
+                <h4 className="font-semibold text-slate-800 mb-2">Trusted</h4>
                 <p className="text-sm text-slate-600 font-inter">Reliable and honest service delivery</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-2 font-degular">Innovative</h4>
+                <h4 className="font-semibold text-slate-800 mb-2">Innovative</h4>
                 <p className="text-sm text-slate-600 font-inter">Modern technology and advanced methods</p>
               </div>
             </div>

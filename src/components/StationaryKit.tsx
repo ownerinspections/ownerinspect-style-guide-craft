@@ -36,7 +36,7 @@ const StationaryKit = () => {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Stationary Kit</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Stationary Kit</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Professional print materials that maintain brand consistency across all business communications and touchpoints.
         </p>
@@ -52,7 +52,7 @@ const StationaryKit = () => {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2 font-degular">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">{item.title}</h3>
                   <p className="text-slate-600 mb-3 font-inter">{item.description}</p>
                   <Badge variant="outline" className="text-xs font-inter">{item.specs}</Badge>
                 </div>
@@ -85,7 +85,7 @@ const StationaryKit = () => {
 
       {/* Download Section */}
       <Card className="p-8 text-center bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-dashed border-blue-200">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-4 font-degular">Letterhead Templates</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-4">Letterhead Templates</h3>
         <p className="text-slate-600 mb-6 font-inter">Download professional letterhead templates for all your business correspondence</p>
         <div className="flex justify-center">
           <Button variant="default" onClick={handleDownloadLetterheadZip} className="bg-[#0b487b] hover:bg-[#094071] font-inter">

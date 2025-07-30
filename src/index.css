@@ -1,5 +1,4 @@
 /* Import official stylesheets */
-@import url('./assets/fonts/Degular/stylesheet.css');
 @import url('./assets/fonts/Inter/stylesheet.css');
 
 @tailwind base;
@@ -106,12 +105,8 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  /* Ensure fonts are applied correctly */
+  /* Ensure Inter font is applied correctly */
   .font-inter {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  }
-
-  .font-degular {
-    font-family: 'Degular Display', Georgia, 'Times New Roman', serif !important;
   }
 }

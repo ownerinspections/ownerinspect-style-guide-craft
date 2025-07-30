@@ -6,10 +6,8 @@ import LogoSection from "@/components/LogoSection";
 import ColorPalette from "@/components/ColorPalette";
 import Typography from "@/components/Typography";
 import StationaryKit from "@/components/StationaryKit";
-import DigitalKit from "@/components/DigitalKit";
 import SocialMediaKit from "@/components/SocialMediaKit";
-import OperationAssets from "@/components/OperationAssets";
-import MarketingAssets from "@/components/MarketingAssets";
+import DigitalAssets from "@/components/DigitalAssets";
 import Services from "@/components/Services";
 import EmailSignature from "@/components/EmailSignature";
 import BrandMenu from "@/components/BrandMenu";
@@ -29,14 +27,10 @@ const Index = () => {
         return <Typography />;
       case "stationary":
         return <StationaryKit />;
-      case "digital":
-        return <DigitalKit />;
       case "social":
         return <SocialMediaKit />;
-      case "operations":
-        return <OperationAssets />;
-      case "marketing":
-        return <MarketingAssets />;
+      case "digital-assets":
+        return <DigitalAssets />;
       case "services":
         return <Services />;
       case "email-signature":

@@ -53,7 +53,7 @@ const Applications = () => {
   return (
     <section className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Brand Applications</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Brand Applications</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Consistent application of the Owner Inspections brand across all touchpoints 
           ensures recognition and builds trust with our customers.
@@ -69,7 +69,7 @@ const Applications = () => {
                 <app.icon className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-slate-800 mb-2 font-degular">{app.title}</h3>
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">{app.title}</h3>
                 <p className="text-slate-600 text-sm mb-4 leading-relaxed font-inter">{app.description}</p>
                 <div className="space-y-1">
                   {app.examples.map((example, idx) => (
@@ -87,10 +87,10 @@ const Applications = () => {
 
       {/* Brand Standards */}
       <Card className="p-8 bg-gradient-to-r from-blue-50 to-orange-50">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Application Standards</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Application Standards</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Core Requirements</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Core Requirements</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Logo must be visible and properly sized</li>
               <li>• Use approved color palette consistently</li>
@@ -99,7 +99,7 @@ const Applications = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Quality Standards</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Quality Standards</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• High-resolution images and graphics</li>
               <li>• Professional tone and language</li>
@@ -112,7 +112,7 @@ const Applications = () => {
 
       {/* Usage Examples */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-8 text-center font-degular">Brand in Action</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-8 text-center">Brand in Action</h3>
         <div className="grid md:grid-cols-3 gap-8">
           {/* Website Example */}
           <div className="text-center">
@@ -134,7 +134,7 @@ const Applications = () => {
                 Book Inspection
               </Button>
             </div>
-            <h4 className="font-semibold text-slate-800 font-degular">Website Header</h4>
+            <h4 className="font-semibold text-slate-800">Website Header</h4>
             <p className="text-sm text-slate-500 font-inter">Clean, professional web presence</p>
           </div>
 
@@ -145,13 +145,13 @@ const Applications = () => {
                 <div className="w-6 h-6 bg-gradient-to-r from-blue-800 to-orange-500 rounded"></div>
               </div>
               <div className="text-left space-y-1">
-                <div className="text-xs font-bold text-slate-800 font-degular">Owner Inspections</div>
+                <div className="text-xs font-bold text-slate-800">Owner Inspections</div>
                 <div className="h-1 bg-slate-200 rounded w-3/4"></div>
                 <div className="h-1 bg-slate-200 rounded w-1/2"></div>
                 <div className="h-1 bg-orange-500 rounded w-2/3"></div>
               </div>
             </div>
-            <h4 className="font-semibold text-slate-800 font-degular">Business Card</h4>
+            <h4 className="font-semibold text-slate-800">Business Card</h4>
             <p className="text-sm text-slate-500 font-inter">Professional networking tool</p>
           </div>
 
@@ -173,7 +173,7 @@ const Applications = () => {
                 </div>
               </div>
             </div>
-            <h4 className="font-semibold text-slate-800 font-degular">Inspection Report</h4>
+            <h4 className="font-semibold text-slate-800">Inspection Report</h4>
             <p className="text-sm text-slate-500 font-inter">Branded documentation</p>
           </div>
         </div>

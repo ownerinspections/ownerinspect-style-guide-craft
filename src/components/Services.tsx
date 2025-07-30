@@ -539,7 +539,7 @@ const Services = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-degular">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
           Our Services
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto font-inter">
@@ -581,7 +581,7 @@ const Services = () => {
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-2xl font-bold text-slate-800 mb-2 font-degular">
+                    <CardTitle className="text-2xl font-bold text-slate-800 mb-2">
                       {category.title}
                     </CardTitle>
                     <CardDescription className="text-slate-600 font-inter">
@@ -792,7 +792,7 @@ const Services = () => {
                               
                               <DialogContent className="max-h-[90vh] overflow-y-auto">
                                 <DialogHeader>
-                                  <DialogTitle className="font-degular">Add Question to {service.name}</DialogTitle>
+                                  <DialogTitle>Add Question to {service.name}</DialogTitle>
                                   <DialogDescription className="font-inter">
                                     Create a new question that will be asked for this service.
                                   </DialogDescription>
@@ -1015,7 +1015,7 @@ const Services = () => {
                                 </DialogTrigger>
                                 <DialogContent>
                                   <DialogHeader>
-                                    <DialogTitle className="font-degular">Copy Questions to {service.name}</DialogTitle>
+                                    <DialogTitle>Copy Questions to {service.name}</DialogTitle>
                                     <DialogDescription className="font-inter">
                                       Select a service to copy all questions from. This will replace any existing questions.
                                     </DialogDescription>
@@ -1070,7 +1070,7 @@ const Services = () => {
                               <Dialog open={editingQuestion?.categoryId === category.id && editingQuestion?.serviceId === service.id} onOpenChange={(open) => !open && setEditingQuestion(null)}>
                                 <DialogContent className="max-h-[90vh] overflow-y-auto">
                                   <DialogHeader>
-                                    <DialogTitle className="font-degular">Edit Question</DialogTitle>
+                                    <DialogTitle>Edit Question</DialogTitle>
                                     <DialogDescription className="font-inter">
                                       Modify the question details below.
                                     </DialogDescription>

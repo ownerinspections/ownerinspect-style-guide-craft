@@ -44,7 +44,7 @@ const OperationAssets = () => {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Operation Assets</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Operation Assets</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Professional presentation templates and operational assets to maintain brand consistency in business communications and client presentations.
         </p>
@@ -56,7 +56,7 @@ const OperationAssets = () => {
           <div className="w-20 h-20 bg-gradient-to-r from-blue-800 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Presentation className="w-10 h-10 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 font-degular">PowerPoint Template</h3>
+          <h3 className="text-2xl font-bold text-slate-800 mb-4">PowerPoint Template</h3>
           <p className="text-slate-600 max-w-2xl mx-auto font-inter">
             Comprehensive presentation template designed for client presentations, training materials, and business communications.
           </p>
@@ -70,7 +70,7 @@ const OperationAssets = () => {
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
                   <Icon className="w-6 h-6 text-blue-800" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-2 font-degular">{feature.title}</h4>
+                <h4 className="font-semibold text-slate-800 mb-2">{feature.title}</h4>
                 <p className="text-sm text-slate-600 font-inter">{feature.description}</p>
               </div>
             );
@@ -87,7 +87,7 @@ const OperationAssets = () => {
 
       {/* Slide Types Available */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Available Slide Templates</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Available Slide Templates</h3>
         <p className="text-slate-600 mb-6 font-inter">
           The PowerPoint template includes a comprehensive set of pre-designed slides for various presentation needs.
         </p>
@@ -103,10 +103,10 @@ const OperationAssets = () => {
 
       {/* Usage Guidelines */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Presentation Guidelines</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Presentation Guidelines</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Brand Consistency</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Brand Consistency</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Always use the provided master slides</li>
               <li>• Maintain consistent color palette throughout</li>
@@ -115,7 +115,7 @@ const OperationAssets = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Content Best Practices</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Content Best Practices</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Keep text concise and readable</li>
               <li>• Use high-quality images and graphics</li>

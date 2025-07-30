@@ -43,7 +43,7 @@ const ColorPalette = () => {
 
   const ColorCard = ({ colors, title }: { colors: any[], title: string }) => (
     <div className="space-y-4">
-      <h3 className="text-2xl font-semibold text-slate-800 font-degular">{title}</h3>
+              <h3 className="text-2xl font-semibold text-slate-800">{title}</h3>
       <div className="grid gap-4">
         {colors.map((color, index) => (
           <Card key={index} className="p-4 hover:shadow-lg transition-shadow">
@@ -53,7 +53,7 @@ const ColorPalette = () => {
                 style={{ backgroundColor: color.hex }}
               />
               <div className="flex-1">
-                <h4 className="font-semibold text-slate-800 font-degular">{color.name}</h4>
+                <h4 className="font-semibold text-slate-800">{color.name}</h4>
                 <p className="text-sm text-slate-500 mb-2 font-inter">{color.usage}</p>
                 <div className="flex items-center space-x-4">
                   <button 
@@ -80,7 +80,7 @@ const ColorPalette = () => {
   return (
     <section className="space-y-12">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-slate-800 mb-4 font-degular">Color Palette</h2>
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Color Palette</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto font-inter">
           Our color palette reflects trust, professionalism, and reliability. 
           The primary blue conveys stability while the secondary blue adds clarity and approachability.
@@ -89,7 +89,7 @@ const ColorPalette = () => {
 
       {/* Brand Colors Showcase */}
       <Card className="p-8 text-white text-center" style={{ background: "linear-gradient(135deg, #0b487b 0%, #2c9bd6 100%)" }}>
-        <h3 className="text-3xl font-bold mb-4 font-degular">Brand Color Combination</h3>
+        <h3 className="text-3xl font-bold mb-4">Brand Color Combination</h3>
         <p className="text-blue-100 mb-6 font-inter">The perfect balance of trust and clarity</p>
         <div className="flex justify-center space-x-8">
           <div className="text-center">
@@ -117,10 +117,10 @@ const ColorPalette = () => {
 
       {/* Color Applications */}
       <Card className="p-8">
-        <h3 className="text-2xl font-semibold text-slate-800 mb-6 font-degular">Color Applications</h3>
+        <h3 className="text-2xl font-semibold text-slate-800 mb-6">Color Applications</h3>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Primary Applications</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Primary Applications</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Website headers and navigation</li>
               <li>• Call-to-action buttons</li>
@@ -129,7 +129,7 @@ const ColorPalette = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-700 mb-3 font-degular">Secondary Applications</h4>
+            <h4 className="font-semibold text-slate-700 mb-3">Secondary Applications</h4>
             <ul className="space-y-2 text-slate-600 font-inter">
               <li>• Links and interactive elements</li>
               <li>• Supporting graphics</li>

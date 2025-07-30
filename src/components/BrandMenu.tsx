@@ -22,7 +22,8 @@ import {
   Menu,
   Target,
   Wrench,
-  Mail
+  Mail,
+  Download
 } from "lucide-react";
 
 interface BrandMenuProps {
@@ -59,24 +60,14 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
       icon: FileText
     },
     {
-      id: "digital",
-      title: "Digital Kit",
-      icon: Monitor
-    },
-    {
       id: "social",
       title: "Social Media Kit",
       icon: Share2
     },
     {
-      id: "operations",
-      title: "Operation Assets",
-      icon: Briefcase
-    },
-    {
-      id: "marketing",
-      title: "Marketing Assets",
-      icon: Target
+      id: "digital-assets",
+      title: "Digital Assets",
+      icon: Download
     },
     {
       id: "services",
@@ -93,7 +84,7 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
   const MenuContent = ({ onItemClick }: { onItemClick?: () => void }) => (
     <div className="p-6 space-y-4">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-800 mb-2 font-degular">Brand Guidelines</h2>
+        <h2 className="text-2xl font-bold text-slate-800 mb-2">Brand Guidelines</h2>
       </div>
 
       {menuItems.map((section) => {
@@ -135,7 +126,7 @@ const BrandMenu = ({ activeSection, onSectionChange, isMobile = false }: BrandMe
         </SheetTrigger>
         <SheetContent side="left" className="w-80">
           <SheetHeader>
-            <SheetTitle className="font-degular">Navigation</SheetTitle>
+            <SheetTitle>Navigation</SheetTitle>
             <SheetDescription className="font-inter">
               Access all brand guideline sections
             </SheetDescription>
