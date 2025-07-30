@@ -31,19 +31,23 @@ interface SignatureData {
 const EmailSignature = () => {
   const [copied, setCopied] = useState(false);
   const [generatedHTML, setGeneratedHTML] = useState("");
+  const [desktopHTML, setDesktopHTML] = useState("");
+  const [tabletHTML, setTabletHTML] = useState("");
+  const [mobileHTML, setMobileHTML] = useState("");
   const [showPreview, setShowPreview] = useState(false);
+  const [previewMode, setPreviewMode] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
   const { toast } = useToast();
 
   const [formData, setFormData] = useState<SignatureData>({
     closing: "Kind regards,",
-    name: "MAISON AZDARI",
+    name: "Maison Azdari",
     position: "Director",
     company: "OWNER INSPECTIONS PTY. LTD.",
     description: `Executive Committee Member, ASBC NSW | Member, SCA NSW
 Accredited SBBIS Inspector, NSW Fair Trading | Building Consultant & Expert Witness, NSW, VIC, QLD
 B.Eng Civil Engineering | Licensed Builder (NSW: 366172C | VIC: DBU-41642 | QLD: 15151453)
 Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
-    whatsappNumber: "+61 456 111 000",
+    whatsappNumber: "+61 888 888 888",
     email: "maison.a@ownerinspections.com.au",
     enabled: {
       closing: true,
@@ -82,309 +86,329 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Owner Inspections - Email Signature</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
-
-    .signature {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #333333;
-      margin: 0;
-      padding: 0 0 0 20px;
-    }
-
-    .contact {
-      margin-bottom: 15px;
-    }
-
-    .contact strong {
-      font-weight: bold;
-      background: linear-gradient(135deg, #0b487b, #2c9bd6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 18px;
-      text-shadow: 0 1px 2px rgba(11, 72, 123, 0.1);
-    }
-
-    .locations {
-      margin-bottom: 15px;
-      line-height: 1.8;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #0b487b;
-      display: inline-block;
-      min-width: 25px;
-      text-shadow: 0 1px 1px rgba(44, 155, 214, 0.2);
-    }
-
-    .contact a {
-      color: #0b487b;
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
-      padding-bottom: 1px;
-    }
-
-    .contact a:hover {
-      color: #2c9bd6;
-      border-bottom: 2px solid #2c9bd6;
-      transform: translateY(-1px);
-    }
-
-    .logo-row {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .logo-row img {
-      max-width: 200px;
-      height: auto;
-      display: block;
-    }
-
-    .social-media {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, #0b487b, #2c9bd6);
-      border-radius: 50%;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(11, 72, 123, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-links a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 4px 15px rgba(11, 72, 123, 0.3);
-    }
-
-    .social-links a:hover::before {
-      left: 100%;
-    }
-
-    .social-links a svg {
-      width: 18px;
-      height: 18px;
-      fill: white;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      .signature {
-        padding: 15px;
-        font-size: 13px;
-      }
-      
-      .contact strong {
-        font-size: 15px;
-      }
-      
-      .locations {
-        line-height: 1.6;
-      }
-      
-      .logo-row img {
-        max-width: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .signature {
-        padding: 12px;
-        font-size: 12px;
-      }
-      
-      .contact strong {
-        font-size: 14px;
-      }
-      
-      .logo-row img {
-        max-width: 120px;
-      }
-    }
-
-    /* Email client compatibility */
-    table {
-      border-collapse: collapse;
-      mso-table-lspace: 0pt;
-      mso-table-rspace: 0pt;
-    }
-
-    .signature-table {
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .signature-table td {
-      padding: 0;
-      vertical-align: top;
-    }
-  </style>
 </head>
 <body>
-  <div class="signature">
-    <div class="contact">
-      ${enabled.closing ? `${closing}<br /><br />` : ''}
-      ${enabled.name || enabled.position || enabled.company ? `<strong>${[
-        enabled.name ? name : '',
-        enabled.position ? position : '',
-        enabled.company ? company : ''
-      ].filter(Boolean).join(' | ')}</strong><br />` : ''}
-      ${enabled.description ? `<div style="font-size: 12px; color: #555555; line-height: 1.5; margin: 12px 0 15px 0;">
-        ${description.split('\n').map(line => `<div style="margin-bottom: 4px;">${line}</div>`).join('')}
-      </div>` : ''}
+<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; color: #333333;">
+  <p style="margin: 0 0 10px 0;">
+    <strong>${enabled.closing ? closing : ''}</strong><br>
+    &nbsp;
+  </p>
+  
+  <!-- Desktop Layout -->
+  <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
+    <div style="margin-bottom: 5px;">
+      <strong style="font-size: 24px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
     </div>
-    <div class="contact-info" style="margin-bottom: 15px;">
-      <!-- 📞 Phone and WhatsApp row -->
-      <div style="display: flex; align-items: center; margin-bottom: 8px;">
-        <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-        </svg>
-        <a href="tel:1300471805" target="_blank" rel="noopener noreferrer" style="color:#333333; text-decoration:none; border-bottom: 2px solid transparent; transition: all 0.3s ease; padding-bottom: 1px;">1300 471 805</a>
-        ${enabled.whatsappNumber ? ` <span style="margin: 0 8px;">|</span> <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
-        </svg><a href="https://api.whatsapp.com/send/?phone=${whatsappNumber.replace(/[^0-9]/g, '')}&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" style="color:#333333; text-decoration:none; border-bottom: 2px solid transparent; transition: all 0.3s ease; padding-bottom: 1px;">${whatsappNumber}</a>` : ''}
-      </div>
-      
-      ${enabled.email ? `<!-- ✉️ Email and Website row -->
-      <div style="display: flex; align-items: center; margin-bottom: 8px;">
-        <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-        <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color:#333333; text-decoration:none; border-bottom: 2px solid transparent; transition: all 0.3s ease; padding-bottom: 1px;">${email}</a> <span style="margin: 0 8px;">|</span> <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg><a href="https://www.ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#0b487b; text-decoration:none; border-bottom: 2px solid transparent; transition: all 0.3s ease; padding-bottom: 1px;">OwnerInspections.com.au</a>
-      </div>` : `<!-- 🌐 Website URL only (when email is disabled) -->
-      <div style="display: flex; align-items: center; margin-bottom: 8px;">
-        <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg>
-        <a href="https://www.ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#0b487b; text-decoration:none; border-bottom: 2px solid transparent; transition: all 0.3s ease; padding-bottom: 1px;">OwnerInspections.com.au</a>
-      </div>`}
-      
-      <!-- 🏢 Address (Office locations for regulated profession) -->
-      <div style="display: flex; align-items: flex-start;">
-        <svg style="width: 16px; height: 16px; margin-right: 10px; fill: #0b487b; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-        <div style="line-height: 1.4;">
-          <div style="margin-bottom: 4px;"><strong style="color: #0b487b;">VIC:</strong> Level 14, 380 St Kilda Rd, Melbourne, VIC 3000</div>
-          <div style="margin-bottom: 4px;"><strong style="color: #0b487b;">QLD:</strong> Level 22, 69 Ann St, Brisbane, QLD 4000</div>
-          <div><strong style="color: #0b487b;">NSW:</strong> Level 1, 995 Victoria Rd, West Ryde</div>
-        </div>
-      </div>
+    <div style="margin-bottom: 15px;">
+      <strong style="font-size: 14px; margin: 0;">${enabled.position ? position : ''}</strong>
     </div>
-    <div class="social-media">
-      <div class="social-links">
-        <a href="https://www.linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" title="YouTube">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" title="Facebook">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" title="Instagram">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <a href="https://www.reddit.com/u/ownerinspections" target="_blank" rel="noopener noreferrer" title="Reddit">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-          </svg>
-        </a>
-        <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" title="Medium">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-          </svg>
-        </a>
-      </div>
+    <div style="margin-top: 8px;">
+      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 24px; width: 24px; border: none;" alt="LinkedIn">
+      </a>
+      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 24px; width: 24px; border: none;" alt="YouTube">
+      </a>
+      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 24px; width: 24px; border: none;" alt="Facebook">
+      </a>
+      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 24px; width: 24px; border: none;" alt="Instagram">
+      </a>
+      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
+      </a>
+      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
+      </a>
     </div>
-    
-    <!-- Additional Images Row -->
-    <div class="additional-images" style="margin-top: 0px; margin-bottom: 0px;">
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px 110px; max-width: 650px; padding-left: 20px;">
-        <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-        <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-        <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-        <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-        <a href="https://www.google.com/maps/search/owner+inspections+au/@-33.1714001,140.5747706,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-        <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer">
-          <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style="height: 60px; width: auto; object-fit: cover; object-position: center; transform: scale(2.0);" />
-        </a>
-      </div>
-    </div>  </div>
+  </div>
+  
+  <div style="display: inline-block; width: 1px; height: 80px; background-color: #0b487b; margin: 0 20px; vertical-align: top;"></div>
+  
+  <div style="display: inline-block; vertical-align: top;">
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
+      1300 471 805${enabled.whatsappNumber ? ` | 
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 16px; width: 16px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
+      ${whatsappNumber}` : ''}
+    </div>
+    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
+      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
+    </div>` : ''}
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
+      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
+    </div>
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
+      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
+    </div>
+  </div>
+  
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 100%;">
+  
+  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
+    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 11px;">${line}</div>`).join('')}
+  </div>` : ''}
+  
+  <div style="margin-top: 10px;">
+    <div style="margin-bottom: 5px;">
+      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 60px; width: auto; border: none;">
+      </a>
+    </div>
+    <div>
+      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 60px; width: auto; border: none;">
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 </html>`;
 
-    setGeneratedHTML(emailSignatureHTML);
+    const desktopHTML = emailSignatureHTML;
+    const tabletHTML = generateTabletHTML();
+    const mobileHTML = generateMobileHTML();
+    
+    setDesktopHTML(desktopHTML);
+    setTabletHTML(tabletHTML);
+    setMobileHTML(mobileHTML);
+    setGeneratedHTML(desktopHTML); // Default to desktop
     setShowPreview(true);
     
     toast({
-      title: "Email signature generated!",
-      description: "Your custom email signature has been created successfully.",
+      title: "Email signatures generated!",
+      description: "Your custom email signatures have been created for all devices.",
     });
+  };
+
+  const generateMobileHTML = () => {
+    const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
+    
+    const mobileHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Inspections - Email Signature (Mobile)</title>
+</head>
+<body>
+<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; color: #333333;">
+  <p style="margin: 0 0 10px 0;">
+    <strong>${enabled.closing ? closing : ''}</strong><br>
+    &nbsp;
+  </p>
+  
+  <!-- Mobile Layout - Stacked -->
+  <div style="margin-bottom: 15px;">
+    <div style="margin-bottom: 5px;">
+      <strong style="font-size: 18px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
+    </div>
+    <div style="margin-bottom: 15px;">
+      <strong style="font-size: 11px; margin: 0;">${enabled.position ? position : ''}</strong>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 15px;">
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
+      1300 471 805${enabled.whatsappNumber ? ` | 
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 12px; width: 12px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
+      ${whatsappNumber}` : ''}
+    </div>
+    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
+      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
+    </div>` : ''}
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
+      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
+    </div>
+    <div style="margin-bottom: 15px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
+      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
+    </div>
+    
+    <!-- Social Media Icons Under Address -->
+    <div style="margin-top: 10px;">
+      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 24px; width: 24px; border: none;" alt="LinkedIn">
+      </a>
+      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 24px; width: 24px; border: none;" alt="YouTube">
+      </a>
+      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 24px; width: 24px; border: none;" alt="Facebook">
+      </a>
+      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 24px; width: 24px; border: none;" alt="Instagram">
+      </a>
+      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
+      </a>
+      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
+      </a>
+    </div>
+  </div>
+  
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 100%;">
+  
+  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
+    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 8px;">${line}</div>`).join('')}
+  </div>` : ''}
+  
+  <div style="margin-top: 10px;">
+    <div style="margin-bottom: 5px;">
+      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 40px; width: auto; border: none;">
+      </a>
+      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 40px; width: auto; border: none;">
+      </a>
+      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 40px; width: auto; border: none;">
+      </a>
+    </div>
+    <div>
+      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 40px; width: auto; border: none;">
+      </a>
+      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 40px; width: auto; border: none;">
+      </a>
+      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 40px; width: auto; border: none;">
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>`;
+
+    return mobileHTML;
+  };
+
+  const generateTabletHTML = () => {
+    const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
+    
+    const tabletHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Inspections - Email Signature (Tablet)</title>
+</head>
+<body>
+<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; color: #333333;">
+  <p style="margin: 0 0 10px 0;">
+    <strong>${enabled.closing ? closing : ''}</strong><br>
+    &nbsp;
+  </p>
+  
+  <!-- Tablet Layout - Side by Side -->
+  <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
+    <div style="margin-bottom: 5px;">
+      <strong style="font-size: 20px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
+    </div>
+    <div style="margin-bottom: 15px;">
+      <strong style="font-size: 12px; margin: 0;">${enabled.position ? position : ''}</strong>
+    </div>
+    <div style="margin-top: 8px;">
+      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 20px; width: 20px; border: none;" alt="LinkedIn">
+      </a>
+      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 20px; width: 20px; border: none;" alt="YouTube">
+      </a>
+      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 20px; width: 20px; border: none;" alt="Facebook">
+      </a>
+      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 20px; width: 20px; border: none;" alt="Instagram">
+      </a>
+      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 20px; width: 20px; border: none;" alt="Medium">
+      </a>
+      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 20px; width: 20px; border: none;" alt="Reddit">
+      </a>
+    </div>
+  </div>
+  
+  <div style="display: inline-block; width: 1px; height: 80px; background-color: #0b487b; margin: 0 20px; vertical-align: top;"></div>
+  
+  <div style="display: inline-block; vertical-align: top;">
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
+      1300 471 805${enabled.whatsappNumber ? ` | 
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 14px; width: 14px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
+      ${whatsappNumber}` : ''}
+    </div>
+    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
+      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
+    </div>` : ''}
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
+      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
+    </div>
+    <div style="margin-bottom: 8px; line-height: 1.4;">
+      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
+      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
+    </div>
+  </div>
+  
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 50%;">
+  
+  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
+    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 10px;">${line}</div>`).join('')}
+  </div>` : ''}
+  
+  <div style="margin-top: 10px;">
+    <div style="margin-bottom: 5px;">
+      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 60px; width: auto; border: none;">
+      </a>
+    </div>
+    <div>
+      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 60px; width: auto; border: none;">
+      </a>
+      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 60px; width: auto; border: none;">
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>`;
+
+    return tabletHTML;
   };
 
   const copyToClipboard = async () => {
@@ -414,155 +438,298 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     }
   };
 
+  const copyDesktopHTML = async () => {
+    if (!desktopHTML) {
+      toast({
+        title: "No desktop signature to copy",
+        description: "Please generate signatures first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(desktopHTML);
+      toast({
+        title: "Desktop HTML copied!",
+        description: "Desktop email signature HTML has been copied to your clipboard.",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy desktop HTML to clipboard.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const copyTabletHTML = async () => {
+    if (!tabletHTML) {
+      toast({
+        title: "No tablet signature to copy",
+        description: "Please generate signatures first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(tabletHTML);
+      toast({
+        title: "Tablet HTML copied!",
+        description: "Tablet email signature HTML has been copied to your clipboard.",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy tablet HTML to clipboard.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const copyMobileHTML = async () => {
+    if (!mobileHTML) {
+      toast({
+        title: "No mobile signature to copy",
+        description: "Please generate signatures first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(mobileHTML);
+      toast({
+        title: "Mobile HTML copied!",
+        description: "Mobile email signature HTML has been copied to your clipboard.",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy mobile HTML to clipboard.",
+        variant: "destructive",
+      });
+    }
+  };
+
   const renderPreview = () => {
     const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
     
+    const previewHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Inspections - Email Signature</title>
+  <style>
+    @media screen and (min-width: 769px) {
+      .certificate-container { max-width: 50% !important; }
+      .certificate-container img { max-height: 80px !important; }
+    }
+    @media screen and (max-width: 768px) {
+      .certificate-container { max-width: 50% !important; gap: 0px !important; }
+      .certificate-container img { max-height: 60px !important; }
+      .hr-line { width: 50% !important; }
+      .signature { font-size: 12px !important; }
+      .name-text { font-size: 20px !important; }
+      .position-text { font-size: 12px !important; }
+      .social-icons img { height: 20px !important; width: 20px !important; }
+      .contact-info img { height: 14px !important; width: 14px !important; }
+      .description-text { font-size: 10px !important; }
+    }
+    @media screen and (max-width: 480px) {
+      .certificate-container { max-width: 95% !important; gap: 0.5px !important; }
+      .hr-line { width: 95% !important; }
+      .signature { font-size: 11px !important; }
+      .name-text { font-size: 18px !important; }
+      .position-text { font-size: 11px !important; }
+      .social-icons img { height: 18px !important; width: 18px !important; }
+      .contact-info img { height: 12px !important; width: 12px !important; }
+      .description-text { font-size: 8px !important; }
+      .main-container { flex-direction: column !important; gap: 15px !important; align-items: flex-start !important; }
+      .main-container > div:first-child { order: 1 !important; width: 100% !important; }
+      .main-container > div:last-child { order: 2 !important; width: 100% !important; }
+      .main-container > div:nth-child(2) { display: none !important; }
+      .main-container .social-icons { display: none !important; }
+      .social-icons-mobile { display: flex !important; }
+      .social-icons-mobile img { height: 24px !important; width: 24px !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="signature" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px;">
+  <div class="contact">
+      <p>
+          <strong>${enabled.closing ? closing : ''}</strong><br>
+          &nbsp;
+      </p>
+      <div class="main-container" style="align-items:center;display:flex;gap:15px;">
+                      <div style="display:flex;flex-direction:column;justify-content:center;">            
+              <strong class="name-text" style="margin-bottom:2px; font-size:24px; color: #0b487b;">${enabled.name ? name : ''}</strong>
+              <div class="position-text" style="margin-bottom:22px; font-size:14px;"><strong>${enabled.position ? position : ''}</strong></div>
+              <div class="social-icons" style="align-items:center;display:flex;margin-top:8px;">
+                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height:24px;width:24px;" alt="LinkedIn">
+                </a>
+                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height:24px;width:24px;" alt="YouTube">
+                </a>
+                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height:24px;width:24px;" alt="Facebook">
+                </a>
+                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height:24px;width:24px;" alt="Instagram">
+                </a>
+                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:24px;width:24px;" alt="Medium">
+                </a>
+                <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:24px;width:24px;" alt="Reddit">
+                </a>
+            </div>
+          </div>
+          <div style="width:1px;height:80px;background-color:#0b487b;margin:0 4px;"></div>
+          <div class="contact-info" style="display:flex;flex-direction:column;gap:8px;justify-content:center;">
+              <div style="align-items:center;display:flex;">
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height:16px;width:16px;margin-right:8px;" alt="Phone">
+                  1300 471 805${enabled.whatsappNumber ? ` | 
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height:16px;width:16px;margin-left:8px;margin-right:8px;" alt="WhatsApp">
+                  ${whatsappNumber}` : ''}
+              </div>
+              ${enabled.email ? `<div style="align-items:center;display:flex;">
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height:16px;width:16px;margin-right:8px;" alt="Email">
+                  <a style="border-bottom:2px solid transparent;color:#333333;padding-bottom:1px;text-decoration:none;transition:all 0.3s ease;" href="mailto:${email}" target="_blank" rel="noopener noreferrer">${email}</a>
+              </div>` : ''}
+              <div style="align-items:center;display:flex;">
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height:16px;width:16px;margin-right:8px;" alt="Website">
+                  <a target="_blank" rel="noopener noreferrer" href="https://ownerinspections.com.au">www.ownerinspections.com.au</a>
+              </div>
+              <div style="align-items:center;display:flex;">
+                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height:16px;width:16px;margin-right:8px;" alt="Address">
+                  Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
+              </div>
+              <div class="social-icons-mobile" style="align-items:center;display:flex;margin-top:8px;display:none;">
+                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height:20px;width:20px;" alt="LinkedIn">
+                </a>
+                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height:20px;width:20px;" alt="YouTube">
+                </a>
+                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height:20px;width:20px;" alt="Facebook">
+                </a>
+                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height:20px;width:20px;" alt="Instagram">
+                </a>
+                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:20px;width:20px;" alt="Medium">
+                </a>
+                <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:20px;width:20px;" alt="Reddit">
+                </a>
+            </div>
+          </div>
+      </div>
+      <hr class="hr-line" style="border: none; height: 1px; background-color: #0b487b; margin-top: 4px; margin-left: 0; width: 50%; max-width: 300px;">
+      ${enabled.description ? `<div class="description-text" style="margin-top: 1px; line-height: 1.2; color: #2c9bd6;">
+          ${description.split('\n').map(line => `<div style="margin-bottom: 1px; font-size:11px;">${line}</div>`).join('')}
+      </div>` : ''}
+      
+      <!-- Certificate Images Row 1 -->
+      <div class="certificate-container" style="display: flex; justify-content: flex-start; margin-top: 2px; gap: 2px; max-width: 50%; overflow-x: hidden;">
+          <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+          <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+          <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+      </div>
+      
+      <!-- Certificate Images Row 2 -->
+      <div class="certificate-container" style="display: flex; justify-content: flex-start; margin-top: -10px; gap: 2px; max-width: 50%; overflow-x: hidden;">
+          <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+          <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+          <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+          </a>
+      </div>
+  </div>
+</div>
+</body>
+</html>`;
+
+    const getPreviewContainerStyle = () => {
+      switch (previewMode) {
+        case 'desktop':
+          return { width: '100%', maxWidth: '800px', margin: '0 auto' };
+        case 'tablet':
+          return { width: '768px', maxWidth: '768px', margin: '0 auto', border: '2px solid #e5e7eb', borderRadius: '8px' };
+        case 'mobile':
+          return { width: '375px', maxWidth: '375px', margin: '0 auto', border: '2px solid #e5e7eb', borderRadius: '8px' };
+        default:
+          return { width: '100%', maxWidth: '800px', margin: '0 auto' };
+      }
+    };
+
     return (
-      <div className="border-2 border-dashed border-slate-200 rounded-lg p-6 bg-white">
-        <div style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: 1.6, color: '#333333' }}>
-          <div style={{ marginBottom: '15px' }}>
-            {enabled.closing && <span>{closing}<br /><br /></span>}
-            {(enabled.name || enabled.position || enabled.company) && (
-              <span>
-                <strong style={{
-                  fontWeight: 'bold',
-                  background: 'linear-gradient(135deg, #0b487b, #2c9bd6)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px',
-                  textShadow: '0 1px 2px rgba(11, 72, 123, 0.1)'
-                }}>
-                  {[
-                    enabled.name ? name : '',
-                    enabled.position ? position : '',
-                    enabled.company ? company : ''
-                  ].filter(Boolean).join(' | ')}
-                </strong>
-                <br />
-              </span>
-            )}
-            {enabled.description && (
-              <div style={{ fontSize: '12px', color: '#555555', lineHeight: 1.5, margin: '12px 0 15px 0' }}>
-                {description.split('\n').map((line, index) => (
-                  <div key={index} style={{ marginBottom: '4px' }}>{line}</div>
-                ))}
-              </div>
-            )}
-          </div>
+      <div className="space-y-4">
+        {/* Preview Mode Toggle */}
+        <div className="flex justify-center gap-2 mb-4">
+          <Button
+            variant={previewMode === 'desktop' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setPreviewMode('desktop')}
+            className="font-inter"
+          >
+            Desktop
+          </Button>
+          <Button
+            variant={previewMode === 'tablet' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setPreviewMode('tablet')}
+            className="font-inter"
+          >
+            Tablet
+          </Button>
+          <Button
+            variant={previewMode === 'mobile' ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setPreviewMode('mobile')}
+            className="font-inter"
+          >
+            Mobile
+          </Button>
+        </div>
 
-          {/* Contact Information */}
-          <div style={{ marginBottom: '15px' }}>
-            {/* Phone and WhatsApp row */}
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', flexWrap: 'nowrap' }}>
-              <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-              </svg>
-              <a href="tel:1300471805" style={{ color: '#333333', textDecoration: 'none', whiteSpace: 'nowrap' }}>1300 471 805</a>
-              {enabled.whatsappNumber && (
-                <>
-                  <span style={{ margin: '0 8px', whiteSpace: 'nowrap' }}>|</span>
-                  <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
-                  </svg>
-                  <a href={`https://api.whatsapp.com/send/?phone=${whatsappNumber.replace(/[^0-9]/g, '')}&text&type=phone_number&app_absent=0`} style={{ color: '#333333', textDecoration: 'none', whiteSpace: 'nowrap' }}>{whatsappNumber}</a>
-                </>
-              )}
-            </div>
-            
-            {/* Email and Website row */}
-            {enabled.email ? (
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', flexWrap: 'nowrap' }}>
-                <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                <a href={`mailto:${email}`} style={{ color: '#333333', textDecoration: 'none', whiteSpace: 'nowrap' }}>{email}</a>
-                <span style={{ margin: '0 8px', whiteSpace: 'nowrap' }}>|</span>
-                <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                </svg>
-                <a href="https://www.ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style={{ color: '#0b487b', textDecoration: 'none', whiteSpace: 'nowrap' }}>OwnerInspections.com.au</a>
-              </div>
-            ) : (
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', flexWrap: 'nowrap' }}>
-                <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0 }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                </svg>
-                <a href="https://www.ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style={{ color: '#0b487b', textDecoration: 'none', whiteSpace: 'nowrap' }}>OwnerInspections.com.au</a>
-              </div>
-            )}
-            
-            <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-              <svg style={{ width: '16px', height: '16px', marginRight: '10px', fill: '#0b487b', flexShrink: 0, marginTop: '2px' }} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              <div style={{ lineHeight: 1.4 }}>
-                <div style={{ marginBottom: '4px' }}><strong style={{ color: '#0b487b' }}>VIC:</strong> Level 14, 380 St Kilda Rd, Melbourne, VIC 3000</div>
-                <div style={{ marginBottom: '4px' }}><strong style={{ color: '#0b487b' }}>QLD:</strong> Level 22, 69 Ann St, Brisbane, QLD 4000</div>
-                <div><strong style={{ color: '#0b487b' }}>NSW:</strong> Level 1, 995 Victoria Rd, West Ryde</div>
-              </div>
-            </div>
+        {/* Preview Container */}
+        <div className="flex justify-center">
+          <div style={getPreviewContainerStyle()}>
+            <iframe
+              srcDoc={previewHTML}
+              style={{
+                width: '100%',
+                height: previewMode === 'mobile' ? '600px' : previewMode === 'tablet' ? '500px' : '400px',
+                border: 'none',
+                backgroundColor: 'white'
+              }}
+              title="Email Signature Preview"
+            />
           </div>
+        </div>
 
-          {/* Social Media Links */}
-          <div style={{ marginTop: '15px', marginBottom: '15px' }}>
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-              <a href="https://www.linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="LinkedIn">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="https://www.youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="YouTube">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
-              <a href="https://www.facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="Facebook">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="Instagram">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="https://www.reddit.com/u/ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="Reddit">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-                </svg>
-              </a>
-              <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', background: 'linear-gradient(135deg, #0b487b, #2c9bd6)', borderRadius: '50%', textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(11, 72, 123, 0.2)', position: 'relative', overflow: 'hidden' }} title="Medium">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px', fill: 'white' }}>
-                  <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Additional Images Row */}
-          <div style={{ marginTop: '0px', marginBottom: '0px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px 110px', maxWidth: '650px', paddingLeft: '20px' }}>
-              <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/NSW-government.svg" alt="NSW Government" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-              <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/BPC.svg" alt="BPC" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-              <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/qbcc.svg" alt="QBCC" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-              <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Au-society.svg" alt="Australian Society" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-              <a href="https://www.google.com/maps/search/owner+inspections+au/@-33.1714001,140.5747706,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/Google-Reviews.svg" alt="Google Reviews" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-              <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer">
-                <img src="https://bb.owner-inspections.com.au/lovable-uploads/Lisence/SVG/ProductReview.svg" alt="Product Review" style={{ height: '60px', width: 'auto', objectFit: 'cover', objectPosition: 'center', transform: 'scale(2.0)' }} />
-              </a>
-            </div>
-          </div>
+        {/* Device Info */}
+        <div className="text-center text-sm text-slate-500 font-inter">
+          {previewMode === 'desktop' && 'Desktop view (800px+)'}
+          {previewMode === 'tablet' && 'Tablet view (768px)'}
+          {previewMode === 'mobile' && 'Mobile view (375px)'}
         </div>
       </div>
     );
@@ -630,7 +797,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                placeholder="MAISON AZDARI"
+                placeholder="Maison Azdari"
                 disabled={!formData.enabled.name}
                 className="mt-2"
               />
@@ -657,8 +824,6 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               />
             </div>
           </div>
-
-
 
           {/* Description */}
           <div className="flex items-center justify-between p-4 border rounded-lg">
@@ -696,7 +861,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                 id="whatsapp"
                 value={formData.whatsappNumber}
                 onChange={(e) => handleInputChange('whatsappNumber', e.target.value)}
-                placeholder="+61 456 111 000"
+                placeholder="+61 888 888 888"
                 disabled={!formData.enabled.whatsappNumber}
                 className="mt-2"
               />
@@ -769,34 +934,73 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               <div>
                 <CardTitle className="font-inter">HTML Code</CardTitle>
                 <CardDescription className="font-inter">
-                  Copy this HTML code to use the signature in your email client
+                  Copy the HTML code for your preferred device view
                 </CardDescription>
               </div>
-              <Button
-                onClick={copyToClipboard}
-                variant="outline"
-                className="font-inter"
-                disabled={copied}
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 mr-2" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 mr-2" />
-                    Copy HTML
-                  </>
-                )}
-              </Button>
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="relative">
-              <pre className="bg-slate-50 p-4 rounded-lg text-xs overflow-x-auto border-2 border-slate-200 font-mono max-h-96 overflow-y-auto">
-                <code>{generatedHTML}</code>
-              </pre>
+          <CardContent className="space-y-6">
+            {/* Desktop HTML */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold text-slate-800 font-inter">Desktop Version</h3>
+                <Button
+                  onClick={copyDesktopHTML}
+                  variant="outline"
+                  size="sm"
+                  className="font-inter"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy Desktop HTML
+                </Button>
+              </div>
+              <div className="relative">
+                <pre className="bg-slate-50 p-4 rounded-lg text-xs overflow-x-auto border-2 border-slate-200 font-mono max-h-48 overflow-y-auto">
+                  <code>{desktopHTML}</code>
+                </pre>
+              </div>
+            </div>
+
+            {/* Tablet HTML */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold text-slate-800 font-inter">Tablet Version</h3>
+                <Button
+                  onClick={copyTabletHTML}
+                  variant="outline"
+                  size="sm"
+                  className="font-inter"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy Tablet HTML
+                </Button>
+              </div>
+              <div className="relative">
+                <pre className="bg-slate-50 p-4 rounded-lg text-xs overflow-x-auto border-2 border-slate-200 font-mono max-h-48 overflow-y-auto">
+                  <code>{tabletHTML}</code>
+                </pre>
+              </div>
+            </div>
+
+            {/* Mobile HTML */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold text-slate-800 font-inter">Mobile Version</h3>
+                <Button
+                  onClick={copyMobileHTML}
+                  variant="outline"
+                  size="sm"
+                  className="font-inter"
+                >
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy Mobile HTML
+                </Button>
+              </div>
+              <div className="relative">
+                <pre className="bg-slate-50 p-4 rounded-lg text-xs overflow-x-auto border-2 border-slate-200 font-mono max-h-48 overflow-y-auto">
+                  <code>{mobileHTML}</code>
+                </pre>
+              </div>
             </div>
           </CardContent>
         </Card>
