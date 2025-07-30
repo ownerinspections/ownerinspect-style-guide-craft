@@ -100,8 +100,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <strong style="font-size: 24px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
     </div>
     <div style="margin-bottom: 15px;">
-      <strong style="font-size: 14px; margin: 0;">${enabled.position ? position : ''}</strong>
+      <strong style="font-size: 24px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
     </div>
+    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
+      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 11px;">${line}</div>`).join('')}
+    </div>` : ''}
     <div style="margin-top: 8px;">
       <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 24px; width: 24px; border: none;" alt="LinkedIn">
@@ -147,11 +150,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     </div>
   </div>
   
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 100%;">
-  
-  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
-    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 11px;">${line}</div>`).join('')}
-  </div>` : ''}
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
   
   <div style="margin-top: 10px;">
     <div style="margin-bottom: 5px;">
@@ -216,12 +215,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   
   <!-- Mobile Layout - Stacked -->
   <div style="margin-bottom: 15px;">
-    <div style="margin-bottom: 5px;">
-      <strong style="font-size: 18px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
-    </div>
     <div style="margin-bottom: 15px;">
-      <strong style="font-size: 11px; margin: 0;">${enabled.position ? position : ''}</strong>
+      <strong style="font-size: 18px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
     </div>
+    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
+      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 8px;">${line}</div>`).join('')}
+    </div>` : ''}
   </div>
   
   <div style="margin-bottom: 15px;">
@@ -267,11 +266,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     </div>
   </div>
   
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 100%;">
-  
-  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
-    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 8px;">${line}</div>`).join('')}
-  </div>` : ''}
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
   
   <div style="margin-top: 10px;">
     <div style="margin-bottom: 5px;">
@@ -327,8 +322,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <strong style="font-size: 20px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
     </div>
     <div style="margin-bottom: 15px;">
-      <strong style="font-size: 12px; margin: 0;">${enabled.position ? position : ''}</strong>
+      <strong style="font-size: 20px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
     </div>
+    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
+      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 10px;">${line}</div>`).join('')}
+    </div>` : ''}
     <div style="margin-top: 8px;">
       <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 20px; width: 20px; border: none;" alt="LinkedIn">
@@ -374,11 +372,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     </div>
   </div>
   
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 50%;">
-  
-  ${enabled.description ? `<div style="margin-top: 10px; line-height: 1.2; color: #2c9bd6;">
-    ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 10px;">${line}</div>`).join('')}
-  </div>` : ''}
+  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
   
   <div style="margin-top: 10px;">
     <div style="margin-bottom: 5px;">
@@ -530,7 +524,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     @media screen and (max-width: 768px) {
       .certificate-container { max-width: 50% !important; gap: 0px !important; }
       .certificate-container img { max-height: 60px !important; }
-      .hr-line { width: 50% !important; }
+      .hr-line { width: 35% !important; }
       .signature { font-size: 12px !important; }
       .name-text { font-size: 20px !important; }
       .position-text { font-size: 12px !important; }
@@ -540,7 +534,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
     }
     @media screen and (max-width: 480px) {
       .certificate-container { max-width: 95% !important; gap: 0.5px !important; }
-      .hr-line { width: 95% !important; }
+      .hr-line { width: 35% !important; }
       .signature { font-size: 11px !important; }
       .name-text { font-size: 18px !important; }
       .position-text { font-size: 11px !important; }
@@ -566,8 +560,10 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       </p>
       <div class="main-container" style="align-items:center;display:flex;gap:15px;">
                       <div style="display:flex;flex-direction:column;justify-content:center;">            
-              <strong class="name-text" style="margin-bottom:2px; font-size:24px; color: #0b487b;">${enabled.name ? name : ''}</strong>
-              <div class="position-text" style="margin-bottom:22px; font-size:14px;"><strong>${enabled.position ? position : ''}</strong></div>
+              <strong class="name-text" style="margin-bottom:15px; font-size:24px; color: #0b487b;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
+              ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
+                ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size:11px;">${line}</div>`).join('')}
+              </div>` : ''}
               <div class="social-icons" style="align-items:center;display:flex;margin-top:8px;">
                 <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
                     <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height:24px;width:24px;" alt="LinkedIn">
@@ -631,10 +627,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
             </div>
           </div>
       </div>
-      <hr class="hr-line" style="border: none; height: 1px; background-color: #0b487b; margin-top: 4px; margin-left: 0; width: 50%; max-width: 300px;">
-      ${enabled.description ? `<div class="description-text" style="margin-top: 1px; line-height: 1.2; color: #2c9bd6;">
-          ${description.split('\n').map(line => `<div style="margin-bottom: 1px; font-size:11px;">${line}</div>`).join('')}
-      </div>` : ''}
+      <hr class="hr-line" style="border: none; height: 1px; background-color: #0b487b; margin-top: 4px; margin-left: 0; width: 35%; max-width: 300px;">
       
       <!-- Certificate Images Row 1 -->
       <div class="certificate-container" style="display: flex; justify-content: flex-start; margin-top: 2px; gap: 2px; max-width: 50%; overflow-x: hidden;">
