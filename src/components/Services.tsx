@@ -11,6 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { PlusCircle, Download, Trash2, Home, Building, Shield, Scale, Headphones, ChevronRight, GitBranch, Zap, Edit, ChevronUp, ChevronDown } from "lucide-react";
 import { 
   getInitialServicesDataWithPersistence, 
+  forceRefreshServicesData,
   downloadServicesData, 
   saveToFile,
   type Question, 
@@ -550,7 +551,26 @@ const Services = () => {
       <div className="space-y-8">
         {/* Export Data Button - Only show in development */}
         {isEditable && (
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-4 gap-2">
+            <Button
+              onClick={async () => {
+                const freshData = await forceRefreshServicesData();
+                setServicesData(freshData);
+              }}
+              variant="outline"
+              className="font-inter"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Refresh from File
+            </Button>
+            <Button
+              onClick={() => window.location.reload()}
+              variant="outline"
+              className="font-inter"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Hard Reload Page
+            </Button>
             <Button
               onClick={() => downloadServicesData(servicesData, 'services-backup.json')}
               variant="outline"

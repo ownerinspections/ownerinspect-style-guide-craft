@@ -114,8 +114,30 @@ export const saveToFile = async (data: ServicesData): Promise<boolean> => {
 
 // Enhanced function to get initial data (always from file)
 export const getInitialServicesDataWithPersistence = (): ServicesData => {
+  // Clear any localStorage data to ensure we load from the JSON file
+  try {
+    localStorage.removeItem('ownerInspections_servicesData');
+  } catch (error) {
+    console.warn('Failed to clear localStorage:', error);
+  }
+  
   // Always load from the JSON file for consistency
   return servicesJsonData as ServicesData;
+};
+
+// Function to force refresh data from file (useful for development)
+export const forceRefreshServicesData = async (): Promise<ServicesData> => {
+  // Clear localStorage
+  try {
+    localStorage.removeItem('ownerInspections_servicesData');
+  } catch (error) {
+    console.warn('Failed to clear localStorage:', error);
+  }
+  
+  // Force reload the JSON data with cache busting
+  const timestamp = Date.now();
+  const freshData = await import(`@/data/services.json?t=${timestamp}`);
+  return freshData.default as ServicesData;
 };
 
 // Icon mapping function since we can't store React components in JSON

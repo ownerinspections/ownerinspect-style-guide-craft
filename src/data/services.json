@@ -79,9 +79,9 @@
       ]
     },
     {
-      "id": "property-compliance",
-      "title": "Property Condition & Compliance Inspections",
-      "description": "Routine, safety, and compliance inspections for existing residential or commercial properties.",
+      "id": "pre-purchase-sale",
+      "title": "Pre-Purchase and Sale Inspections",
+      "description": "Comprehensive inspections for property buyers and sellers to ensure informed decisions.",
       "icon": "Home",
       "services": [
         {
@@ -155,21 +155,29 @@
         {
           "id": "pre-auction",
           "name": "Pre-Auction Inspection",
-          "isCurrentlyOffering": false,
+          "isCurrentlyOffering": true,
           "questions": []
         },
         {
           "id": "pre-settlement",
-          "name": "Pre-Settlement Inspection (Apartment / Off-the-plan)",
+          "name": "Pre-Settlement Inspection (Apartment / Off-the-Plan)",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "rental-condition",
-          "name": "Rental Property Condition Report (Entry/Exit)",
+          "name": "Rental Property Condition Report (Entry / Exit)",
           "isCurrentlyOffering": false,
           "questions": []
-        },
+        }
+      ]
+    },
+    {
+      "id": "maintenance-condition",
+      "title": "Maintenance and Condition Inspections",
+      "description": "Specialized inspections for property maintenance, safety, and compliance requirements.",
+      "icon": "Building",
+      "services": [
         {
           "id": "maintenance",
           "name": "Maintenance Inspection",
@@ -195,18 +203,6 @@
           "questions": []
         },
         {
-          "id": "building-code",
-          "name": "Building Code Compliance Inspection",
-          "isCurrentlyOffering": false,
-          "questions": []
-        },
-        {
-          "id": "fire-safety",
-          "name": "Fire Safety Inspection",
-          "isCurrentlyOffering": false,
-          "questions": []
-        },
-        {
           "id": "pool-barrier",
           "name": "Swimming Pool Barrier / Compliance Inspection",
           "isCurrentlyOffering": false,
@@ -225,6 +221,26 @@
           "questions": []
         },
         {
+          "id": "building-code",
+          "name": "Building Code Compliance Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "fire-safety",
+          "name": "Fire Safety Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "commercial-property",
+      "title": "Commercial Property Inspections",
+      "description": "Specialized inspections for commercial properties and compliance requirements.",
+      "icon": "Building",
+      "services": [
+        {
           "id": "commercial-property",
           "name": "Commercial Property Inspection",
           "isCurrentlyOffering": false,
@@ -233,6 +249,18 @@
         {
           "id": "make-good",
           "name": "Make Good Inspection (Commercial)",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "fire-safety-commercial",
+          "name": "Fire Safety Inspection",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "building-code-commercial",
+          "name": "Building Code Compliance Inspection",
           "isCurrentlyOffering": false,
           "questions": []
         }
@@ -245,44 +273,50 @@
       "icon": "Building",
       "services": [
         {
-          "id": "slab-stage",
-          "name": "Slab Stage Inspection",
+          "id": "bored-piers",
+          "name": "Bored Piers (if required)",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "slab-pre-pour",
+          "name": "Slab Pre-Pour",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "frame-stage",
-          "name": "Frame Stage Inspection",
+          "name": "Frame Stage",
+          "isCurrentlyOffering": false,
+          "questions": []
+        },
+        {
+          "id": "pre-plaster-stage",
+          "name": "Pre-Plaster Stage",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "lock-up-stage",
-          "name": "Lock-up Stage Inspection",
-          "isCurrentlyOffering": false,
-          "questions": []
-        },
-        {
-          "id": "waterproofing",
-          "name": "Waterproofing Inspection",
+          "name": "Lock-up Stage",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
           "id": "fixing-stage",
-          "name": "Fixing Stage Inspection",
+          "name": "Fixing Stage",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
-          "id": "practical-completion",
-          "name": "Practical Completion / Handover Inspection",
+          "id": "waterproofing-stage",
+          "name": "Waterproofing Stage",
           "isCurrentlyOffering": false,
           "questions": []
         },
         {
-          "id": "final-inspection",
-          "name": "Final Inspection Report",
+          "id": "completion-pci",
+          "name": "Completion (PCI) / Pre-Handover",
           "isCurrentlyOffering": false,
           "questions": []
         }
@@ -297,7 +331,7 @@
         {
           "id": "owner-builder-warranty",
           "name": "Owner-Builder Warranty Inspection",
-          "isCurrentlyOffering": false,
+          "isCurrentlyOffering": true,
           "questions": []
         },
         {
@@ -354,7 +388,7 @@
     },
     {
       "id": "remote-advisory",
-      "title": "Remote Building Advisory Service",
+      "title": "Remote Building Advisory Services",
       "description": "Professional building advisory services delivered remotely.",
       "icon": "Headphones",
       "services": [
