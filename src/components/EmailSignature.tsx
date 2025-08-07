@@ -121,7 +121,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
       </a>
-      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
       </a>
     </div>
@@ -260,8 +260,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
       </a>
-      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
+      </a>
+      <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height: 24px; width: 24px; border: none;" alt="TikTok">
       </a>
     </div>
   </div>
@@ -343,8 +346,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 20px; width: 20px; border: none;" alt="Medium">
       </a>
-      <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
         <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 20px; width: 20px; border: none;" alt="Reddit">
+      </a>
+      <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height: 20px; width: 20px; border: none;" alt="TikTok">
       </a>
     </div>
   </div>
@@ -580,8 +586,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                 <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
                     <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:24px;width:24px;" alt="Medium">
                 </a>
-                <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
                     <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:24px;width:24px;" alt="Reddit">
+                </a>
+                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height:24px;width:24px;" alt="TikTok">
                 </a>
             </div>
           </div>
@@ -621,8 +630,11 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                 <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
                     <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:20px;width:20px;" alt="Medium">
                 </a>
-                <a href="https://reddit.com/user/ownerinspections" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
                     <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:20px;width:20px;" alt="Reddit">
+                </a>
+                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height:20px;width:20px;" alt="TikTok">
                 </a>
             </div>
           </div>

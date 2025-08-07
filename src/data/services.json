@@ -275,7 +275,7 @@
         {
           "id": "bored-piers",
           "name": "Bored Piers (if required)",
-          "isCurrentlyOffering": false,
+          "isCurrentlyOffering": true,
           "questions": []
         },
         {
