@@ -86,97 +86,221 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Owner Inspections - Email Signature</title>
+  <!-- Gmail-safe: table-only markup, inline styles, explicit img dimensions -->
+  <!-- Do not edit styles into <style> blocks; Gmail strips them on reply/forward -->
 </head>
 <body>
-<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; color: #333333;">
-  <p style="margin: 0 0 10px 0;">
-    <strong>${enabled.closing ? closing : ''}</strong><br>
+  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#262626;">
+    <tbody>
+      ${enabled.closing ? `
+      <tr>
+        <td style="padding:0 0 10px 0;">
+          <strong>${closing}</strong><br>
     &nbsp;
-  </p>
-  
-  <!-- Desktop Layout -->
-  <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
-    <div style="margin-bottom: 5px;">
-      <strong style="font-size: 24px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
-    </div>
-    <div style="margin-bottom: 15px;">
-      <strong style="font-size: 24px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
-    </div>
-    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
-      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 11px;">${line}</div>`).join('')}
-    </div>` : ''}
-    <div style="margin-top: 8px;">
-      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 24px; width: 24px; border: none;" alt="LinkedIn">
-      </a>
-      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 24px; width: 24px; border: none;" alt="YouTube">
-      </a>
-      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 24px; width: 24px; border: none;" alt="Facebook">
-      </a>
-      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 24px; width: 24px; border: none;" alt="Instagram">
-      </a>
-      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
-      </a>
-      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
-      </a>
-    </div>
-  </div>
-  
-  <div style="display: inline-block; width: 1px; height: 80px; background-color: #0b487b; margin: 0 20px; vertical-align: top;"></div>
-  
-  <div style="display: inline-block; vertical-align: top;">
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
-      1300 471 805${enabled.whatsappNumber ? ` | 
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 16px; width: 16px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
-      ${whatsappNumber}` : ''}
-    </div>
-    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
-      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
-    </div>` : ''}
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
-      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
-    </div>
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 16px; width: 16px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
-      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
-    </div>
-  </div>
-  
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
-  
-  <div style="margin-top: 10px;">
-    <div style="margin-bottom: 5px;">
-      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 60px; width: auto; border: none;">
-      </a>
-    </div>
-    <div>
-      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 60px; width: auto; border: none;">
-      </a>
-    </div>
-  </div>
-</div>
+        </td>
+      </tr>` : ''}
+
+      <!-- Main block: left info | separator | right contact -->
+      <tr>
+        <td>
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <!-- Left column -->
+                <td valign="top" style="padding-right:20px;">
+                  ${enabled.name ? `
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0 0 5px 0;">
+                          <strong style="font-size:24px;color:#0b487b;">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>` : ''}
+                  ${enabled.description ? `
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                      ${description.split('\n').map(line => `
+                      <tr>
+                        <td style="padding:0 0 2px 0;color:#2c9bd6;">
+                          <span style="font-size:11px;">${line}</span>
+                        </td>
+                      </tr>`).join('')}
+                    </tbody>
+                  </table>` : ''}
+                  <!-- Social icons -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="padding-top:8px;">
+                    <tbody>
+                      <tr>
+                        <td style="padding-right:12px;line-height:0;font-size:0;">
+                          <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn">
+                          </a>
+                        </td>
+                        <td style="padding-right:12px;line-height:0;font-size:0;">
+                          <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube">
+                          </a>
+                        </td>
+                        <td style="padding-right:12px;line-height:0;font-size:0;">
+                          <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook">
+                          </a>
+                        </td>
+                        <td style="padding-right:12px;line-height:0;font-size:0;">
+                          <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram">
+                          </a>
+                        </td>
+                        <td style="padding-right:12px;line-height:0;font-size:0;">
+                          <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium">
+                          </a>
+                        </td>
+                        <td style="line-height:0;font-size:0;">
+                          <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
+                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit">
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+
+                <!-- Separator -->
+                <td valign="top" style="width:1px;background:#0b487b;">&nbsp;</td>
+
+                <!-- Right column -->
+                <td valign="top" style="padding-left:20px;">
+                  <!-- Phone / WhatsApp row -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                    <tbody>
+                      <tr>
+                        <td valign="middle" style="padding:0 8px 0 0;">
+                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
+                        </td>
+                        <td valign="middle" style="padding:0; font-size:14px; color:#262626;">1300 471 805</td>
+                        ${enabled.whatsappNumber ? `
+                        <td valign="middle" style="padding:0 8px 0 8px; font-size:14px; color:#262626;">|</td>
+                        <td valign="middle" style="padding:0 8px 0 0;">
+                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
+                        </td>
+                        <td valign="middle" style="padding:0; font-size:14px; color:#262626;">${whatsappNumber}</td>` : ''}
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- Spacer -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+
+                  <!-- Email row -->
+                  ${enabled.email ? `
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                    <tbody>
+                      <tr>
+                        <td valign="middle" style="padding:0 8px 0 0;">
+                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
+                        </td>
+                        <td valign="middle" style="padding:0;">
+                          <a href="mailto:${email}" style="color:#262626;text-decoration:none;">${email}</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>` : ''}
+                  <!-- Spacer -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+
+                  <!-- Website row -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                    <tbody>
+                      <tr>
+                        <td valign="middle" style="padding:0 8px 0 0;">
+                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
+                        </td>
+                        <td valign="middle" style="padding:0;">
+                          <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- Spacer -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+
+                  <!-- Address row -->
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                    <tbody>
+                      <tr>
+                        <td valign="middle" style="padding:0 8px 0 0;">
+                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
+                        </td>
+                        <td valign="middle" style="padding:0; color:#262626;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      
+
+      <!-- Certificates Row 1 -->
+      <tr>
+        <td style="padding-top:10px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td style="padding-right:5px;">
+                  <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence">
+                  </a>
+                </td>
+                <td style="padding-right:5px;">
+                  <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence">
+                  </a>
+                </td>
+                <td>
+                  <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Certificates Row 2 -->
+      <tr>
+        <td style="padding-top:5px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td style="padding-right:5px;">
+                  <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants">
+                  </a>
+                </td>
+                <td style="padding-right:5px;">
+                  <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews">
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer">
+                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>`;
 
@@ -207,95 +331,134 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   <title>Owner Inspections - Email Signature (Mobile)</title>
 </head>
 <body>
-<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; color: #333333;">
-  <p style="margin: 0 0 10px 0;">
-    <strong>${enabled.closing ? closing : ''}</strong><br>
-    &nbsp;
-  </p>
-  
-  <!-- Mobile Layout - Stacked -->
-  <div style="margin-bottom: 15px;">
-    <div style="margin-bottom: 15px;">
-      <strong style="font-size: 18px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
-    </div>
-    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
-      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 8px;">${line}</div>`).join('')}
-    </div>` : ''}
-  </div>
-  
-  <div style="margin-bottom: 15px;">
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
-      1300 471 805${enabled.whatsappNumber ? ` | 
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 12px; width: 12px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
-      ${whatsappNumber}` : ''}
-    </div>
-    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
-      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
-    </div>` : ''}
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
-      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
-    </div>
-    <div style="margin-bottom: 15px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 12px; width: 12px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
-      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
-    </div>
-    
-    <!-- Social Media Icons Under Address -->
-    <div style="margin-top: 10px;">
-      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 24px; width: 24px; border: none;" alt="LinkedIn">
-      </a>
-      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 24px; width: 24px; border: none;" alt="YouTube">
-      </a>
-      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 24px; width: 24px; border: none;" alt="Facebook">
-      </a>
-      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 24px; width: 24px; border: none;" alt="Instagram">
-      </a>
-      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 24px; width: 24px; border: none;" alt="Medium">
-      </a>
-      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 24px; width: 24px; border: none;" alt="Reddit">
-      </a>
-      <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height: 24px; width: 24px; border: none;" alt="TikTok">
-      </a>
-    </div>
-  </div>
-  
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
-  
-  <div style="margin-top: 10px;">
-    <div style="margin-bottom: 5px;">
-      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 40px; width: auto; border: none;">
-      </a>
-      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 40px; width: auto; border: none;">
-      </a>
-      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 40px; width: auto; border: none;">
-      </a>
-    </div>
-    <div>
-      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 40px; width: auto; border: none;">
-      </a>
-      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 40px; width: auto; border: none;">
-      </a>
-      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 40px; width: auto; border: none;">
-      </a>
-    </div>
-  </div>
-</div>
+  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:#262626;">
+    <tbody>
+      ${enabled.closing ? `
+      <tr>
+        <td style="padding:0 0 10px 0;"><strong>${closing}</strong><br>&nbsp;</td>
+      </tr>` : ''}
+      <tr>
+        <td>
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              ${enabled.name ? `
+              <tr>
+                <td style="padding:0 0 10px 0;">
+                  <strong style="font-size:18px;color:#0b487b;">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
+                </td>
+              </tr>` : ''}
+              ${enabled.description ? description.split('\n').map(line => `
+              <tr>
+                <td style="padding:0 0 2px 0;color:#2c9bd6;"><span style="font-size:8px;">${line}</span></td>
+              </tr>`).join('') : ''}
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Contact rows -->
+      <tr><td>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
+          <tr>
+            <td valign="middle" style="padding:0 8px 0 0;">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
+            </td>
+            <td valign="middle" style="padding:0;">1300 471 805</td>
+            ${enabled.whatsappNumber ? `
+            <td valign="middle" style="padding:0 8px;">|</td>
+            <td valign="middle" style="padding:0 8px 0 0;">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
+            </td>
+            <td valign="middle" style="padding:0;">${whatsappNumber}</td>` : ''}
+          </tr>
+        </tbody></table>
+      </td></tr>
+      ${enabled.email ? `
+      <tr><td>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
+          <tr>
+            <td valign="middle" style="padding:0 8px 0 0;">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
+            </td>
+            <td valign="middle" style="padding:0;"><a href="mailto:${email}" style="color:#262626;text-decoration:none;">${email}</a></td>
+          </tr>
+        </tbody></table>
+      </td></tr>` : ''}
+      <tr><td>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
+          <tr>
+            <td valign="middle" style="padding:0 8px 0 0;">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
+            </td>
+            <td valign="middle" style="padding:0;"><a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a></td>
+          </tr>
+        </tbody></table>
+      </td></tr>
+      <tr><td>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
+          <tr>
+            <td valign="middle" style="padding:0 8px 0 0;">
+              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
+            </td>
+            <td valign="middle" style="padding:0;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td>
+          </tr>
+        </tbody></table>
+      </td></tr>
+
+      <!-- Social icons under address -->
+      <tr>
+        <td style="padding-top:10px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
+            <tr>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a>
+              </td>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a>
+              </td>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a>
+              </td>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a>
+              </td>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a>
+              </td>
+              <td style="padding-right:12px;line-height:0;font-size:0;">
+                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit"></a>
+              </td>
+              <td style="line-height:0;font-size:0;">
+                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="TikTok"></a>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+
+      
+
+      <!-- Certificates (smaller) -->
+      <tr>
+        <td style="padding-top:10px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
+            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-top:5px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
+            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>`;
 
@@ -313,98 +476,63 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   <title>Owner Inspections - Email Signature (Tablet)</title>
 </head>
 <body>
-<div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; color: #333333;">
-  <p style="margin: 0 0 10px 0;">
-    <strong>${enabled.closing ? closing : ''}</strong><br>
-    &nbsp;
-  </p>
-  
-  <!-- Tablet Layout - Side by Side -->
-  <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
-    <div style="margin-bottom: 5px;">
-      <strong style="font-size: 20px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}</strong>
-    </div>
-    <div style="margin-bottom: 15px;">
-      <strong style="font-size: 20px; color: #0b487b; margin: 0;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
-    </div>
-    ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
-      ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size: 10px;">${line}</div>`).join('')}
-    </div>` : ''}
-    <div style="margin-top: 8px;">
-      <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height: 20px; width: 20px; border: none;" alt="LinkedIn">
-      </a>
-      <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height: 20px; width: 20px; border: none;" alt="YouTube">
-      </a>
-      <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height: 20px; width: 20px; border: none;" alt="Facebook">
-      </a>
-      <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height: 20px; width: 20px; border: none;" alt="Instagram">
-      </a>
-      <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height: 20px; width: 20px; border: none;" alt="Medium">
-      </a>
-      <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right: 12px; text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height: 20px; width: 20px; border: none;" alt="Reddit">
-      </a>
-      <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height: 20px; width: 20px; border: none;" alt="TikTok">
-      </a>
-    </div>
-  </div>
-  
-  <div style="display: inline-block; width: 1px; height: 80px; background-color: #0b487b; margin: 0 20px; vertical-align: top;"></div>
-  
-  <div style="display: inline-block; vertical-align: top;">
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Phone">
-      1300 471 805${enabled.whatsappNumber ? ` | 
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height: 14px; width: 14px; margin-left: 8px; margin-right: 8px; vertical-align: middle; border: none;" alt="WhatsApp">
-      ${whatsappNumber}` : ''}
-    </div>
-    ${enabled.email ? `<div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Email">
-      <a href="mailto:${email}" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">${email}</a>
-    </div>` : ''}
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Website">
-      <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color: #333333; text-decoration: none;">www.ownerinspections.com.au</a>
-    </div>
-    <div style="margin-bottom: 8px; line-height: 1.4;">
-      <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height: 14px; width: 14px; margin-right: 8px; vertical-align: middle; border: none;" alt="Address">
-      Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
-    </div>
-  </div>
-  
-  <hr style="border: none; height: 1px; background-color: #0b487b; margin: 15px 0 10px 0; width: 35%;">
-  
-  <div style="margin-top: 10px;">
-    <div style="margin-bottom: 5px;">
-      <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="height: 60px; width: auto; border: none;">
-      </a>
-    </div>
-    <div>
-      <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-decoration: none; margin-right: 5px;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="height: 60px; width: auto; border: none;">
-      </a>
-      <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="height: 60px; width: auto; border: none;">
-      </a>
-    </div>
-  </div>
-</div>
+  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;color:#262626;">
+    <tbody>
+      ${enabled.closing ? `
+      <tr><td style="padding:0 0 10px 0;"><strong>${closing}</strong><br>&nbsp;</td></tr>` : ''}
+      <tr>
+        <td>
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+            <td valign="top" style="padding-right:20px;">
+              ${enabled.name ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td style=\"padding:0 0 5px 0;\"><strong style=\"font-size:20px;color:#0b487b;\">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong></td></tr></tbody></table>` : ''}
+              ${enabled.description ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody>${description.split('\n').map(line => `<tr><td style=\"padding:0 0 2px 0;color:#2c9bd6;\"><span style=\"font-size:10px;\">${line}</span></td></tr>`).join('')}</tbody></table>` : ''}
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="padding-top:8px;"><tbody><tr>
+                <td style="padding-right:12px;"><a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a></td>
+                <td style="padding-right:12px;"><a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a></td>
+                <td style="padding-right:12px;"><a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a></td>
+                <td style="padding-right:12px;"><a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a></td>
+                <td style="padding-right:12px;"><a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a></td>
+                <td><a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit"></a></td>
+              </tr></tbody></table>
+            </td>
+            <td valign="top" style="width:1px;background:#0b487b;">&nbsp;</td>
+            <td valign="top" style="padding-left:20px;">
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+                <td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone"></td>
+                <td valign="middle" style="padding:0;">1300 471 805</td>
+                ${enabled.whatsappNumber ? `<td valign=\"middle\" style=\"padding:0 8px;\">|</td><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"WhatsApp\"></td><td valign=\"middle\" style=\"padding:0;\">${whatsappNumber}</td>` : ''}
+              </tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+              ${enabled.email ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"Email\"></td><td valign=\"middle\" style=\"padding:0;\"><a href=\"mailto:${email}\" style=\"color:#262626;text-decoration:none;\">${email}</a></td></tr></tbody></table>` : ''}
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website"></td><td valign="middle" style="padding:0;"><a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a></td></tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address"></td><td valign="middle" style="padding:0;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td></tr></tbody></table>
+            </td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding-top:10px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
+            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-top:5px;">
+          <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
+            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>`;
 
@@ -514,163 +642,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   };
 
   const renderPreview = () => {
-    const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
-    
-    const previewHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Owner Inspections - Email Signature</title>
-  <style>
-    @media screen and (min-width: 769px) {
-      .certificate-container { max-width: 50% !important; }
-      .certificate-container img { max-height: 80px !important; }
-    }
-    @media screen and (max-width: 768px) {
-      .certificate-container { max-width: 50% !important; gap: 0px !important; }
-      .certificate-container img { max-height: 60px !important; }
-      .hr-line { width: 35% !important; }
-      .signature { font-size: 12px !important; }
-      .name-text { font-size: 20px !important; }
-      .position-text { font-size: 12px !important; }
-      .social-icons img { height: 20px !important; width: 20px !important; }
-      .contact-info img { height: 14px !important; width: 14px !important; }
-      .description-text { font-size: 10px !important; }
-    }
-    @media screen and (max-width: 480px) {
-      .certificate-container { max-width: 95% !important; gap: 0.5px !important; }
-      .hr-line { width: 35% !important; }
-      .signature { font-size: 11px !important; }
-      .name-text { font-size: 18px !important; }
-      .position-text { font-size: 11px !important; }
-      .social-icons img { height: 18px !important; width: 18px !important; }
-      .contact-info img { height: 12px !important; width: 12px !important; }
-      .description-text { font-size: 8px !important; }
-      .main-container { flex-direction: column !important; gap: 15px !important; align-items: flex-start !important; }
-      .main-container > div:first-child { order: 1 !important; width: 100% !important; }
-      .main-container > div:last-child { order: 2 !important; width: 100% !important; }
-      .main-container > div:nth-child(2) { display: none !important; }
-      .main-container .social-icons { display: none !important; }
-      .social-icons-mobile { display: flex !important; }
-      .social-icons-mobile img { height: 24px !important; width: 24px !important; }
-    }
-  </style>
-</head>
-<body>
-<div class="signature" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px;">
-  <div class="contact">
-      <p>
-          <strong>${enabled.closing ? closing : ''}</strong><br>
-          &nbsp;
-      </p>
-      <div class="main-container" style="align-items:center;display:flex;gap:15px;">
-                      <div style="display:flex;flex-direction:column;justify-content:center;">            
-              <strong class="name-text" style="margin-bottom:15px; font-size:24px; color: #0b487b;">${enabled.name ? name : ''}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
-              ${enabled.description ? `<div style="margin-bottom: 15px; line-height: 1.2; color: #2c9bd6;">
-                ${description.split('\n').map(line => `<div style="margin-bottom: 2px; font-size:11px;">${line}</div>`).join('')}
-              </div>` : ''}
-              <div class="social-icons" style="align-items:center;display:flex;margin-top:8px;">
-                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height:24px;width:24px;" alt="LinkedIn">
-                </a>
-                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height:24px;width:24px;" alt="YouTube">
-                </a>
-                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height:24px;width:24px;" alt="Facebook">
-                </a>
-                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height:24px;width:24px;" alt="Instagram">
-                </a>
-                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:24px;width:24px;" alt="Medium">
-                </a>
-                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:24px;width:24px;" alt="Reddit">
-                </a>
-                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height:24px;width:24px;" alt="TikTok">
-                </a>
-            </div>
-          </div>
-          <div style="width:1px;height:80px;background-color:#0b487b;margin:0 4px;"></div>
-          <div class="contact-info" style="display:flex;flex-direction:column;gap:8px;justify-content:center;">
-              <div style="align-items:center;display:flex;">
-                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" style="height:16px;width:16px;margin-right:8px;" alt="Phone">
-                  1300 471 805${enabled.whatsappNumber ? ` | 
-                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" style="height:16px;width:16px;margin-left:8px;margin-right:8px;" alt="WhatsApp">
-                  ${whatsappNumber}` : ''}
-              </div>
-              ${enabled.email ? `<div style="align-items:center;display:flex;">
-                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" style="height:16px;width:16px;margin-right:8px;" alt="Email">
-                  <a style="border-bottom:2px solid transparent;color:#333333;padding-bottom:1px;text-decoration:none;transition:all 0.3s ease;" href="mailto:${email}" target="_blank" rel="noopener noreferrer">${email}</a>
-              </div>` : ''}
-              <div style="align-items:center;display:flex;">
-                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" style="height:16px;width:16px;margin-right:8px;" alt="Website">
-                  <a target="_blank" rel="noopener noreferrer" href="https://ownerinspections.com.au">www.ownerinspections.com.au</a>
-              </div>
-              <div style="align-items:center;display:flex;">
-                  <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" style="height:16px;width:16px;margin-right:8px;" alt="Address">
-                  Level 8, 97 Pacific Hwy, North Sydney, NSW 2065
-              </div>
-              <div class="social-icons-mobile" style="align-items:center;display:flex;margin-top:8px;display:none;">
-                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" style="height:20px;width:20px;" alt="LinkedIn">
-                </a>
-                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" style="height:20px;width:20px;" alt="YouTube">
-                </a>
-                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" style="height:20px;width:20px;" alt="Facebook">
-                </a>
-                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" style="height:20px;width:20px;" alt="Instagram">
-                </a>
-                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" style="height:20px;width:20px;" alt="Medium">
-                </a>
-                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" style="height:20px;width:20px;" alt="Reddit">
-                </a>
-                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" style="height:20px;width:20px;" alt="TikTok">
-                </a>
-            </div>
-          </div>
-      </div>
-      <hr class="hr-line" style="border: none; height: 1px; background-color: #0b487b; margin-top: 4px; margin-left: 0; width: 35%; max-width: 300px;">
-      
-      <!-- Certificate Images Row 1 -->
-      <div class="certificate-container" style="display: flex; justify-content: flex-start; margin-top: 2px; gap: 2px; max-width: 50%; overflow-x: hidden;">
-          <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" alt="NSW Government Licence" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-          <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" alt="QBCC Licence" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-          <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" alt="Building Practitioners Board" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-      </div>
-      
-      <!-- Certificate Images Row 2 -->
-      <div class="certificate-container" style="display: flex; justify-content: flex-start; margin-top: -10px; gap: 2px; max-width: 50%; overflow-x: hidden;">
-          <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" alt="Australian Society of Building Consultants" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-          <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" alt="Google Reviews" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-          <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer" style="text-align: center; flex: 1; max-width: calc(33.33% - 1.33px);">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" alt="Product Review" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
-          </a>
-      </div>
-  </div>
-</div>
-</body>
-</html>`;
-
+    const html = previewMode === 'tablet' ? tabletHTML : previewMode === 'mobile' ? mobileHTML : desktopHTML;
     const getPreviewContainerStyle = () => {
       switch (previewMode) {
         case 'desktop':
@@ -683,10 +655,8 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
           return { width: '100%', maxWidth: '800px', margin: '0 auto' };
       }
     };
-
     return (
       <div className="space-y-4">
-        {/* Preview Mode Toggle */}
         <div className="flex justify-center gap-2 mb-4">
           <Button
             variant={previewMode === 'desktop' ? 'default' : 'outline'}
@@ -713,12 +683,10 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
             Mobile
           </Button>
         </div>
-
-        {/* Preview Container */}
         <div className="flex justify-center">
           <div style={getPreviewContainerStyle()}>
             <iframe
-              srcDoc={previewHTML}
+              srcDoc={html}
               style={{
                 width: '100%',
                 height: previewMode === 'mobile' ? '600px' : previewMode === 'tablet' ? '500px' : '400px',
@@ -729,8 +697,6 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
             />
           </div>
         </div>
-
-        {/* Device Info */}
         <div className="text-center text-sm text-slate-500 font-inter">
           {previewMode === 'desktop' && 'Desktop view (800px+)'}
           {previewMode === 'tablet' && 'Tablet view (768px)'}
