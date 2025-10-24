@@ -135,32 +135,27 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                       <tr>
                         <td style="padding-right:12px;line-height:0;font-size:0;">
                           <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Linkedin-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn">
                           </a>
                         </td>
                         <td style="padding-right:12px;line-height:0;font-size:0;">
                           <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Youtube-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube">
                           </a>
                         </td>
                         <td style="padding-right:12px;line-height:0;font-size:0;">
                           <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Facebook-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook">
                           </a>
                         </td>
                         <td style="padding-right:12px;line-height:0;font-size:0;">
                           <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Instagram-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram">
                           </a>
                         </td>
                         <td style="padding-right:12px;line-height:0;font-size:0;">
                           <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium">
-                          </a>
-                        </td>
-                        <td style="line-height:0;font-size:0;">
-                          <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Medium-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium">
                           </a>
                         </td>
                       </tr>
@@ -178,13 +173,13 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     <tbody>
                       <tr>
                         <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Phone-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
                         </td>
                         <td valign="middle" style="padding:0; font-size:14px; color:#262626;">1300 471 805</td>
                         ${enabled.whatsappNumber ? `
                         <td valign="middle" style="padding:0 8px 0 8px; font-size:14px; color:#262626;">|</td>
                         <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Whatsapp-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
                         </td>
                         <td valign="middle" style="padding:0; font-size:14px; color:#262626;">${whatsappNumber}</td>` : ''}
                       </tr>
@@ -199,7 +194,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     <tbody>
                       <tr>
                         <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Massage-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
                         </td>
                         <td valign="middle" style="padding:0;">
                           <a href="mailto:${email}" style="color:#262626;text-decoration:none;">${email}</a>
@@ -215,7 +210,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     <tbody>
                       <tr>
                         <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Web-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
                         </td>
                         <td valign="middle" style="padding:0;">
                           <a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a>
@@ -231,7 +226,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     <tbody>
                       <tr>
                         <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Pin-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
                         </td>
                         <td valign="middle" style="padding:0; color:#262626;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td>
                       </tr>
@@ -254,17 +249,17 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               <tr>
                 <td style="padding-right:5px;">
                   <a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/nsw-fair-trading-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence">
                   </a>
                 </td>
                 <td style="padding-right:5px;">
                   <a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/qld-qbcc-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence">
                   </a>
                 </td>
                 <td>
                   <a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/vic-bpc-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board">
                   </a>
                 </td>
               </tr>
@@ -281,17 +276,17 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               <tr>
                 <td style="padding-right:5px;">
                   <a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/asbc-sip-1-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants">
                   </a>
                 </td>
                 <td style="padding-right:5px;">
                   <a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/Google-Reviews-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews">
                   </a>
                 </td>
                 <td>
                   <a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer">
-                    <img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review">
+                    <img src="https://ownerinspections.com.au/wp-content/uploads/ProductReview-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review">
                   </a>
                 </td>
               </tr>
@@ -361,13 +356,13 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
         <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
           <tr>
             <td valign="middle" style="padding:0 8px 0 0;">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
+              <img src="https://ownerinspections.com.au/wp-content/uploads/Phone-300x300.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
             </td>
             <td valign="middle" style="padding:0;">1300 471 805</td>
             ${enabled.whatsappNumber ? `
             <td valign="middle" style="padding:0 8px;">|</td>
             <td valign="middle" style="padding:0 8px 0 0;">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
+              <img src="https://ownerinspections.com.au/wp-content/uploads/Whatsapp-300x300.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
             </td>
             <td valign="middle" style="padding:0;">${whatsappNumber}</td>` : ''}
           </tr>
@@ -378,7 +373,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
         <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
           <tr>
             <td valign="middle" style="padding:0 8px 0 0;">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
+              <img src="https://ownerinspections.com.au/wp-content/uploads/Massage-300x300.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Email">
             </td>
             <td valign="middle" style="padding:0;"><a href="mailto:${email}" style="color:#262626;text-decoration:none;">${email}</a></td>
           </tr>
@@ -388,7 +383,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
         <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
           <tr>
             <td valign="middle" style="padding:0 8px 0 0;">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
+              <img src="https://ownerinspections.com.au/wp-content/uploads/Web-300x300.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website">
             </td>
             <td valign="middle" style="padding:0;"><a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a></td>
           </tr>
@@ -398,7 +393,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
         <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
           <tr>
             <td valign="middle" style="padding:0 8px 0 0;">
-              <img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
+              <img src="https://ownerinspections.com.au/wp-content/uploads/Pin-300x300.png" width="12" height="12" style="width:12px;height:12px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address">
             </td>
             <td valign="middle" style="padding:0;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td>
           </tr>
@@ -411,25 +406,22 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
           <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody>
             <tr>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a>
+                <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Linkedin-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a>
               </td>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a>
+                <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Youtube-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a>
               </td>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a>
+                <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Facebook-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a>
               </td>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a>
+                <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Instagram-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a>
               </td>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a>
+                <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Medium-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a>
               </td>
               <td style="padding-right:12px;line-height:0;font-size:0;">
-                <a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit"></a>
-              </td>
-              <td style="line-height:0;font-size:0;">
-                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Tiktok.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="TikTok"></a>
+                <a href="https://www.tiktok.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Tiktok-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="TikTok"></a>
               </td>
             </tr>
           </tbody></table>
@@ -442,18 +434,18 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <tr>
         <td style="padding-top:10px;">
           <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
-            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
-            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
+            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/nsw-fair-trading-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/qld-qbcc-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
+            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/vic-bpc-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
           </tr></tbody></table>
         </td>
       </tr>
       <tr>
         <td style="padding-top:5px;">
           <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
-            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
-            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
+            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/asbc-sip-1-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Google-Reviews-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
+            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/ProductReview-300x133.jpg" width="100" height="40" style="width:100px;height:40px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
           </tr></tbody></table>
         </td>
       </tr>
@@ -487,27 +479,26 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
               ${enabled.name ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td style=\"padding:0 0 5px 0;\"><strong style=\"font-size:20px;color:#0b487b;\">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong></td></tr></tbody></table>` : ''}
               ${enabled.description ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody>${description.split('\n').map(line => `<tr><td style=\"padding:0 0 2px 0;color:#2c9bd6;\"><span style=\"font-size:10px;\">${line}</span></td></tr>`).join('')}</tbody></table>` : ''}
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="padding-top:8px;"><tbody><tr>
-                <td style="padding-right:12px;"><a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Linkedin.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a></td>
-                <td style="padding-right:12px;"><a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Youtube.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a></td>
-                <td style="padding-right:12px;"><a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Facebook.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a></td>
-                <td style="padding-right:12px;"><a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Instagram.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a></td>
-                <td style="padding-right:12px;"><a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Medium.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a></td>
-                <td><a href="https://www.reddit.com/r/ownerinspections/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Reddit.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Reddit"></a></td>
+                <td style="padding-right:12px;"><a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Linkedin-300x300.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn"></a></td>
+                <td style="padding-right:12px;"><a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Youtube-300x300.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube"></a></td>
+                <td style="padding-right:12px;"><a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Facebook-300x300.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook"></a></td>
+                <td style="padding-right:12px;"><a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Instagram-300x300.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram"></a></td>
+                <td style="padding-right:12px;"><a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Medium-300x300.png" width="20" height="20" style="width:20px;height:20px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium"></a></td>
               </tr></tbody></table>
             </td>
             <td valign="top" style="width:1px;background:#0b487b;">&nbsp;</td>
             <td valign="top" style="padding-left:20px;">
               <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-                <td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Phone.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone"></td>
+                <td valign="middle" style="padding:0 8px 0 0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Phone-300x300.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone"></td>
                 <td valign="middle" style="padding:0;">1300 471 805</td>
-                ${enabled.whatsappNumber ? `<td valign=\"middle\" style=\"padding:0 8px;\">|</td><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Whatsapp.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"WhatsApp\"></td><td valign=\"middle\" style=\"padding:0;\">${whatsappNumber}</td>` : ''}
+                ${enabled.whatsappNumber ? `<td valign=\"middle\" style=\"padding:0 8px;\">|</td><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://ownerinspections.com.au/wp-content/uploads/Whatsapp-300x300.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"WhatsApp\"></td><td valign=\"middle\" style=\"padding:0;\">${whatsappNumber}</td>` : ''}
               </tr></tbody></table>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
-              ${enabled.email ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Massage.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"Email\"></td><td valign=\"middle\" style=\"padding:0;\"><a href=\"mailto:${email}\" style=\"color:#262626;text-decoration:none;\">${email}</a></td></tr></tbody></table>` : ''}
+              ${enabled.email ? `<table role=\"presentation\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr><td valign=\"middle\" style=\"padding:0 8px 0 0;\"><img src=\"https://ownerinspections.com.au/wp-content/uploads/Massage-300x300.png\" width=\"14\" height=\"14\" style=\"width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;\" alt=\"Email\"></td><td valign=\"middle\" style=\"padding:0;\"><a href=\"mailto:${email}\" style=\"color:#262626;text-decoration:none;\">${email}</a></td></tr></tbody></table>` : ''}
               <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
-              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Web.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website"></td><td valign="middle" style="padding:0;"><a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a></td></tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Web-300x300.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Website"></td><td valign="middle" style="padding:0;"><a href="https://ownerinspections.com.au" target="_blank" rel="noopener noreferrer" style="color:#262626;text-decoration:none;">www.ownerinspections.com.au</a></td></tr></tbody></table>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
-              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://bb.owner-inspections.com.au/lovable-uploads/socialmedia-icons/Pin.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address"></td><td valign="middle" style="padding:0;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td></tr></tbody></table>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td valign="middle" style="padding:0 8px 0 0;"><img src="https://ownerinspections.com.au/wp-content/uploads/Pin-300x300.png" width="14" height="14" style="width:14px;height:14px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Address"></td><td valign="middle" style="padding:0;">Level 8, 97 Pacific Hwy, North Sydney, NSW 2065</td></tr></tbody></table>
             </td>
           </tr></tbody></table>
         </td>
@@ -516,18 +507,18 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       <tr>
         <td style="padding-top:10px;">
           <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/nsw-gov.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
-            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/qbcc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
-            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/bpc.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
+            <td style="padding-right:5px;"><a href="https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-3N7CE4X" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/nsw-fair-trading-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="NSW Government Licence"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.onlineservices.qbcc.qld.gov.au/OnlineLicenceSearch/VisualElements/ShowDetailResultContent.aspx?LicNO=15249792&name=&firstName=&licCat=LIC&searchType=Contractor" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/qld-qbcc-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="QBCC Licence"></a></td>
+            <td><a href="https://bams.vba.vic.gov.au/bams/s/practitioner-detail?inputParams=zcTxTUWVcpMyC5oukumULdqpYzjywoorAYPb19uGLRZLvYJjzfh9fMlAvwbNGRpB" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/vic-bpc-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Building Practitioners Board"></a></td>
           </tr></tbody></table>
         </td>
       </tr>
       <tr>
         <td style="padding-top:5px;">
           <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/au-society.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
-            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/google-reviews.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
-            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://bb.owner-inspections.com.au/lovable-uploads/certificates/png/product-review.png" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
+            <td style="padding-right:5px;"><a href="https://asbc.com.au/members/maison-azdari/" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/asbc-sip-1-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Australian Society of Building Consultants"></a></td>
+            <td style="padding-right:5px;"><a href="https://www.google.com/maps/search/owner+inspections/@-32.5397158,143.7071653,6z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/Google-Reviews-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Google Reviews"></a></td>
+            <td><a href="https://www.productreview.com.au/listings/owner-inspections" target="_blank" rel="noopener noreferrer"><img src="https://ownerinspections.com.au/wp-content/uploads/ProductReview-300x133.jpg" width="120" height="60" style="width:120px;height:60px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Product Review"></a></td>
           </tr></tbody></table>
         </td>
       </tr>

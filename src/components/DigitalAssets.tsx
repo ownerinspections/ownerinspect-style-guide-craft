@@ -126,32 +126,32 @@ const DigitalAssets = () => {
             {/* Thumbnail Grid */}
             <div className="grid grid-cols-3 gap-2 p-4 bg-slate-50 rounded-lg">
               <img 
-                src="/lovable-uploads/certificates/png/qbcc.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/qld-qbcc-300x133.jpg" 
                 alt="QBCC Certificate" 
                 className="w-12 h-8 object-contain"
               />
               <img 
-                src="/lovable-uploads/certificates/png/nsw-gov.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/nsw-fair-trading-300x133.jpg" 
                 alt="NSW Government" 
                 className="w-12 h-8 object-contain"
               />
               <img 
-                src="/lovable-uploads/certificates/png/au-society.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/asbc-sip-1-300x133.jpg" 
                 alt="AU Society" 
                 className="w-12 h-8 object-contain"
               />
               <img 
-                src="/lovable-uploads/certificates/png/bpc.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/vic-bpc-300x133.jpg" 
                 alt="BPC Certificate" 
                 className="w-12 h-8 object-contain"
               />
               <img 
-                src="/lovable-uploads/certificates/png/google-reviews.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/Google-Reviews-300x133.jpg" 
                 alt="Google Reviews" 
                 className="w-12 h-8 object-contain"
               />
               <img 
-                src="/lovable-uploads/certificates/png/product-review.png" 
+                src="https://ownerinspections.com.au/wp-content/uploads/ProductReview-300x133.jpg" 
                 alt="Product Review" 
                 className="w-12 h-8 object-contain"
               />
