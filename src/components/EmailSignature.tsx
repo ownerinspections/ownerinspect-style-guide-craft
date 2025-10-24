@@ -80,17 +80,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   const generateEmailSignature = () => {
     const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
     
-    const emailSignatureHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Owner Inspections - Email Signature</title>
-  <!-- Gmail-safe: table-only markup, inline styles, explicit img dimensions -->
-  <!-- Do not edit styles into <style> blocks; Gmail strips them on reply/forward -->
-</head>
-<body>
-  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#262626;">
+    const emailSignatureHTML = `<!--[if mso]>
+<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+<v:fill type="tile" color="#ffffff"/>
+</v:background>
+<![endif]-->
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:14px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
     <tbody>
       ${enabled.closing ? `
       <tr>
@@ -296,8 +291,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       </tr>
     </tbody>
   </table>
-</body>
-</html>`;
+`;
 
     const desktopHTML = emailSignatureHTML;
     const tabletHTML = generateTabletHTML();
@@ -318,15 +312,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   const generateMobileHTML = () => {
     const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
     
-    const mobileHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Owner Inspections - Email Signature (Mobile)</title>
-</head>
-<body>
-  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:#262626;">
+    const mobileHTML = `<!--[if mso]>
+<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+<v:fill type="tile" color="#ffffff"/>
+</v:background>
+<![endif]-->
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:11px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
     <tbody>
       ${enabled.closing ? `
       <tr>
@@ -451,8 +442,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       </tr>
     </tbody>
   </table>
-</body>
-</html>`;
+`;
 
     return mobileHTML;
   };
@@ -460,15 +450,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
   const generateTabletHTML = () => {
     const { closing, name, position, company, description, whatsappNumber, email, enabled } = formData;
     
-    const tabletHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Owner Inspections - Email Signature (Tablet)</title>
-</head>
-<body>
-  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:12px;color:#262626;">
+    const tabletHTML = `<!--[if mso]>
+<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+<v:fill type="tile" color="#ffffff"/>
+</v:background>
+<![endif]-->
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:12px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
     <tbody>
       ${enabled.closing ? `
       <tr><td style="padding:0 0 10px 0;"><strong>${closing}</strong><br>&nbsp;</td></tr>` : ''}
@@ -524,8 +511,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
       </tr>
     </tbody>
   </table>
-</body>
-</html>`;
+`;
 
     return tabletHTML;
   };
