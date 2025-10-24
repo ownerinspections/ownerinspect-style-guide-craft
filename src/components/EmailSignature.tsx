@@ -85,12 +85,12 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
 <v:fill type="tile" color="#ffffff"/>
 </v:background>
 <![endif]-->
-<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:14px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:14px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;mso-padding-alt:0pt;mso-margin-left-alt:0pt;mso-margin-right-alt:0pt;">
     <tbody>
       ${enabled.closing ? `
       <tr>
-        <td style="padding:0 0 10px 0;">
-          <strong>${closing}</strong><br>
+        <td style="padding:0 0 10px 0;mso-padding-alt:0pt 0pt 10pt 0pt;mso-line-height-rule:exactly;">
+          <strong style="font-weight:bold !important;mso-bidi-font-weight:bold;">${closing}</strong><br>
     &nbsp;
         </td>
       </tr>` : ''}
@@ -107,8 +107,8 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                   <table role="presentation" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                       <tr>
-                        <td style="padding:0 0 5px 0;">
-                          <strong style="font-size:24px;color:#0b487b;">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
+                        <td style="padding:0 0 5px 0;mso-padding-alt:0pt 0pt 5pt 0pt;mso-line-height-rule:exactly;">
+                          <strong style="font-size:24px !important;color:#0b487b !important;font-weight:bold !important;mso-bidi-font-weight:bold;mso-font-charset:0;">${name}${enabled.position ? ` | ${position}` : ''} | Owner Inspections</strong>
                         </td>
                       </tr>
                     </tbody>
@@ -118,39 +118,39 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     <tbody>
                       ${description.split('\n').map(line => `
                       <tr>
-                        <td style="padding:0 0 2px 0;color:#2c9bd6;">
-                          <span style="font-size:11px;">${line}</span>
+                        <td style="padding:0 0 2px 0;color:#2c9bd6 !important;mso-padding-alt:0pt 0pt 2pt 0pt;mso-line-height-rule:exactly;">
+                          <span style="font-size:11px !important;mso-font-charset:0;">${line}</span>
                         </td>
                       </tr>`).join('')}
                     </tbody>
                   </table>` : ''}
                   <!-- Social icons -->
-                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="padding-top:8px;">
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="padding-top:8px;mso-padding-alt:8pt 0pt 0pt 0pt;mso-line-height-rule:exactly;">
                     <tbody>
                       <tr>
-                        <td style="padding-right:12px;line-height:0;font-size:0;">
-                          <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://ownerinspections.com.au/wp-content/uploads/Linkedin-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="LinkedIn">
+                        <td style="padding-right:12px;line-height:0;font-size:0;mso-padding-alt:0pt 12pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <a href="https://linkedin.com/company/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;display:block !important;border:0 !important;outline:none !important;line-height:0 !important;font-size:0 !important;mso-hyperlink:url(https://linkedin.com/company/ownerinspections);">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Linkedin-300x300.png" width="24" height="24" style="width:24px !important;height:24px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="LinkedIn">
                           </a>
                         </td>
-                        <td style="padding-right:12px;line-height:0;font-size:0;">
-                          <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://ownerinspections.com.au/wp-content/uploads/Youtube-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="YouTube">
+                        <td style="padding-right:12px;line-height:0;font-size:0;mso-padding-alt:0pt 12pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <a href="https://youtube.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;display:block !important;border:0 !important;outline:none !important;line-height:0 !important;font-size:0 !important;mso-hyperlink:url(https://youtube.com/@ownerinspections);">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Youtube-300x300.png" width="24" height="24" style="width:24px !important;height:24px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="YouTube">
                           </a>
                         </td>
-                        <td style="padding-right:12px;line-height:0;font-size:0;">
-                          <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://ownerinspections.com.au/wp-content/uploads/Facebook-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Facebook">
+                        <td style="padding-right:12px;line-height:0;font-size:0;mso-padding-alt:0pt 12pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <a href="https://facebook.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;display:block !important;border:0 !important;outline:none !important;line-height:0 !important;font-size:0 !important;mso-hyperlink:url(https://facebook.com/ownerinspections);">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Facebook-300x300.png" width="24" height="24" style="width:24px !important;height:24px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="Facebook">
                           </a>
                         </td>
-                        <td style="padding-right:12px;line-height:0;font-size:0;">
-                          <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://ownerinspections.com.au/wp-content/uploads/Instagram-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Instagram">
+                        <td style="padding-right:12px;line-height:0;font-size:0;mso-padding-alt:0pt 12pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <a href="https://instagram.com/ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;display:block !important;border:0 !important;outline:none !important;line-height:0 !important;font-size:0 !important;mso-hyperlink:url(https://instagram.com/ownerinspections);">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Instagram-300x300.png" width="24" height="24" style="width:24px !important;height:24px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="Instagram">
                           </a>
                         </td>
-                        <td style="padding-right:12px;line-height:0;font-size:0;">
-                          <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:block;border:0;outline:none;line-height:0;font-size:0;">
-                            <img src="https://ownerinspections.com.au/wp-content/uploads/Medium-300x300.png" width="24" height="24" style="width:24px;height:24px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Medium">
+                        <td style="padding-right:12px;line-height:0;font-size:0;mso-padding-alt:0pt 12pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <a href="https://medium.com/@ownerinspections" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;display:block !important;border:0 !important;outline:none !important;line-height:0 !important;font-size:0 !important;mso-hyperlink:url(https://medium.com/@ownerinspections);">
+                            <img src="https://ownerinspections.com.au/wp-content/uploads/Medium-300x300.png" width="24" height="24" style="width:24px !important;height:24px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="Medium">
                           </a>
                         </td>
                       </tr>
@@ -159,29 +159,29 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                 </td>
 
                 <!-- Separator -->
-                <td valign="top" style="width:1px;background:#0b487b;">&nbsp;</td>
+                <td valign="top" style="width:1px;background:#0b487b !important;mso-line-height-rule:exactly;">&nbsp;</td>
 
                 <!-- Right column -->
                 <td valign="top" style="padding-left:20px;">
                   <!-- Phone / WhatsApp row -->
-                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;mso-padding-alt:0pt;mso-line-height-rule:exactly;">
                     <tbody>
                       <tr>
-                        <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://ownerinspections.com.au/wp-content/uploads/Phone-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="Phone">
+                        <td valign="middle" style="padding:0 8px 0 0;mso-padding-alt:0pt 8pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Phone-300x300.png" width="16" height="16" style="width:16px !important;height:16px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="Phone">
                         </td>
-                        <td valign="middle" style="padding:0; font-size:14px; color:#262626;">1300 471 805</td>
+                        <td valign="middle" style="padding:0; font-size:14px !important; color:#262626 !important;mso-line-height-rule:exactly;mso-font-charset:0;">1300 471 805</td>
                         ${enabled.whatsappNumber ? `
-                        <td valign="middle" style="padding:0 8px 0 8px; font-size:14px; color:#262626;">|</td>
-                        <td valign="middle" style="padding:0 8px 0 0;">
-                          <img src="https://ownerinspections.com.au/wp-content/uploads/Whatsapp-300x300.png" width="16" height="16" style="width:16px;height:16px;display:block;border:0;outline:none;text-decoration:none;line-height:0;font-size:0;" alt="WhatsApp">
+                        <td valign="middle" style="padding:0 8px 0 8px; font-size:14px !important; color:#262626 !important;mso-padding-alt:0pt 8pt 0pt 8pt;mso-line-height-rule:exactly;mso-font-charset:0;">|</td>
+                        <td valign="middle" style="padding:0 8px 0 0;mso-padding-alt:0pt 8pt 0pt 0pt;mso-line-height-rule:exactly;">
+                          <img src="https://ownerinspections.com.au/wp-content/uploads/Whatsapp-300x300.png" width="16" height="16" style="width:16px !important;height:16px !important;display:block !important;border:0 !important;outline:none !important;text-decoration:none !important;line-height:0 !important;font-size:0 !important;mso-image-raise:0;" alt="WhatsApp">
                         </td>
-                        <td valign="middle" style="padding:0; font-size:14px; color:#262626;">${whatsappNumber}</td>` : ''}
+                        <td valign="middle" style="padding:0; font-size:14px !important; color:#262626 !important;mso-line-height-rule:exactly;mso-font-charset:0;">${whatsappNumber}</td>` : ''}
                       </tr>
                     </tbody>
                   </table>
                   <!-- Spacer -->
-                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="mso-line-height-rule:exactly;"><tbody><tr><td height="8" style="height:8px !important;line-height:8px !important;font-size:8px !important;mso-line-height-rule:exactly;">&nbsp;</td></tr></tbody></table>
 
                   <!-- Email row -->
                   ${enabled.email ? `
@@ -198,7 +198,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     </tbody>
                   </table>` : ''}
                   <!-- Spacer -->
-                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="mso-line-height-rule:exactly;"><tbody><tr><td height="8" style="height:8px !important;line-height:8px !important;font-size:8px !important;mso-line-height-rule:exactly;">&nbsp;</td></tr></tbody></table>
 
                   <!-- Website row -->
                   <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
@@ -214,7 +214,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
                     </tbody>
                   </table>
                   <!-- Spacer -->
-                  <table role="presentation" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td height="8" style="height:8px;line-height:8px;font-size:8px;">&nbsp;</td></tr></tbody></table>
+                  <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="mso-line-height-rule:exactly;"><tbody><tr><td height="8" style="height:8px !important;line-height:8px !important;font-size:8px !important;mso-line-height-rule:exactly;">&nbsp;</td></tr></tbody></table>
 
                   <!-- Address row -->
                   <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
@@ -317,7 +317,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
 <v:fill type="tile" color="#ffffff"/>
 </v:background>
 <![endif]-->
-<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:11px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:11px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;mso-padding-alt:0pt;mso-margin-left-alt:0pt;mso-margin-right-alt:0pt;">
     <tbody>
       ${enabled.closing ? `
       <tr>
@@ -455,7 +455,7 @@ Registered Building Inspector (QLD: 15151453) | Certified Termite Inspector`,
 <v:fill type="tile" color="#ffffff"/>
 </v:background>
 <![endif]-->
-<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:12px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;">
+<table role="presentation" border="0" cellspacing="0" cellpadding="0" style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,Helvetica,sans-serif;font-size:12px;color:#262626;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactly;mso-padding-alt:0pt;mso-margin-left-alt:0pt;mso-margin-right-alt:0pt;">
     <tbody>
       ${enabled.closing ? `
       <tr><td style="padding:0 0 10px 0;"><strong>${closing}</strong><br>&nbsp;</td></tr>` : ''}
